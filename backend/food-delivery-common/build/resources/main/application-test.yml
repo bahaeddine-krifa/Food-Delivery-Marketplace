@@ -1,0 +1,56 @@
+# Test Configuration - Uses Testcontainers
+
+spring:
+  # Test database will be provided by Testcontainers
+  datasource:
+    url: jdbc:tc:postgresql:16:///food_delivery_test
+    username: test
+    password: test
+    driver-class-name: org.testcontainers.jdbc.ContainerDatabaseDriver
+
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: false
+    properties:
+      hibernate:
+        format_sql: false
+
+  flyway:
+    enabled: true
+    locations: classpath:db/migration
+    baseline-on-migrate: true
+
+  # Disable Redis for tests (or use Testcontainers Redis)
+  data:
+    redis:
+      host: localhost
+      port: 6379
+
+  # Mail for tests
+  mail:
+    host: localhost
+    port: 2525
+
+# JWT for tests (short expiration)
+app:
+  jwt:
+    secret: test-secret-key-for-testing-purposes-only-must-be-32-chars-minimum
+    access-token-expiration: 1m
+    refresh-token-expiration: 10m
+    remember-me-expiration: 1h
+
+# Logging for tests
+logging:
+  level:
+    com.fooddelivery: DEBUG
+    org.springframework.security: WARN
+    org.hibernate.SQL: WARN
+    org.testcontainers: INFO
+
+# Disable actuator for tests
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health

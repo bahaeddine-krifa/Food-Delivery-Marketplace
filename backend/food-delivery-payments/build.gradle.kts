@@ -1,0 +1,10 @@
+dependencies {
+    implementation(project(":food-delivery-common"))
+
+    implementation(libs.spring.boot.starter.data.jpa)
+    implementation(libs.spring.boot.starter.validation)
+    implementation(libs.spring.boot.starter.web)
+    implementation(libs.spring.boot.starter.security)
+
+    implementation(libs.swagger.core.jakarta)
+}

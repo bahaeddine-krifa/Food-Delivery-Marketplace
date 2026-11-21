@@ -1,0 +1,196 @@
+2026-11-20 19:36:04.398 [Test worker] INFO  c.f.c.e.GlobalExceptionHandlerTest - Starting GlobalExceptionHandlerTest using Java 21.0.13.1 with PID 68458 (started by bahaeddine in /home/bahaeddine/Baha-Workspace/food-delivery-platform/backend/food-delivery-common)
+2026-11-20 19:36:04.401 [Test worker] INFO  c.f.c.e.GlobalExceptionHandlerTest - The following 1 profile is active: "test"
+2026-11-20 19:36:05.955 [Test worker] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-11-20 19:36:05.995 [Test worker] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 27 ms. Found 0 JPA repository interfaces.
+2026-11-20 19:36:06.881 [Test worker] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-11-20 19:36:06.959 [Test worker] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.4.Final
+2026-11-20 19:36:06.997 [Test worker] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-11-20 19:36:07.212 [Test worker] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-11-20 19:36:07.237 [Test worker] WARN  com.zaxxer.hikari.HikariConfig - HikariPool-1 - idleTimeout has been set but has no effect because the pool is operating as a fixed size pool.
+2026-11-20 19:36:07.237 [Test worker] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-11-20 19:36:07.412 [Test worker] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+2026-11-20 19:36:07.413 [Test worker] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-11-20 19:36:07.437 [Test worker] WARN  org.hibernate.orm.deprecation - HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-11-20 19:36:07.770 [Test worker] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-11-20 19:36:07.775 [Test worker] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-11-20 19:36:08.138 [Test worker] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-11-20 19:36:08.839 [Test worker] WARN  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: 7960cad0-26a8-4347-80e0-68289fd7133b
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-11-20 19:36:09.026 [Test worker] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@2c4eda3a, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@466bf366, org.springframework.security.web.context.SecurityContextHolderFilter@5a183fa6, org.springframework.security.web.header.HeaderWriterFilter@c680819, org.springframework.web.filter.CorsFilter@28be7db5, org.springframework.security.web.csrf.CsrfFilter@186fc6e, org.springframework.security.web.authentication.logout.LogoutFilter@6bb46040, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@507e3e77, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@4b477121, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@700596f9, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@7cd2d3b6, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@292b7a02, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3e242137, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2ac00dc9, org.springframework.security.web.access.ExceptionTranslationFilter@7cddc50f, org.springframework.security.web.access.intercept.AuthorizationFilter@27563444]
+2026-11-20 19:36:09.126 [Test worker] INFO  o.s.b.t.m.w.SpringBootMockServletContext - Initializing Spring TestDispatcherServlet ''
+2026-11-20 19:36:09.127 [Test worker] INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+2026-11-20 19:36:09.129 [Test worker] INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 1 ms
+2026-11-20 19:36:09.164 [Test worker] INFO  c.f.c.e.GlobalExceptionHandlerTest - Started GlobalExceptionHandlerTest in 5.248 seconds (process running for 6.548)
+2026-11-20 19:36:09.896 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-11-20 19:36:09.899 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-11-20 19:36:09.902 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-11-20 19:37:28.406 [Test worker] INFO  c.f.c.e.GlobalExceptionHandlerTest - Starting GlobalExceptionHandlerTest using Java 21.0.13.1 with PID 69238 (started by bahaeddine in /home/bahaeddine/Baha-Workspace/food-delivery-platform/backend/food-delivery-common)
+2026-11-20 19:37:28.408 [Test worker] INFO  c.f.c.e.GlobalExceptionHandlerTest - The following 1 profile is active: "test"
+2026-11-20 19:37:29.880 [Test worker] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-11-20 19:37:29.916 [Test worker] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 25 ms. Found 0 JPA repository interfaces.
+2026-11-20 19:37:30.612 [Test worker] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-11-20 19:37:30.686 [Test worker] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.4.Final
+2026-11-20 19:37:30.720 [Test worker] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-11-20 19:37:30.932 [Test worker] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-11-20 19:37:30.970 [Test worker] WARN  com.zaxxer.hikari.HikariConfig - HikariPool-1 - idleTimeout has been set but has no effect because the pool is operating as a fixed size pool.
+2026-11-20 19:37:30.971 [Test worker] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-11-20 19:37:31.182 [Test worker] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+2026-11-20 19:37:31.184 [Test worker] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-11-20 19:37:31.208 [Test worker] WARN  org.hibernate.orm.deprecation - HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-11-20 19:37:31.564 [Test worker] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-11-20 19:37:31.569 [Test worker] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-11-20 19:37:31.795 [Test worker] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-11-20 19:37:31.831 [Test worker] WARN  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: d898ae54-e2fb-4992-b9a1-3ea17a7bcee9
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-11-20 19:37:32.296 [Test worker] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@4d73d3d1, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@eef6e, org.springframework.security.web.context.SecurityContextHolderFilter@69e8f7a5, org.springframework.security.web.header.HeaderWriterFilter@7890324e, org.springframework.web.filter.CorsFilter@56b66cc6, org.springframework.security.web.authentication.logout.LogoutFilter@6db2a260, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@36bd07ec, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@85b9f9c, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6f076c53, org.springframework.security.web.access.ExceptionTranslationFilter@52b77d5e, org.springframework.security.web.access.intercept.AuthorizationFilter@818a514]
+2026-11-20 19:37:32.974 [Test worker] INFO  o.s.b.t.m.w.SpringBootMockServletContext - Initializing Spring TestDispatcherServlet ''
+2026-11-20 19:37:32.975 [Test worker] INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+2026-11-20 19:37:32.977 [Test worker] INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 2 ms
+2026-11-20 19:37:33.025 [Test worker] INFO  c.f.c.e.GlobalExceptionHandlerTest - Started GlobalExceptionHandlerTest in 5.106 seconds (process running for 6.583)
+2026-11-20 19:37:33.908 [Test worker] WARN  c.f.c.e.GlobalExceptionHandler - Business exception: TEST_ERROR - Test error
+2026-11-20 19:37:34.055 [Test worker] WARN  c.f.c.e.GlobalExceptionHandler - Business exception: NOT_FOUND - User not found with identifier: 123
+2026-11-20 19:37:34.086 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-11-20 19:37:34.089 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-11-20 19:37:34.093 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-11-20 20:33:24.413 [Test worker] INFO  c.f.c.e.GlobalExceptionHandlerTest - Starting GlobalExceptionHandlerTest using Java 21.0.13.1 with PID 96532 (started by bahaeddine in /home/bahaeddine/Baha-Workspace/food-delivery-platform/backend/food-delivery-common)
+2026-11-20 20:33:24.509 [Test worker] INFO  c.f.c.e.GlobalExceptionHandlerTest - The following 1 profile is active: "test"
+2026-11-20 20:33:26.023 [Test worker] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-11-20 20:33:26.058 [Test worker] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 25 ms. Found 0 JPA repository interfaces.
+2026-11-20 20:33:26.753 [Test worker] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-11-20 20:33:26.804 [Test worker] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.4.Final
+2026-11-20 20:33:26.836 [Test worker] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-11-20 20:33:27.039 [Test worker] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-11-20 20:33:27.061 [Test worker] WARN  com.zaxxer.hikari.HikariConfig - HikariPool-1 - idleTimeout has been set but has no effect because the pool is operating as a fixed size pool.
+2026-11-20 20:33:27.061 [Test worker] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-11-20 20:33:27.208 [Test worker] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+2026-11-20 20:33:27.210 [Test worker] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-11-20 20:33:27.230 [Test worker] WARN  org.hibernate.orm.deprecation - HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-11-20 20:33:27.516 [Test worker] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-11-20 20:33:27.521 [Test worker] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-11-20 20:33:27.759 [Test worker] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-11-20 20:33:27.808 [Test worker] WARN  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: e65572f6-939c-4c70-8097-4fd1f78a639c
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-11-20 20:33:28.290 [Test worker] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@b0e6d4e, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2bf2523f, org.springframework.security.web.context.SecurityContextHolderFilter@25093079, org.springframework.security.web.header.HeaderWriterFilter@594965c9, org.springframework.web.filter.CorsFilter@1be3e952, org.springframework.security.web.authentication.logout.LogoutFilter@55b78dad, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1c96bf1e, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7890324e, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@818a514, org.springframework.security.web.access.ExceptionTranslationFilter@377d55, org.springframework.security.web.access.intercept.AuthorizationFilter@5fcff272]
+2026-11-20 20:33:28.979 [Test worker] INFO  o.s.b.t.m.w.SpringBootMockServletContext - Initializing Spring TestDispatcherServlet ''
+2026-11-20 20:33:28.980 [Test worker] INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+2026-11-20 20:33:28.983 [Test worker] INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 2 ms
+2026-11-20 20:33:29.035 [Test worker] INFO  c.f.c.e.GlobalExceptionHandlerTest - Started GlobalExceptionHandlerTest in 5.129 seconds (process running for 6.412)
+2026-11-20 20:33:30.036 [Test worker] WARN  c.f.c.e.GlobalExceptionHandler - Business exception: TEST_ERROR - Test error
+2026-11-20 20:33:30.160 [Test worker] WARN  c.f.c.e.GlobalExceptionHandler - Business exception: NOT_FOUND - User not found with identifier: 123
+2026-11-20 20:33:30.184 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-11-20 20:33:30.187 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-11-20 20:33:30.195 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-11-20 20:44:19.650 [main] INFO  c.f.common.FoodDeliveryApplicationKt - Starting FoodDeliveryApplicationKt using Java 21.0.13.1 with PID 102142 (/home/bahaeddine/Baha-Workspace/food-delivery-platform/backend/food-delivery-common/build/classes/kotlin/main started by bahaeddine in /home/bahaeddine/Baha-Workspace/food-delivery-platform/backend/food-delivery-common)
+2026-11-20 20:44:19.652 [main] DEBUG c.f.common.FoodDeliveryApplicationKt - Running with Spring Boot v3.2.5, Spring v6.1.6
+2026-11-20 20:44:19.652 [main] INFO  c.f.common.FoodDeliveryApplicationKt - No active profile set, falling back to 1 default profile: "default"
+2026-11-20 20:44:20.411 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-11-20 20:44:20.436 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 17 ms. Found 0 JPA repository interfaces.
+2026-11-20 20:44:21.718 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-11-20 20:44:21.731 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-11-20 20:44:21.731 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.20]
+2026-11-20 20:44:21.779 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-11-20 20:44:21.779 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2071 ms
+2026-11-20 20:44:21.854 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'dataSourceScriptDatabaseInitializer' defined in class path resource [org/springframework/boot/autoconfigure/sql/init/DataSourceInitializationConfiguration.class]: Unsatisfied dependency expressed through method 'dataSourceScriptDatabaseInitializer' parameter 0: Error creating bean with name 'dataSource' defined in class path resource [org/springframework/boot/autoconfigure/jdbc/DataSourceConfiguration$Hikari.class]: Failed to instantiate [com.zaxxer.hikari.HikariDataSource]: Factory method 'dataSource' threw exception with message: Cannot load driver class: org.postgresql.Driver
+2026-11-20 20:44:21.856 [main] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2026-11-20 20:44:21.869 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2026-11-20 20:44:21.884 [main] ERROR o.s.boot.SpringApplication - Application run failed
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'dataSourceScriptDatabaseInitializer' defined in class path resource [org/springframework/boot/autoconfigure/sql/init/DataSourceInitializationConfiguration.class]: Unsatisfied dependency expressed through method 'dataSourceScriptDatabaseInitializer' parameter 0: Error creating bean with name 'dataSource' defined in class path resource [org/springframework/boot/autoconfigure/jdbc/DataSourceConfiguration$Hikari.class]: Failed to instantiate [com.zaxxer.hikari.HikariDataSource]: Factory method 'dataSource' threw exception with message: Cannot load driver class: org.postgresql.Driver
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:795)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:542)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1335)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1165)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:562)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:313)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1234)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:952)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:624)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:334)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343)
+	at com.fooddelivery.common.FoodDeliveryApplicationKt.main(FoodDeliveryApplication.kt:16)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSource' defined in class path resource [org/springframework/boot/autoconfigure/jdbc/DataSourceConfiguration$Hikari.class]: Failed to instantiate [com.zaxxer.hikari.HikariDataSource]: Factory method 'dataSource' threw exception with message: Cannot load driver class: org.postgresql.Driver
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:648)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:636)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1335)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1165)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:562)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1443)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1353)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:904)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:782)
+	... 21 common frames omitted
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.zaxxer.hikari.HikariDataSource]: Factory method 'dataSource' threw exception with message: Cannot load driver class: org.postgresql.Driver
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:177)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:644)
+	... 35 common frames omitted
+Caused by: java.lang.IllegalStateException: Cannot load driver class: org.postgresql.Driver
+	at org.springframework.util.Assert.state(Assert.java:97)
+	at org.springframework.boot.autoconfigure.jdbc.DataSourceProperties.determineDriverClassName(DataSourceProperties.java:175)
+	at org.springframework.boot.autoconfigure.jdbc.PropertiesJdbcConnectionDetails.getDriverClassName(PropertiesJdbcConnectionDetails.java:49)
+	at org.springframework.boot.autoconfigure.jdbc.DataSourceConfiguration.createDataSource(DataSourceConfiguration.java:55)
+	at org.springframework.boot.autoconfigure.jdbc.DataSourceConfiguration$Hikari.dataSource(DataSourceConfiguration.java:117)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:140)
+	... 36 common frames omitted
+2026-11-20 20:45:32.442 [Test worker] INFO  c.f.c.e.GlobalExceptionHandlerTest - Starting GlobalExceptionHandlerTest using Java 21.0.13.1 with PID 102944 (started by bahaeddine in /home/bahaeddine/Baha-Workspace/food-delivery-platform/backend/food-delivery-common)
+2026-11-20 20:45:32.445 [Test worker] INFO  c.f.c.e.GlobalExceptionHandlerTest - The following 1 profile is active: "test"
+2026-11-20 20:45:34.522 [Test worker] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-11-20 20:45:34.573 [Test worker] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 35 ms. Found 0 JPA repository interfaces.
+2026-11-20 20:45:35.447 [Test worker] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-11-20 20:45:35.527 [Test worker] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.4.Final
+2026-11-20 20:45:35.561 [Test worker] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-11-20 20:45:35.784 [Test worker] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-11-20 20:45:35.811 [Test worker] WARN  com.zaxxer.hikari.HikariConfig - HikariPool-1 - idleTimeout has been set but has no effect because the pool is operating as a fixed size pool.
+2026-11-20 20:45:35.812 [Test worker] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-11-20 20:45:35.985 [Test worker] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+2026-11-20 20:45:35.987 [Test worker] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-11-20 20:45:36.013 [Test worker] WARN  org.hibernate.orm.deprecation - HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-11-20 20:45:36.381 [Test worker] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-11-20 20:45:36.387 [Test worker] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-11-20 20:45:36.666 [Test worker] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-11-20 20:45:36.717 [Test worker] WARN  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: 70dc78f3-54b8-4532-8528-ce71b2d33009
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-11-20 20:45:37.180 [Test worker] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@4d73d3d1, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@eef6e, org.springframework.security.web.context.SecurityContextHolderFilter@69e8f7a5, org.springframework.security.web.header.HeaderWriterFilter@7890324e, org.springframework.web.filter.CorsFilter@56b66cc6, org.springframework.security.web.authentication.logout.LogoutFilter@6db2a260, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@36bd07ec, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@85b9f9c, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6f076c53, org.springframework.security.web.access.ExceptionTranslationFilter@52b77d5e, org.springframework.security.web.access.intercept.AuthorizationFilter@818a514]
+2026-11-20 20:45:37.865 [Test worker] INFO  o.s.b.t.m.w.SpringBootMockServletContext - Initializing Spring TestDispatcherServlet ''
+2026-11-20 20:45:37.866 [Test worker] INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+2026-11-20 20:45:37.869 [Test worker] INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 2 ms
+2026-11-20 20:45:37.911 [Test worker] INFO  c.f.c.e.GlobalExceptionHandlerTest - Started GlobalExceptionHandlerTest in 5.976 seconds (process running for 7.404)
+2026-11-20 20:45:38.957 [Test worker] WARN  c.f.c.e.GlobalExceptionHandler - Business exception: TEST_ERROR - Test error
+2026-11-20 20:45:39.061 [Test worker] WARN  c.f.c.e.GlobalExceptionHandler - Business exception: NOT_FOUND - User not found with identifier: 123
+2026-11-20 20:45:39.084 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-11-20 20:45:39.087 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-11-20 20:45:39.090 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.

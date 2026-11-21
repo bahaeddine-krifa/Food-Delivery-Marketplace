@@ -1,0 +1,148 @@
+[versions]
+# Kotlin & Gradle
+kotlin = "1.9.24"
+gradle = "8.5"
+
+# Spring Boot & Spring
+springBoot = "3.2.5"
+springFramework = "6.1.6"
+springSecurity = "6.2.4"
+springDataJpa = "3.2.3"
+springValidation = "3.2.3"
+springWeb = "6.1.6"
+springMail = "6.1.6"
+
+# Database
+postgresql = "42.7.3"
+flyway = "10.17.0"
+hikaricp = "5.1.0"
+liquibase = "4.29.0"
+testcontainers = "1.19.8"
+
+# JWT & Security
+jjwt = "0.12.5"
+bcrypt = "0.10.2"
+nimbusJoseJwt = "9.37.3"
+
+# Serialization
+jackson = "2.17.0"
+jacksonKotlin = "2.17.0"
+kotlinxSerialization = "1.6.2"
+
+# OpenAPI
+springdoc = "2.3.0"
+
+# Testing
+junit = "5.10.2"
+mockito = "5.11.0"
+assertj = "3.25.3"
+mockk = "1.13.13"
+testcontainersJunit = "1.19.8"
+restAssured = "5.4.0"
+
+# Utilities
+lombok = "1.18.32"
+mapstruct = "1.5.5.Final"
+mapstructProcessor = "1.5.5.Final"
+uuid = "4.5.1"
+slf4j = "2.0.13"
+logback = "1.5.6"
+
+# Redis
+redis = "3.2.3"
+lettuce = "6.3.1.RELEASE"
+
+# Email
+jakartaMail = "2.0.1"
+
+[plugins]
+# Core
+kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
+kotlin-spring = { id = "org.jetbrains.kotlin.plugin.spring", version.ref = "kotlin" }
+kotlin-jpa = { id = "org.jetbrains.kotlin.plugin.jpa", version.ref = "kotlin" }
+kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
+spring-boot = { id = "org.springframework.boot", version.ref = "springBoot" }
+dependency-management = { id = "io.spring.dependency-management", version = "1.1.6" }
+lombok = { id = "io.freefair.lombok", version.ref = "lombok" }
+
+# Testing
+junit-platform = { id = "org.junit.platform.gradle.plugin", version = "1.10.2" }
+
+[libraries]
+# Spring Boot Starters
+spring-boot-starter-web = { module = "org.springframework.boot:spring-boot-starter-web", version.ref = "springBoot" }
+spring-boot-starter-data-jpa = { module = "org.springframework.boot:spring-boot-starter-data-jpa", version.ref = "springBoot" }
+spring-boot-starter-security = { module = "org.springframework.boot:spring-boot-starter-security", version.ref = "springBoot" }
+spring-boot-starter-validation = { module = "org.springframework.boot:spring-boot-starter-validation", version.ref = "springBoot" }
+spring-boot-starter-mail = { module = "org.springframework.boot:spring-boot-starter-mail", version.ref = "springBoot" }
+spring-boot-starter-actuator = { module = "org.springframework.boot:spring-boot-starter-actuator", version.ref = "springBoot" }
+spring-boot-starter-test = { module = "org.springframework.boot:spring-boot-starter-test", version.ref = "springBoot" }
+spring-boot-starter-data-redis = { module = "org.springframework.boot:spring-boot-starter-data-redis", version.ref = "springBoot" }
+spring-boot-starter-websocket = { module = "org.springframework.boot:spring-boot-starter-websocket", version.ref = "springBoot" }
+
+# Spring Security
+spring-security-config = { module = "org.springframework.security:spring-security-config", version.ref = "springSecurity" }
+spring-security-web = { module = "org.springframework.security:spring-security-web", version.ref = "springSecurity" }
+spring-security-oauth2-resource-server = { module = "org.springframework.security:spring-security-oauth2-resource-server", version.ref = "springSecurity" }
+spring-security-oauth2-jose = { module = "org.springframework.security:spring-security-oauth2-jose", version.ref = "springSecurity" }
+
+# Database
+postgresql = { module = "org.postgresql:postgresql", version.ref = "postgresql" }
+flyway-core = { module = "org.flywaydb:flyway-core", version.ref = "flyway" }
+flyway-database-postgresql = { module = "org.flywaydb:flyway-database-postgresql", version.ref = "flyway" }
+hikaricp = { module = "com.zaxxer:HikariCP", version.ref = "hikaricp" }
+
+# JWT
+jjwt-api = { module = "io.jsonwebtoken:jjwt-api", version.ref = "jjwt" }
+jjwt-impl = { module = "io.jsonwebtoken:jjwt-impl", version.ref = "jjwt" }
+jjwt-jackson = { module = "io.jsonwebtoken:jjwt-jackson", version.ref = "jjwt" }
+nimbus-jose-jwt = { module = "com.nimbusds:nimbus-jose-jwt", version.ref = "nimbusJoseJwt" }
+
+# Jackson
+jackson-module-kotlin = { module = "com.fasterxml.jackson.module:jackson-module-kotlin", version.ref = "jacksonKotlin" }
+jackson-datatype-jsr310 = { module = "com.fasterxml.jackson.datatype:jackson-datatype-jsr310", version.ref = "jackson" }
+jackson-datatype-hibernate = { module = "com.fasterxml.jackson.datatype:jackson-datatype-hibernate", version.ref = "jackson" }
+
+# OpenAPI
+springdoc-openapi-starter-webmvc = { module = "org.springdoc:springdoc-openapi-starter-webmvc-ui", version.ref = "springdoc" }
+springdoc-openapi-starter-common = { module = "org.springdoc:springdoc-openapi-starter-common", version.ref = "springdoc" }
+swagger-core-jakarta = { module = "io.swagger.core.v3:swagger-core-jakarta", version = "2.2.20" }
+
+# Testing
+junit-jupiter = { module = "org.junit.jupiter:junit-jupiter", version.ref = "junit" }
+junit-jupiter-params = { module = "org.junit.jupiter:junit-jupiter-params", version.ref = "junit" }
+mockito-core = { module = "org.mockito:mockito-core", version.ref = "mockito" }
+mockito-junit-jupiter = { module = "org.mockito:mockito-junit-jupiter", version.ref = "mockito" }
+assertj = { module = "org.assertj:assertj-core", version.ref = "assertj" }
+mockk = { module = "io.mockk:mockk", version.ref = "mockk" }
+testcontainers = { module = "org.testcontainers:testcontainers", version.ref = "testcontainers" }
+testcontainers-postgresql = { module = "org.testcontainers:postgresql", version.ref = "testcontainers" }
+testcontainers-junit-jupiter = { module = "org.testcontainers:junit-jupiter", version.ref = "testcontainers" }
+rest-assured = { module = "io.rest-assured:rest-assured", version.ref = "restAssured" }
+spring-security-test = { module = "org.springframework.security:spring-security-test", version.ref = "springSecurity" }
+
+# MapStruct
+mapstruct = { module = "org.mapstruct:mapstruct", version.ref = "mapstruct" }
+mapstruct-processor = { module = "org.mapstruct:mapstruct-processor", version.ref = "mapstructProcessor" }
+
+# Lombok
+lombok = { module = "org.projectlombok:lombok", version.ref = "lombok" }
+lombok-mapstruct-binding = { module = "org.projectlombok:lombok-mapstruct-binding", version = "0.2.0" }
+
+# Utilities
+uuid-creator = { module = "com.github.stephenc.jcip:jcip-annotations", version = "1.0-1" }
+slf4j-api = { module = "org.slf4j:slf4j-api", version.ref = "slf4j" }
+logback-classic = { module = "ch.qos.logback:logback-classic", version.ref = "logback" }
+
+# Redis
+lettuce-core = { module = "io.lettuce:lettuce-core", version.ref = "lettuce" }
+
+# Email
+jakarta-mail = { module = "com.sun.mail:jakarta.mail", version.ref = "jakartaMail" }
+
+# Kotlin
+kotlin-stdlib = { module = "org.jetbrains.kotlin:kotlin-stdlib", version.ref = "kotlin" }
+kotlin-reflect = { module = "org.jetbrains.kotlin:kotlin-reflect", version.ref = "kotlin" }
+kotlinx-coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version = "1.7.3" }
+kotlinx-coroutines-reactor = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-reactor", version = "1.7.3" }
+kotlinx-serialization-json = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "kotlinxSerialization" }
