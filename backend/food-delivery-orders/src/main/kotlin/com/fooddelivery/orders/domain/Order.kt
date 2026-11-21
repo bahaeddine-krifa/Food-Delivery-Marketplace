@@ -2,6 +2,7 @@ package com.fooddelivery.orders.domain
 
 import com.fooddelivery.common.domain.AuditableEntity
 import com.fooddelivery.common.enums.OrderStatus
+import jakarta.persistence.CascadeType
 import jakarta.persistence.Column
 import jakarta.persistence.Convert
 import jakarta.persistence.Entity
@@ -107,6 +108,6 @@ class Order : AuditableEntity() {
     @Column(name = "idempotency_key", nullable = false, unique = true, length = 64)
     var idempotencyKey: String = ""
 
-    @OneToMany(mappedBy = "order")
+    @OneToMany(mappedBy = "order", cascade = [CascadeType.PERSIST, CascadeType.MERGE], orphanRemoval = true)
     var items: MutableList<OrderItem> = mutableListOf()
 }

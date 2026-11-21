@@ -3,10 +3,9 @@ package com.fooddelivery.auth.controller
 import com.fooddelivery.auth.dto.LoginRequest
 import com.fooddelivery.auth.dto.RefreshRequest
 import com.fooddelivery.auth.dto.RegisterRequest
-import com.fooddelivery.common.FoodDeliveryApplication
+import com.fooddelivery.auth.test.AuthTestApplication
 import com.fooddelivery.common.enums.UserRole
 import com.fooddelivery.common.enums.UserStatus
-import com.fooddelivery.users.test.UsersTestApplication
 import com.fasterxml.jackson.databind.ObjectMapper
 import com.fasterxml.jackson.module.kotlin.KotlinModule
 import org.junit.jupiter.api.BeforeEach
@@ -27,7 +26,7 @@ import com.fooddelivery.users.domain.User
 import com.fooddelivery.users.repository.UserRepository
 import com.fooddelivery.users.repository.CustomerProfileRepository
 
-@SpringBootTest(classes = [FoodDeliveryApplication::class, UsersTestApplication::class])
+@SpringBootTest(classes = [AuthTestApplication::class])
 @ActiveProfiles("test")
 @AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.ANY)
 @AutoConfigureMockMvc

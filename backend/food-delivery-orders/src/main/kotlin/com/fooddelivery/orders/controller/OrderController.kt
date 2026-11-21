@@ -1,9 +1,9 @@
 package com.fooddelivery.orders.controller
 
-import com.fooddelivery.auth.service.JwtService
 import com.fooddelivery.common.dto.ApiResponse
 import com.fooddelivery.common.enums.OrderStatus
 import com.fooddelivery.common.enums.UserRole
+import com.fooddelivery.common.security.CurrentUser
 import com.fooddelivery.orders.dto.CreateOrderRequest
 import com.fooddelivery.orders.dto.OrderItemResponse
 import com.fooddelivery.orders.dto.OrderResponse
@@ -21,6 +21,7 @@ import org.springframework.data.web.PageableDefault
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
 import org.springframework.security.access.prepost.PreAuthorize
+import org.springframework.security.core.annotation.AuthenticationPrincipal
 import org.springframework.web.bind.annotation.*
 import java.util.UUID
 
@@ -28,33 +29,18 @@ import java.util.UUID
 @RequestMapping("/api/v1/orders")
 @Tag(name = "Orders", description = "Order management endpoints")
 class OrderController(
-    private val orderService: OrderService,
-    private val jwtService: JwtService
+    private val orderService: OrderService
 ) {
-
-    private fun getCurrentUserId(httpRequest: HttpServletRequest): UUID {
-        val authHeader = httpRequest.getHeader("Authorization")
-            ?: throw IllegalStateException("No authorization header")
-        val token = authHeader.removePrefix("Bearer ").trim()
-        return jwtService.extractUserId(token)
-    }
-
-    private fun getCurrentUserRole(httpRequest: HttpServletRequest): UserRole {
-        val authHeader = httpRequest.getHeader("Authorization")
-            ?: throw IllegalStateException("No authorization header")
-        val token = authHeader.removePrefix("Bearer ").trim()
-        return jwtService.extractUserRole(token)
-    }
 
     @PostMapping
     @PreAuthorize("hasRole('CUSTOMER')")
     @Operation(summary = "Create a new order")
     fun createOrder(
-        httpRequest: HttpServletRequest,
-        @Valid @RequestBody request: CreateOrderRequest
+        @AuthenticationPrincipal currentUser: CurrentUser,
+        @Valid @RequestBody request: CreateOrderRequest,
+        httpRequest: HttpServletRequest
     ): ResponseEntity<ApiResponse<OrderResponse>> {
-        val userId = getCurrentUserId(httpRequest)
-        val order = orderService.createOrder(userId, request)
+        val order = orderService.createOrder(currentUser.id, request)
         return ResponseEntity.status(HttpStatus.CREATED)
             .body(ApiResponse.ok(order, httpRequest.getHeader("X-Request-ID")))
     }
@@ -63,13 +49,12 @@ class OrderController(
     @PreAuthorize("hasRole('CUSTOMER') or hasRole('RESTAURANT_OWNER') or hasRole('ADMIN')")
     @Operation(summary = "Get orders for the current user")
     fun getOrders(
-        httpRequest: HttpServletRequest,
+        @AuthenticationPrincipal currentUser: CurrentUser,
         @RequestParam(required = false) status: OrderStatus?,
-        @PageableDefault(size = 20, sort = ["createdAt,desc"]) pageable: Pageable
+        @PageableDefault(size = 20, sort = ["createdAt"], direction = org.springframework.data.domain.Sort.Direction.DESC) pageable: Pageable,
+        httpRequest: HttpServletRequest
     ): ResponseEntity<ApiResponse<Page<OrderSummaryResponse>>> {
-        val userId = getCurrentUserId(httpRequest)
-        val userRole = getCurrentUserRole(httpRequest)
-        val orders = orderService.getOrders(userId, userRole, status, pageable)
+        val orders = orderService.getOrders(currentUser.id, currentUser.role, status, pageable)
         return ResponseEntity.ok(ApiResponse.ok(orders, httpRequest.getHeader("X-Request-ID")))
     }
 
@@ -77,12 +62,11 @@ class OrderController(
     @PreAuthorize("hasRole('CUSTOMER') or hasRole('RESTAURANT_OWNER') or hasRole('DELIVERY_PERSON') or hasRole('ADMIN')")
     @Operation(summary = "Get order details by ID")
     fun getOrder(
-        httpRequest: HttpServletRequest,
-        @PathVariable orderId: UUID
+        @AuthenticationPrincipal currentUser: CurrentUser,
+        @PathVariable orderId: UUID,
+        httpRequest: HttpServletRequest
     ): ResponseEntity<ApiResponse<OrderResponse>> {
-        val userId = getCurrentUserId(httpRequest)
-        val userRole = getCurrentUserRole(httpRequest)
-        val order = orderService.getOrderById(userId, orderId, userRole)
+        val order = orderService.getOrderById(currentUser.id, orderId, currentUser.role)
         return ResponseEntity.ok(ApiResponse.ok(order, httpRequest.getHeader("X-Request-ID")))
     }
 
@@ -90,13 +74,12 @@ class OrderController(
     @PreAuthorize("hasRole('RESTAURANT_OWNER') or hasRole('DELIVERY_PERSON') or hasRole('ADMIN')")
     @Operation(summary = "Update order status")
     fun updateOrderStatus(
-        httpRequest: HttpServletRequest,
+        @AuthenticationPrincipal currentUser: CurrentUser,
         @PathVariable orderId: UUID,
-        @Valid @RequestBody request: UpdateOrderStatusRequest
+        @Valid @RequestBody request: UpdateOrderStatusRequest,
+        httpRequest: HttpServletRequest
     ): ResponseEntity<ApiResponse<OrderResponse>> {
-        val userId = getCurrentUserId(httpRequest)
-        val userRole = getCurrentUserRole(httpRequest)
-        val order = orderService.updateOrderStatus(orderId, request, userId, userRole)
+        val order = orderService.updateOrderStatus(orderId, request, currentUser.id, currentUser.role)
         return ResponseEntity.ok(ApiResponse.ok(order, httpRequest.getHeader("X-Request-ID")))
     }
 
@@ -104,13 +87,12 @@ class OrderController(
     @PreAuthorize("hasRole('CUSTOMER') or hasRole('RESTAURANT_OWNER') or hasRole('ADMIN')")
     @Operation(summary = "Cancel an order")
     fun cancelOrder(
-        httpRequest: HttpServletRequest,
+        @AuthenticationPrincipal currentUser: CurrentUser,
         @PathVariable orderId: UUID,
-        @RequestParam(required = false) reason: String?
+        @RequestParam(required = false) reason: String?,
+        httpRequest: HttpServletRequest
     ): ResponseEntity<ApiResponse<OrderResponse>> {
-        val userId = getCurrentUserId(httpRequest)
-        val userRole = getCurrentUserRole(httpRequest)
-        val order = orderService.cancelOrder(orderId, userId, userRole, reason)
+        val order = orderService.cancelOrder(orderId, currentUser.id, currentUser.role, reason)
         return ResponseEntity.ok(ApiResponse.ok(order, httpRequest.getHeader("X-Request-ID")))
     }
 
@@ -118,9 +100,9 @@ class OrderController(
     @PreAuthorize("hasRole('CUSTOMER') or hasRole('RESTAURANT_OWNER') or hasRole('ADMIN')")
     @Operation(summary = "Get order status history")
     fun getOrderHistory(
-        httpRequest: HttpServletRequest,
         @PathVariable orderId: UUID,
-        @PageableDefault(size = 20) pageable: Pageable
+        @PageableDefault(size = 20) pageable: Pageable,
+        httpRequest: HttpServletRequest
     ): ResponseEntity<ApiResponse<Page<OrderStatusHistoryResponse>>> {
         val history = orderService.getOrderStatusHistory(orderId, pageable)
         return ResponseEntity.ok(ApiResponse.ok(history, httpRequest.getHeader("X-Request-ID")))

@@ -1,6 +1,8 @@
 package com.fooddelivery.orders.service
 
 import com.fooddelivery.common.enums.OrderStatus
+import com.fooddelivery.common.enums.UserRole
+import com.fooddelivery.common.exception.AccessDeniedException
 import com.fooddelivery.common.exception.BusinessException
 import com.fooddelivery.common.exception.ResourceNotFoundException
 import com.fooddelivery.orders.domain.Order
@@ -12,12 +14,10 @@ import com.fooddelivery.orders.dto.OrderResponse
 import com.fooddelivery.orders.dto.OrderStatusHistoryResponse
 import com.fooddelivery.orders.dto.OrderSummaryResponse
 import com.fooddelivery.orders.dto.UpdateOrderStatusRequest
-import com.fooddelivery.common.enums.PaymentMethod
 import com.fooddelivery.common.enums.PaymentStatus
 import com.fooddelivery.orders.repository.OrderRepository
 import com.fooddelivery.orders.repository.OrderItemRepository
 import com.fooddelivery.orders.repository.OrderStatusHistoryRepository
-import com.fooddelivery.payments.domain.Payment
 import com.fooddelivery.payments.service.PaymentService
 import com.fooddelivery.products.domain.Product
 import com.fooddelivery.products.repository.ProductRepository
@@ -63,8 +63,7 @@ class OrderService(
             return OrderResponse.fromEntity(existingOrder)
         }
 
-        val customer = userRepository.findById(customerId)
-            .orElseThrow { ResourceNotFoundException("Customer", customerId) }
+        val customer = findUserById(customerId, "Customer")
 
         val restaurant = restaurantRepository.findById(request.restaurantId)
             .orElseThrow { ResourceNotFoundException("Restaurant", request.restaurantId) }
@@ -151,26 +150,26 @@ class OrderService(
         return OrderResponse.fromEntity(savedOrder)
     }
 
-    fun getOrderById(userId: UUID, orderId: UUID, userRole: com.fooddelivery.common.enums.UserRole): OrderResponse {
+    fun getOrderById(userId: UUID, orderId: UUID, userRole: UserRole): OrderResponse {
         val order = orderRepository.findById(orderId)
             .orElseThrow { ResourceNotFoundException("Order", orderId) }
 
         // Authorization check
         when (userRole) {
-            com.fooddelivery.common.enums.UserRole.CUSTOMER -> {
+            UserRole.CUSTOMER -> {
                 if (order.customer?.id != userId) {
-                    throw com.fooddelivery.common.exception.AccessDeniedException("You can only view your own orders")
+                    throw AccessDeniedException("You can only view your own orders")
                 }
             }
-            com.fooddelivery.common.enums.UserRole.RESTAURANT_OWNER -> {
+            UserRole.RESTAURANT_OWNER -> {
                 if (order.restaurant?.owner?.id != userId) {
-                    throw com.fooddelivery.common.exception.AccessDeniedException("You can only view orders for your restaurants")
+                    throw AccessDeniedException("You can only view orders for your restaurants")
                 }
             }
-            com.fooddelivery.common.enums.UserRole.DELIVERY_PERSON -> {
+            UserRole.DELIVERY_PERSON -> {
                 // Delivery person can see assigned orders - check via delivery module
             }
-            com.fooddelivery.common.enums.UserRole.ADMIN -> {
+            UserRole.ADMIN -> {
                 // Admin can see all
             }
         }
@@ -180,19 +179,19 @@ class OrderService(
 
     fun getOrders(
         userId: UUID,
-        userRole: com.fooddelivery.common.enums.UserRole,
+        userRole: UserRole,
         status: OrderStatus?,
         pageable: Pageable
     ): Page<OrderSummaryResponse> {
         return when (userRole) {
-            com.fooddelivery.common.enums.UserRole.CUSTOMER -> {
+            UserRole.CUSTOMER -> {
                 if (status != null) {
                     orderRepository.findByCustomerIdAndStatusIn(userId, listOf(status), pageable)
                 } else {
                     orderRepository.findByCustomerId(userId, pageable)
                 }
             }
-            com.fooddelivery.common.enums.UserRole.RESTAURANT_OWNER -> {
+            UserRole.RESTAURANT_OWNER -> {
                 val restaurantIds = restaurantRepository.findByOwnerId(userId).map { it.id }
                 if (status != null) {
                     // Simplified - would need a custom query for multiple restaurants
@@ -201,7 +200,7 @@ class OrderService(
                     orderRepository.findByRestaurantId(restaurantIds.first(), pageable)
                 }
             }
-            com.fooddelivery.common.enums.UserRole.ADMIN -> {
+            UserRole.ADMIN -> {
                 if (status != null) {
                     orderRepository.findByStatus(status, pageable)
                 } else {
@@ -216,7 +215,7 @@ class OrderService(
         orderId: UUID,
         request: UpdateOrderStatusRequest,
         changedBy: UUID,
-        userRole: com.fooddelivery.common.enums.UserRole
+        userRole: UserRole
     ): OrderResponse {
         val order = orderRepository.findById(orderId)
             .orElseThrow { ResourceNotFoundException("Order", orderId) }
@@ -256,19 +255,28 @@ class OrderService(
         return OrderResponse.fromEntity(savedOrder)
     }
 
-    fun cancelOrder(orderId: UUID, userId: UUID, userRole: com.fooddelivery.common.enums.UserRole, reason: String?): OrderResponse {
+    fun cancelOrder(orderId: UUID, userId: UUID, userRole: UserRole, reason: String?): OrderResponse {
         val order = orderRepository.findById(orderId)
             .orElseThrow { ResourceNotFoundException("Order", orderId) }
 
         // Authorization
         val canCancel = when (userRole) {
-            com.fooddelivery.common.enums.UserRole.CUSTOMER -> order.customer?.id == userId && order.status.canBeCancelledByCustomer()
-            com.fooddelivery.common.enums.UserRole.RESTAURANT_OWNER -> order.restaurant?.owner?.id == userId && order.status.canBeCancelledByRestaurant()
-            com.fooddelivery.common.enums.UserRole.ADMIN -> true
+            UserRole.CUSTOMER -> order.customer?.id == userId && order.status.canBeCancelledByCustomer()
+            UserRole.RESTAURANT_OWNER -> order.restaurant?.owner?.id == userId && order.status.canBeCancelledByRestaurant()
+            UserRole.ADMIN -> true
             else -> false
         }
 
         if (!canCancel) {
+            // Check if user owns the order but can't cancel due to status, or doesn't own it
+            val ownsOrder = when (userRole) {
+                UserRole.CUSTOMER -> order.customer?.id == userId
+                UserRole.RESTAURANT_OWNER -> order.restaurant?.owner?.id == userId
+                else -> false
+            }
+            if (!ownsOrder) {
+                throw com.fooddelivery.common.exception.AccessDeniedException("You can only cancel your own orders")
+            }
             throw BusinessException("Order cannot be cancelled in current status", "INVALID_CANCELLATION")
         }
 
@@ -283,27 +291,32 @@ class OrderService(
             .map { OrderStatusHistoryResponse.fromEntity(it) }
     }
 
+    private fun findUserById(userId: UUID, entityName: String): User {
+        return userRepository.findById(userId)
+            .orElseThrow { ResourceNotFoundException(entityName, userId) }
+    }
+
     private fun validateTransition(
         from: OrderStatus,
         to: OrderStatus,
-        userRole: com.fooddelivery.common.enums.UserRole
+        userRole: UserRole
     ) {
         val validTransitions = when (userRole) {
-            com.fooddelivery.common.enums.UserRole.CUSTOMER -> mapOf(
+            UserRole.CUSTOMER -> mapOf(
                 OrderStatus.PENDING to setOf(OrderStatus.CANCELLED)
             )
-            com.fooddelivery.common.enums.UserRole.RESTAURANT_OWNER -> mapOf(
+            UserRole.RESTAURANT_OWNER -> mapOf(
                 OrderStatus.PENDING to setOf(OrderStatus.ACCEPTED, OrderStatus.CANCELLED),
                 OrderStatus.ACCEPTED to setOf(OrderStatus.PREPARING, OrderStatus.CANCELLED),
                 OrderStatus.PREPARING to setOf(OrderStatus.READY, OrderStatus.CANCELLED),
                 OrderStatus.READY to setOf(OrderStatus.CANCELLED)
             )
-            com.fooddelivery.common.enums.UserRole.DELIVERY_PERSON -> mapOf(
+            UserRole.DELIVERY_PERSON -> mapOf(
                 OrderStatus.ASSIGNED to setOf(OrderStatus.PICKED_UP),
                 OrderStatus.PICKED_UP to setOf(OrderStatus.DELIVERING),
                 OrderStatus.DELIVERING to setOf(OrderStatus.DELIVERED)
             )
-            com.fooddelivery.common.enums.UserRole.ADMIN -> OrderStatus.values().associateWith { OrderStatus.values().toSet() }
+            UserRole.ADMIN -> OrderStatus.values().associateWith { OrderStatus.values().toSet() }
             else -> emptyMap()
         }
 
@@ -352,7 +365,7 @@ class OrderService(
                     val payment = paymentService.getPaymentByOrderId(order.id)
                     if (payment.status == PaymentStatus.PAID) {
                         val customerId = order.customer?.id
-                            ?: throw com.fooddelivery.common.exception.ResourceNotFoundException("Customer for order", order.id)
+                            ?: throw ResourceNotFoundException("Customer for order", order.id)
                         paymentService.initiateRefund(payment.id, "Order cancelled", customerId)
                     }
                 } catch (e: Exception) {

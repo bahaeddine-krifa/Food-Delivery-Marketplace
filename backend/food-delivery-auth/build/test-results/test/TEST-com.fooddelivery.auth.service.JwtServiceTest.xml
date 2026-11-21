@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.fooddelivery.auth.service.JwtServiceTest" tests="12" skipped="0" failures="0" errors="0" timestamp="2026-11-21T12:01:39" hostname="Bahaeddine-KRIFA" time="0.118">
+<testsuite name="com.fooddelivery.auth.service.JwtServiceTest" tests="12" skipped="0" failures="0" errors="0" timestamp="2026-11-21T14:12:49" hostname="Bahaeddine-KRIFA" time="0.079">
   <properties/>
-  <testcase name="should get expiration from token()" classname="com.fooddelivery.auth.service.JwtServiceTest" time="0.008"/>
-  <testcase name="should generate and validate access token()" classname="com.fooddelivery.auth.service.JwtServiceTest" time="0.008"/>
-  <testcase name="should identify access token()" classname="com.fooddelivery.auth.service.JwtServiceTest" time="0.012"/>
-  <testcase name="should throw exception for invalid token()" classname="com.fooddelivery.auth.service.JwtServiceTest" time="0.003"/>
-  <testcase name="should generate and validate refresh token()" classname="com.fooddelivery.auth.service.JwtServiceTest" time="0.008"/>
-  <testcase name="should extract role from token()" classname="com.fooddelivery.auth.service.JwtServiceTest" time="0.004"/>
-  <testcase name="should extract email from token()" classname="com.fooddelivery.auth.service.JwtServiceTest" time="0.006"/>
-  <testcase name="should detect expired token()" classname="com.fooddelivery.auth.service.JwtServiceTest" time="0.017"/>
-  <testcase name="should generate remember me refresh token with longer expiration()" classname="com.fooddelivery.auth.service.JwtServiceTest" time="0.007"/>
-  <testcase name="should throw exception for expired token()" classname="com.fooddelivery.auth.service.JwtServiceTest" time="0.018"/>
-  <testcase name="should extract user id from token()" classname="com.fooddelivery.auth.service.JwtServiceTest" time="0.005"/>
-  <testcase name="should identify refresh token()" classname="com.fooddelivery.auth.service.JwtServiceTest" time="0.006"/>
+  <testcase name="should get expiration from token()" classname="com.fooddelivery.auth.service.JwtServiceTest" time="0.005"/>
+  <testcase name="should generate and validate access token()" classname="com.fooddelivery.auth.service.JwtServiceTest" time="0.004"/>
+  <testcase name="should identify access token()" classname="com.fooddelivery.auth.service.JwtServiceTest" time="0.006"/>
+  <testcase name="should throw exception for invalid token()" classname="com.fooddelivery.auth.service.JwtServiceTest" time="0.001"/>
+  <testcase name="should generate and validate refresh token()" classname="com.fooddelivery.auth.service.JwtServiceTest" time="0.004"/>
+  <testcase name="should extract role from token()" classname="com.fooddelivery.auth.service.JwtServiceTest" time="0.003"/>
+  <testcase name="should extract email from token()" classname="com.fooddelivery.auth.service.JwtServiceTest" time="0.003"/>
+  <testcase name="should detect expired token()" classname="com.fooddelivery.auth.service.JwtServiceTest" time="0.014"/>
+  <testcase name="should generate remember me refresh token with longer expiration()" classname="com.fooddelivery.auth.service.JwtServiceTest" time="0.006"/>
+  <testcase name="should throw exception for expired token()" classname="com.fooddelivery.auth.service.JwtServiceTest" time="0.015"/>
+  <testcase name="should extract user id from token()" classname="com.fooddelivery.auth.service.JwtServiceTest" time="0.003"/>
+  <testcase name="should identify refresh token()" classname="com.fooddelivery.auth.service.JwtServiceTest" time="0.005"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

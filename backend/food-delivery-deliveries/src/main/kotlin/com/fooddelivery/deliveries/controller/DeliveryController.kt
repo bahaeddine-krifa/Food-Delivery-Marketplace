@@ -2,13 +2,13 @@ package com.fooddelivery.deliveries.controller
 
 import com.fooddelivery.common.dto.ApiResponse
 import com.fooddelivery.common.enums.DeliveryStatus
-import com.fooddelivery.common.enums.UserRole
 import com.fooddelivery.common.security.CurrentUser
 import com.fooddelivery.deliveries.dto.AssignDeliveryRequest
 import com.fooddelivery.deliveries.dto.DeliveryResponse
 import com.fooddelivery.deliveries.dto.DeliverySummaryResponse
 import com.fooddelivery.deliveries.dto.UpdateDeliveryStatusRequest
 import com.fooddelivery.deliveries.service.DeliveryService
+import com.fooddelivery.orders.repository.OrderRepository
 import io.swagger.v3.oas.annotations.Operation
 import io.swagger.v3.oas.annotations.tags.Tag
 import jakarta.servlet.http.HttpServletRequest
@@ -19,7 +19,7 @@ import org.springframework.data.web.PageableDefault
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
 import org.springframework.security.access.prepost.PreAuthorize
-import org.springframework.security.core.context.SecurityContextHolder
+import org.springframework.security.core.annotation.AuthenticationPrincipal
 import org.springframework.web.bind.annotation.*
 import java.util.UUID
 
@@ -27,24 +27,20 @@ import java.util.UUID
 @RequestMapping("/api/v1/deliveries")
 @Tag(name = "Deliveries", description = "Delivery management endpoints")
 class DeliveryController(
-    private val deliveryService: DeliveryService
+    private val deliveryService: DeliveryService,
+    private val orderRepository: OrderRepository
 ) {
-
-    private fun getCurrentUser(): CurrentUser {
-        val auth = SecurityContextHolder.getContext().authentication
-        return auth?.principal as CurrentUser
-    }
 
     @PostMapping("/{orderId}")
     @PreAuthorize("hasRole('ADMIN')")
     @Operation(summary = "Create delivery for an order (admin)")
     fun createDelivery(
-        httpRequest: HttpServletRequest,
-        @PathVariable orderId: UUID
+        @PathVariable orderId: UUID,
+        httpRequest: HttpServletRequest
     ): ResponseEntity<ApiResponse<DeliveryResponse>> {
-        val delivery = deliveryService.createDeliveryForOrder(
-            com.fooddelivery.orders.domain.Order().apply { this.id = orderId }
-        )
+        val order = orderRepository.findById(orderId)
+            .orElseThrow { com.fooddelivery.common.exception.ResourceNotFoundException("Order", orderId) }
+        val delivery = deliveryService.createDeliveryForOrder(order)
         return ResponseEntity.status(HttpStatus.CREATED)
             .body(ApiResponse.ok(DeliveryResponse.fromEntity(delivery), httpRequest.getHeader("X-Request-ID")))
     }
@@ -53,8 +49,8 @@ class DeliveryController(
     @PreAuthorize("hasRole('CUSTOMER') or hasRole('DELIVERY_PERSON') or hasRole('RESTAURANT_OWNER') or hasRole('ADMIN')")
     @Operation(summary = "Get delivery details by ID")
     fun getDelivery(
-        httpRequest: HttpServletRequest,
-        @PathVariable deliveryId: UUID
+        @PathVariable deliveryId: UUID,
+        httpRequest: HttpServletRequest
     ): ResponseEntity<ApiResponse<DeliveryResponse>> {
         val delivery = deliveryService.getDeliveryById(deliveryId)
         return ResponseEntity.ok(ApiResponse.ok(delivery, httpRequest.getHeader("X-Request-ID")))
@@ -64,8 +60,8 @@ class DeliveryController(
     @PreAuthorize("hasRole('CUSTOMER') or hasRole('DELIVERY_PERSON') or hasRole('RESTAURANT_OWNER') or hasRole('ADMIN')")
     @Operation(summary = "Get delivery by order ID")
     fun getDeliveryByOrder(
-        httpRequest: HttpServletRequest,
-        @PathVariable orderId: UUID
+        @PathVariable orderId: UUID,
+        httpRequest: HttpServletRequest
     ): ResponseEntity<ApiResponse<DeliveryResponse>> {
         val delivery = deliveryService.getDeliveryByOrderId(orderId)
         return ResponseEntity.ok(ApiResponse.ok(delivery, httpRequest.getHeader("X-Request-ID")))
@@ -75,9 +71,9 @@ class DeliveryController(
     @PreAuthorize("hasRole('ADMIN')")
     @Operation(summary = "Assign a delivery person to a delivery")
     fun assignDeliveryPerson(
-        httpRequest: HttpServletRequest,
         @PathVariable deliveryId: UUID,
-        @Valid @RequestBody request: AssignDeliveryRequest
+        @Valid @RequestBody request: AssignDeliveryRequest,
+        httpRequest: HttpServletRequest
     ): ResponseEntity<ApiResponse<DeliveryResponse>> {
         val delivery = deliveryService.assignDeliveryPerson(deliveryId, request.deliveryPersonId)
         return ResponseEntity.ok(ApiResponse.ok(delivery, httpRequest.getHeader("X-Request-ID")))
@@ -87,11 +83,11 @@ class DeliveryController(
     @PreAuthorize("hasRole('DELIVERY_PERSON') or hasRole('ADMIN')")
     @Operation(summary = "Update delivery status")
     fun updateDeliveryStatus(
-        httpRequest: HttpServletRequest,
+        @AuthenticationPrincipal currentUser: CurrentUser,
         @PathVariable deliveryId: UUID,
-        @Valid @RequestBody request: UpdateDeliveryStatusRequest
+        @Valid @RequestBody request: UpdateDeliveryStatusRequest,
+        httpRequest: HttpServletRequest
     ): ResponseEntity<ApiResponse<DeliveryResponse>> {
-        val currentUser = getCurrentUser()
         val delivery = deliveryService.updateDeliveryStatus(deliveryId, request, currentUser.id, currentUser.role)
         return ResponseEntity.ok(ApiResponse.ok(delivery, httpRequest.getHeader("X-Request-ID")))
     }
@@ -100,11 +96,11 @@ class DeliveryController(
     @PreAuthorize("hasRole('DELIVERY_PERSON')")
     @Operation(summary = "Get deliveries for the current delivery person")
     fun getMyDeliveries(
-        httpRequest: HttpServletRequest,
+        @AuthenticationPrincipal currentUser: CurrentUser,
         @RequestParam(required = false) status: DeliveryStatus?,
-        @PageableDefault(size = 20, sort = ["createdAt,desc"]) pageable: Pageable
+        @PageableDefault(size = 20, sort = ["createdAt"], direction = org.springframework.data.domain.Sort.Direction.DESC) pageable: Pageable,
+        httpRequest: HttpServletRequest
     ): ResponseEntity<ApiResponse<Page<DeliverySummaryResponse>>> {
-        val currentUser = getCurrentUser()
         val deliveries = deliveryService.getDeliveriesForDeliveryPerson(currentUser.id, status, pageable)
         return ResponseEntity.ok(ApiResponse.ok(deliveries, httpRequest.getHeader("X-Request-ID")))
     }
@@ -113,8 +109,8 @@ class DeliveryController(
     @PreAuthorize("hasRole('DELIVERY_PERSON') or hasRole('ADMIN')")
     @Operation(summary = "Get available deliveries for assignment")
     fun getAvailableDeliveries(
-        httpRequest: HttpServletRequest,
-        @PageableDefault(size = 20) pageable: Pageable
+        @PageableDefault(size = 20) pageable: Pageable,
+        httpRequest: HttpServletRequest
     ): ResponseEntity<ApiResponse<Page<DeliverySummaryResponse>>> {
         val deliveries = deliveryService.getAvailableDeliveries(pageable)
         return ResponseEntity.ok(ApiResponse.ok(deliveries, httpRequest.getHeader("X-Request-ID")))
@@ -124,9 +120,9 @@ class DeliveryController(
     @PreAuthorize("hasRole('ADMIN')")
     @Operation(summary = "Get all deliveries (admin)")
     fun getAllDeliveries(
-        httpRequest: HttpServletRequest,
         @RequestParam(required = false) status: DeliveryStatus?,
-        @PageableDefault(size = 20, sort = ["createdAt,desc"]) pageable: Pageable
+        @PageableDefault(size = 20, sort = ["createdAt"], direction = org.springframework.data.domain.Sort.Direction.DESC) pageable: Pageable,
+        httpRequest: HttpServletRequest
     ): ResponseEntity<ApiResponse<Page<DeliverySummaryResponse>>> {
         val deliveries = deliveryService.getDeliveries(status, pageable)
         return ResponseEntity.ok(ApiResponse.ok(deliveries, httpRequest.getHeader("X-Request-ID")))

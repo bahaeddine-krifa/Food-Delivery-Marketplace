@@ -7,6 +7,8 @@ import jakarta.persistence.Index
 import jakarta.persistence.JoinColumn
 import jakarta.persistence.ManyToOne
 import jakarta.persistence.Table
+import org.hibernate.annotations.JdbcTypeCode
+import org.hibernate.type.SqlTypes
 import java.math.BigDecimal
 import java.util.UUID
 
@@ -41,7 +43,8 @@ class Product : AuditableEntity() {
     @Column(name = "image_url", length = 500)
     var imageUrl: String? = null
 
-    @Column(name = "additional_images", columnDefinition = "TEXT[]")
+    @JdbcTypeCode(SqlTypes.JSON)
+    @Column(name = "additional_images", columnDefinition = "TEXT")
     var additionalImages: Array<String>? = null
 
     @Column(name = "is_available", nullable = false)
@@ -59,7 +62,8 @@ class Product : AuditableEntity() {
     @Column(name = "allergens", columnDefinition = "TEXT")
     var allergens: String? = null
 
-    @Column(name = "tags", columnDefinition = "TEXT[]")
+    @JdbcTypeCode(SqlTypes.JSON)
+    @Column(name = "tags", columnDefinition = "TEXT")
     var tags: Array<String>? = null
 
     @Column(name = "preparation_time_minutes")

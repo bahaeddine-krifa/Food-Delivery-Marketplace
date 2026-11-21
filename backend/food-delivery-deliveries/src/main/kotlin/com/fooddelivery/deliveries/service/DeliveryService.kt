@@ -220,8 +220,8 @@ class DeliveryService(
         val validTransitions = when (userRole) {
             com.fooddelivery.common.enums.UserRole.DELIVERY_PERSON -> mapOf(
                 DeliveryStatus.ASSIGNED to setOf(DeliveryStatus.ACCEPTED),
-                DeliveryStatus.ACCEPTED to setOf(DeliveryStatus.PICKED_UP),
-                DeliveryStatus.PICKED_UP to setOf(DeliveryStatus.DELIVERING),
+                DeliveryStatus.ACCEPTED to setOf(DeliveryStatus.PICKED_UP, DeliveryStatus.FAILED),
+                DeliveryStatus.PICKED_UP to setOf(DeliveryStatus.DELIVERING, DeliveryStatus.FAILED),
                 DeliveryStatus.DELIVERING to setOf(DeliveryStatus.DELIVERED, DeliveryStatus.FAILED)
             )
             com.fooddelivery.common.enums.UserRole.ADMIN -> DeliveryStatus.values().associateWith { DeliveryStatus.values().toSet() }
