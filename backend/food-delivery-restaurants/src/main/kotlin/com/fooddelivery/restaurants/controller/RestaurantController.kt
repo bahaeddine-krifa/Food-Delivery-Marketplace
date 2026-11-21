@@ -7,6 +7,7 @@ import com.fooddelivery.common.dto.SortInfo
 import com.fooddelivery.common.enums.ApplicationStatus
 import com.fooddelivery.common.enums.DayOfWeek
 import com.fooddelivery.common.enums.RestaurantStatus
+import com.fooddelivery.common.security.CurrentUser
 import com.fooddelivery.restaurants.domain.Restaurant
 import com.fooddelivery.restaurants.domain.RestaurantApplication
 import com.fooddelivery.restaurants.domain.RestaurantHours
@@ -20,6 +21,7 @@ import org.springframework.data.domain.Pageable
 import org.springframework.data.domain.Sort
 import org.springframework.http.ResponseEntity
 import org.springframework.security.access.prepost.PreAuthorize
+import org.springframework.security.core.annotation.AuthenticationPrincipal
 import org.springframework.web.bind.annotation.DeleteMapping
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PatchMapping
@@ -44,20 +46,22 @@ class RestaurantController(
     @Operation(summary = "Create restaurant draft", description = "Create a new restaurant in draft status")
     @PreAuthorize("hasRole('RESTAURANT_OWNER')")
     fun createDraft(
+        @AuthenticationPrincipal currentUser: CurrentUser,
         @Valid @RequestBody request: CreateRestaurantRequest,
         httpRequest: HttpServletRequest
     ): ResponseEntity<ApiResponse<Restaurant>> {
-        val ownerId = getCurrentUserId(httpRequest)
-        val restaurant = restaurantService.createDraft(ownerId, request.name, request.phone, request.addressId)
+        val restaurant = restaurantService.createDraft(currentUser.id, request.name, request.phone, request.addressId)
         return ResponseEntity.status(201).body(ApiResponse.created(restaurant, httpRequest.getHeader("X-Request-ID")))
     }
 
     @GetMapping("/mine")
     @Operation(summary = "List own restaurants", description = "Get all restaurants owned by current user")
     @PreAuthorize("hasRole('RESTAURANT_OWNER')")
-    fun getMyRestaurants(httpRequest: HttpServletRequest): ResponseEntity<ApiResponse<List<Restaurant>>> {
-        val ownerId = getCurrentUserId(httpRequest)
-        val restaurants = restaurantService.getMyRestaurants(ownerId)
+    fun getMyRestaurants(
+        @AuthenticationPrincipal currentUser: CurrentUser,
+        httpRequest: HttpServletRequest
+    ): ResponseEntity<ApiResponse<List<Restaurant>>> {
+        val restaurants = restaurantService.getMyRestaurants(currentUser.id)
         return ResponseEntity.ok(ApiResponse.ok(restaurants, httpRequest.getHeader("X-Request-ID")))
     }
 
@@ -73,30 +77,36 @@ class RestaurantController(
     @Operation(summary = "Update restaurant", description = "Update restaurant details")
     @PreAuthorize("hasRole('RESTAURANT_OWNER')")
     fun updateRestaurant(
+        @AuthenticationPrincipal currentUser: CurrentUser,
         @PathVariable id: UUID,
         @Valid @RequestBody request: RestaurantService.RestaurantUpdateRequest,
         httpRequest: HttpServletRequest
     ): ResponseEntity<ApiResponse<Restaurant>> {
-        val ownerId = getCurrentUserId(httpRequest)
-        val restaurant = restaurantService.updateRestaurant(ownerId, id, request)
+        val restaurant = restaurantService.updateRestaurant(currentUser.id, id, request)
         return ResponseEntity.ok(ApiResponse.ok(restaurant, httpRequest.getHeader("X-Request-ID")))
     }
 
     @PostMapping("/{id}/submit")
     @Operation(summary = "Submit for approval", description = "Submit draft restaurant for admin approval")
     @PreAuthorize("hasRole('RESTAURANT_OWNER')")
-    fun submitForApproval(@PathVariable id: UUID, httpRequest: HttpServletRequest): ResponseEntity<ApiResponse<Restaurant>> {
-        val ownerId = getCurrentUserId(httpRequest)
-        val restaurant = restaurantService.submitForApproval(ownerId, id)
+    fun submitForApproval(
+        @AuthenticationPrincipal currentUser: CurrentUser,
+        @PathVariable id: UUID,
+        httpRequest: HttpServletRequest
+    ): ResponseEntity<ApiResponse<Restaurant>> {
+        val restaurant = restaurantService.submitForApproval(currentUser.id, id)
         return ResponseEntity.ok(ApiResponse.ok(restaurant, httpRequest.getHeader("X-Request-ID")))
     }
 
     @DeleteMapping("/{id}")
     @Operation(summary = "Delete restaurant", description = "Delete draft or rejected restaurant")
     @PreAuthorize("hasRole('RESTAURANT_OWNER')")
-    fun deleteRestaurant(@PathVariable id: UUID, httpRequest: HttpServletRequest): ResponseEntity<ApiResponse<Unit>> {
-        val ownerId = getCurrentUserId(httpRequest)
-        restaurantService.deleteRestaurant(ownerId, id)
+    fun deleteRestaurant(
+        @AuthenticationPrincipal currentUser: CurrentUser,
+        @PathVariable id: UUID,
+        httpRequest: HttpServletRequest
+    ): ResponseEntity<ApiResponse<Unit>> {
+        restaurantService.deleteRestaurant(currentUser.id, id)
         return ResponseEntity.ok(ApiResponse.ok(Unit, httpRequest.getHeader("X-Request-ID")))
     }
 
@@ -112,12 +122,12 @@ class RestaurantController(
     @Operation(summary = "Update opening hours", description = "Update restaurant opening hours (bulk)")
     @PreAuthorize("hasRole('RESTAURANT_OWNER')")
     fun updateHours(
+        @AuthenticationPrincipal currentUser: CurrentUser,
         @PathVariable id: UUID,
         @Valid @RequestBody hours: List<RestaurantService.RestaurantHoursRequest>,
         httpRequest: HttpServletRequest
     ): ResponseEntity<ApiResponse<List<RestaurantHours>>> {
-        val ownerId = getCurrentUserId(httpRequest)
-        val updatedHours = restaurantService.updateHours(ownerId, id, hours)
+        val updatedHours = restaurantService.updateHours(currentUser.id, id, hours)
         return ResponseEntity.ok(ApiResponse.ok(updatedHours, httpRequest.getHeader("X-Request-ID")))
     }
 
@@ -126,12 +136,12 @@ class RestaurantController(
     @Operation(summary = "Submit restaurant application", description = "Submit a new restaurant application for approval")
     @PreAuthorize("hasRole('RESTAURANT_OWNER')")
     fun submitApplication(
+        @AuthenticationPrincipal currentUser: CurrentUser,
         @Valid @RequestBody request: SubmitApplicationRequest,
         httpRequest: HttpServletRequest
     ): ResponseEntity<ApiResponse<RestaurantApplication>> {
-        val ownerId = getCurrentUserId(httpRequest)
         val application = restaurantService.submitApplication(
-            ownerId,
+            currentUser.id,
             request.proposedName,
             request.proposedCuisine,
             request.addressId,
@@ -145,9 +155,11 @@ class RestaurantController(
     @GetMapping("/applications/mine")
     @Operation(summary = "Get my application", description = "Get current user's restaurant application status")
     @PreAuthorize("hasRole('RESTAURANT_OWNER')")
-    fun getMyApplication(httpRequest: HttpServletRequest): ResponseEntity<ApiResponse<RestaurantApplication?>> {
-        val ownerId = getCurrentUserId(httpRequest)
-        val application = restaurantService.getMyApplication(ownerId)
+    fun getMyApplication(
+        @AuthenticationPrincipal currentUser: CurrentUser,
+        httpRequest: HttpServletRequest
+    ): ResponseEntity<ApiResponse<RestaurantApplication?>> {
+        val application = restaurantService.getMyApplication(currentUser.id)
         return ResponseEntity.ok(ApiResponse.ok(application, httpRequest.getHeader("X-Request-ID")))
     }
 
@@ -217,9 +229,12 @@ class RestaurantController(
     @PostMapping("/admin/applications/{id}/approve")
     @Operation(summary = "Approve application (Admin)", description = "Approve restaurant application and create restaurant")
     @PreAuthorize("hasRole('ADMIN')")
-    fun approveApplication(@PathVariable id: UUID, httpRequest: HttpServletRequest): ResponseEntity<ApiResponse<Restaurant>> {
-        val adminId = getCurrentUserId(httpRequest)
-        val restaurant = restaurantService.approveApplication(id, adminId)
+    fun approveApplication(
+        @AuthenticationPrincipal currentUser: CurrentUser,
+        @PathVariable id: UUID,
+        httpRequest: HttpServletRequest
+    ): ResponseEntity<ApiResponse<Restaurant>> {
+        val restaurant = restaurantService.approveApplication(id, currentUser.id)
         return ResponseEntity.ok(ApiResponse.ok(restaurant, httpRequest.getHeader("X-Request-ID")))
     }
 
@@ -227,12 +242,12 @@ class RestaurantController(
     @Operation(summary = "Reject application (Admin)", description = "Reject restaurant application with reason")
     @PreAuthorize("hasRole('ADMIN')")
     fun rejectApplication(
+        @AuthenticationPrincipal currentUser: CurrentUser,
         @PathVariable id: UUID,
         @Valid @RequestBody request: RejectApplicationRequest,
         httpRequest: HttpServletRequest
     ): ResponseEntity<ApiResponse<RestaurantApplication>> {
-        val adminId = getCurrentUserId(httpRequest)
-        val application = restaurantService.rejectApplication(id, adminId, request.reason)
+        val application = restaurantService.rejectApplication(id, currentUser.id, request.reason)
         return ResponseEntity.ok(ApiResponse.ok(application, httpRequest.getHeader("X-Request-ID")))
     }
 
@@ -255,12 +270,12 @@ class RestaurantController(
     @Operation(summary = "Update restaurant status (Admin)", description = "Update restaurant status")
     @PreAuthorize("hasRole('ADMIN')")
     fun adminUpdateStatus(
+        @AuthenticationPrincipal currentUser: CurrentUser,
         @PathVariable id: UUID,
         @Valid @RequestBody request: UpdateStatusRequest,
         httpRequest: HttpServletRequest
     ): ResponseEntity<ApiResponse<Restaurant>> {
-        val adminId = getCurrentUserId(httpRequest)
-        val restaurant = restaurantService.adminUpdateStatus(id, request.status, adminId)
+        val restaurant = restaurantService.adminUpdateStatus(id, request.status, currentUser.id)
         return ResponseEntity.ok(ApiResponse.ok(restaurant, httpRequest.getHeader("X-Request-ID")))
     }
 
@@ -270,13 +285,6 @@ class RestaurantController(
     fun adminDeleteRestaurant(@PathVariable id: UUID, httpRequest: HttpServletRequest): ResponseEntity<ApiResponse<Unit>> {
         restaurantService.adminDeleteRestaurant(id)
         return ResponseEntity.ok(ApiResponse.ok(Unit, httpRequest.getHeader("X-Request-ID")))
-    }
-
-    private fun getCurrentUserId(httpRequest: HttpServletRequest): UUID {
-        val authHeader = httpRequest.getHeader("Authorization")
-            ?: throw IllegalStateException("No authorization header")
-        // In real implementation, extract from JWT
-        return UUID.fromString(httpRequest.getHeader("X-User-ID") ?: throw IllegalStateException("User ID not found"))
     }
 
     private fun <T> toPageResponse(page: org.springframework.data.domain.Page<T>): PageResponse<T> {

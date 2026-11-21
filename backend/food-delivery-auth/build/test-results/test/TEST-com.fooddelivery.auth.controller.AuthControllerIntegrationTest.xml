@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.fooddelivery.auth.controller.AuthControllerIntegrationTest" tests="7" skipped="0" failures="0" errors="0" timestamp="2026-11-20T19:45:21" hostname="Bahaeddine-KRIFA" time="2.257">
+<testsuite name="com.fooddelivery.auth.controller.AuthControllerIntegrationTest" tests="7" skipped="0" failures="0" errors="0" timestamp="2026-11-21T12:01:36" hostname="Bahaeddine-KRIFA" time="2.047">
   <properties/>
-  <testcase name="should register new customer()" classname="com.fooddelivery.auth.controller.AuthControllerIntegrationTest" time="1.946"/>
-  <testcase name="should reject invalid refresh token()" classname="com.fooddelivery.auth.controller.AuthControllerIntegrationTest" time="0.077"/>
-  <testcase name="should reject login with wrong password()" classname="com.fooddelivery.auth.controller.AuthControllerIntegrationTest" time="0.067"/>
-  <testcase name="should refresh access token()" classname="com.fooddelivery.auth.controller.AuthControllerIntegrationTest" time="0.068"/>
-  <testcase name="should login successfully()" classname="com.fooddelivery.auth.controller.AuthControllerIntegrationTest" time="0.026"/>
-  <testcase name="should reject login for inactive user()" classname="com.fooddelivery.auth.controller.AuthControllerIntegrationTest" time="0.028"/>
-  <testcase name="should reject duplicate email registration()" classname="com.fooddelivery.auth.controller.AuthControllerIntegrationTest" time="0.025"/>
+  <testcase name="should register new customer()" classname="com.fooddelivery.auth.controller.AuthControllerIntegrationTest" time="1.728"/>
+  <testcase name="should reject invalid refresh token()" classname="com.fooddelivery.auth.controller.AuthControllerIntegrationTest" time="0.081"/>
+  <testcase name="should reject login with wrong password()" classname="com.fooddelivery.auth.controller.AuthControllerIntegrationTest" time="0.078"/>
+  <testcase name="should refresh access token()" classname="com.fooddelivery.auth.controller.AuthControllerIntegrationTest" time="0.062"/>
+  <testcase name="should login successfully()" classname="com.fooddelivery.auth.controller.AuthControllerIntegrationTest" time="0.029"/>
+  <testcase name="should reject login for inactive user()" classname="com.fooddelivery.auth.controller.AuthControllerIntegrationTest" time="0.031"/>
+  <testcase name="should reject duplicate email registration()" classname="com.fooddelivery.auth.controller.AuthControllerIntegrationTest" time="0.027"/>
   <system-out><![CDATA[
   .   ____          _            __ _ _
  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
@@ -17,28 +17,28 @@
  =========|_|==============|___/=/_/_/_/
  :: Spring Boot ::                (v3.2.5)
 
-2026-11-20 20:45:13.539 [Test worker] INFO  c.f.a.c.AuthControllerIntegrationTest - Starting AuthControllerIntegrationTest using Java 21.0.13.1 with PID 102700 (started by bahaeddine in /home/bahaeddine/Baha-Workspace/food-delivery-platform/backend/food-delivery-auth)
-2026-11-20 20:45:13.543 [Test worker] INFO  c.f.a.c.AuthControllerIntegrationTest - The following 1 profile is active: "test"
-2026-11-20 20:45:14.505 [Test worker] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2026-11-20 20:45:14.585 [Test worker] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 70 ms. Found 5 JPA repository interfaces.
-2026-11-20 20:45:15.274 [Test worker] INFO  o.s.b.t.a.j.TestDatabaseAutoConfiguration$EmbeddedDataSourceBeanFactoryPostProcessor - Replacing 'dataSource' DataSource bean with embedded version
-2026-11-20 20:45:15.775 [Test worker] INFO  o.s.j.d.e.EmbeddedDatabaseFactory - Starting embedded database: url='jdbc:h2:mem:1d06eca5-766b-4234-8be4-a396a90b7d48;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false', username='sa'
-2026-11-20 20:45:16.200 [Test worker] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
-2026-11-20 20:45:16.276 [Test worker] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.4.Final
-2026-11-20 20:45:16.328 [Test worker] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
-2026-11-20 20:45:16.651 [Test worker] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
-2026-11-20 20:45:16.720 [Test worker] WARN  org.hibernate.orm.deprecation - HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2026-11-20 20:45:17.686 [Test worker] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2026-11-20 20:45:17.764 [Test worker] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
-2026-11-20 20:45:18.553 [Test worker] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
-2026-11-20 20:45:19.637 [Test worker] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2026-11-20 20:45:20.252 [Test worker] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@76fece79, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@491ef90c, org.springframework.security.web.context.SecurityContextHolderFilter@5989f463, org.springframework.security.web.header.HeaderWriterFilter@4ea4e0f3, org.springframework.web.filter.CorsFilter@6a5c67cf, org.springframework.security.web.authentication.logout.LogoutFilter@a308ffd, com.fooddelivery.auth.service.JwtAuthenticationFilter@24381e4a, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@48b14e4a, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@2db618e3, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@26db1100, org.springframework.security.web.session.SessionManagementFilter@83ec0b0, org.springframework.security.web.access.ExceptionTranslationFilter@28de7e2e, org.springframework.security.web.access.intercept.AuthorizationFilter@53ed864c]
-2026-11-20 20:45:21.309 [Test worker] INFO  o.s.b.t.m.w.SpringBootMockServletContext - Initializing Spring TestDispatcherServlet ''
-2026-11-20 20:45:21.309 [Test worker] INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
-2026-11-20 20:45:21.312 [Test worker] INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 2 ms
-2026-11-20 20:45:21.369 [Test worker] INFO  c.f.a.c.AuthControllerIntegrationTest - Started AuthControllerIntegrationTest in 8.344 seconds (process running for 9.628)
-2026-11-20 20:45:23.628 [Test worker] WARN  c.f.c.e.GlobalExceptionHandler - Business exception: ACCOUNT_INACTIVE - Account is not active. Status: INACTIVE
-2026-11-20 20:45:23.653 [Test worker] WARN  c.f.c.e.GlobalExceptionHandler - Business exception: CONFLICT - Email already registered
+2026-11-21 13:01:29.044 [Test worker] INFO  c.f.a.c.AuthControllerIntegrationTest - Starting AuthControllerIntegrationTest using Java 21.0.13.1 with PID 38739 (started by bahaeddine in /home/bahaeddine/Baha-Workspace/food-delivery-platform/backend/food-delivery-auth)
+2026-11-21 13:01:29.048 [Test worker] INFO  c.f.a.c.AuthControllerIntegrationTest - The following 1 profile is active: "test"
+2026-11-21 13:01:29.957 [Test worker] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-11-21 13:01:30.035 [Test worker] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 66 ms. Found 5 JPA repository interfaces.
+2026-11-21 13:01:30.838 [Test worker] INFO  o.s.b.t.a.j.TestDatabaseAutoConfiguration$EmbeddedDataSourceBeanFactoryPostProcessor - Replacing 'dataSource' DataSource bean with embedded version
+2026-11-21 13:01:31.575 [Test worker] INFO  o.s.j.d.e.EmbeddedDatabaseFactory - Starting embedded database: url='jdbc:h2:mem:f1815295-ef7a-4150-b6ec-c4275ee3dd3d;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false', username='sa'
+2026-11-21 13:01:32.070 [Test worker] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-11-21 13:01:32.150 [Test worker] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.4.Final
+2026-11-21 13:01:32.205 [Test worker] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-11-21 13:01:32.555 [Test worker] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-11-21 13:01:32.614 [Test worker] WARN  org.hibernate.orm.deprecation - HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-11-21 13:01:33.576 [Test worker] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-11-21 13:01:33.668 [Test worker] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-11-21 13:01:34.407 [Test worker] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-11-21 13:01:35.473 [Test worker] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-11-21 13:01:36.041 [Test worker] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@20c642ef, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1f799f4c, org.springframework.security.web.context.SecurityContextHolderFilter@2fc94125, org.springframework.security.web.header.HeaderWriterFilter@7820a19d, org.springframework.web.filter.CorsFilter@66be0ea, org.springframework.security.web.authentication.logout.LogoutFilter@7d49ebf2, com.fooddelivery.auth.service.JwtAuthenticationFilter@2eed6331, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@a29aced, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@113886b1, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@ac51234, org.springframework.security.web.session.SessionManagementFilter@49808d41, org.springframework.security.web.access.ExceptionTranslationFilter@2db618e3, org.springframework.security.web.access.intercept.AuthorizationFilter@414fd9f2]
+2026-11-21 13:01:36.804 [Test worker] INFO  o.s.b.t.m.w.SpringBootMockServletContext - Initializing Spring TestDispatcherServlet ''
+2026-11-21 13:01:36.804 [Test worker] INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+2026-11-21 13:01:36.807 [Test worker] INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 1 ms
+2026-11-21 13:01:36.851 [Test worker] INFO  c.f.a.c.AuthControllerIntegrationTest - Started AuthControllerIntegrationTest in 8.294 seconds (process running for 11.097)
+2026-11-21 13:01:38.890 [Test worker] WARN  c.f.c.e.GlobalExceptionHandler - Business exception: ACCOUNT_INACTIVE - Account is not active. Status: INACTIVE
+2026-11-21 13:01:38.920 [Test worker] WARN  c.f.c.e.GlobalExceptionHandler - Business exception: CONFLICT - Email already registered
 ]]></system-out>
   <system-err><![CDATA[WARNING: A Java agent has been loaded dynamically (/home/bahaeddine/.gradle/caches/modules-2/files-2.1/net.bytebuddy/byte-buddy-agent/1.14.17/e3c251a39dc90badaf71c83427ba46840f219d8d/byte-buddy-agent-1.14.17.jar)
 WARNING: If a serviceability tool is in use, please run with -XX:+EnableDynamicAgentLoading to hide this warning

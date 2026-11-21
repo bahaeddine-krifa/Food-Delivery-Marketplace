@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.fooddelivery.auth.service.AuthServiceTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2026-11-20T19:45:23" hostname="Bahaeddine-KRIFA" time="0.992">
+<testsuite name="com.fooddelivery.auth.service.AuthServiceTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2026-11-21T12:01:38" hostname="Bahaeddine-KRIFA" time="1.006">
   <properties/>
-  <testcase name="should register new user()" classname="com.fooddelivery.auth.service.AuthServiceTest" time="0.776"/>
-  <testcase name="should refresh tokens()" classname="com.fooddelivery.auth.service.AuthServiceTest" time="0.129"/>
-  <testcase name="should throw exception for inactive user()" classname="com.fooddelivery.auth.service.AuthServiceTest" time="0.019"/>
-  <testcase name="should login successfully()" classname="com.fooddelivery.auth.service.AuthServiceTest" time="0.038"/>
-  <testcase name="should throw exception for invalid password()" classname="com.fooddelivery.auth.service.AuthServiceTest" time="0.016"/>
+  <testcase name="should register new user()" classname="com.fooddelivery.auth.service.AuthServiceTest" time="0.735"/>
+  <testcase name="should refresh tokens()" classname="com.fooddelivery.auth.service.AuthServiceTest" time="0.127"/>
+  <testcase name="should throw exception for inactive user()" classname="com.fooddelivery.auth.service.AuthServiceTest" time="0.032"/>
+  <testcase name="should login successfully()" classname="com.fooddelivery.auth.service.AuthServiceTest" time="0.083"/>
+  <testcase name="should throw exception for invalid password()" classname="com.fooddelivery.auth.service.AuthServiceTest" time="0.015"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
