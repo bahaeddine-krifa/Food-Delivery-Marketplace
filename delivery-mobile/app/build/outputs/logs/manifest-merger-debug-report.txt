@@ -1,0 +1,567 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /home/bahaeddine/Baha-Workspace/food-delivery-platform/delivery-mobile/app/src/main/AndroidManifest.xml:2:1-42:12
+INJECTED from /home/bahaeddine/Baha-Workspace/food-delivery-platform/delivery-mobile/app/src/main/AndroidManifest.xml:2:1-42:12
+INJECTED from /home/bahaeddine/Baha-Workspace/food-delivery-platform/delivery-mobile/app/src/main/AndroidManifest.xml:2:1-42:12
+INJECTED from /home/bahaeddine/Baha-Workspace/food-delivery-platform/delivery-mobile/app/src/main/AndroidManifest.xml:2:1-42:12
+MERGED from [androidx.databinding:viewbinding:8.4.0] /home/bahaeddine/.gradle/caches/transforms-4/2d2d4c8973f29dd69882e19e0eadc4f6/transformed/viewbinding-8.4.0/AndroidManifest.xml:2:1-7:12
+MERGED from [com.google.accompanist:accompanist-systemuicontroller:0.32.0] /home/bahaeddine/.gradle/caches/transforms-4/833e3726145e656781b169ba41e3056c/transformed/accompanist-systemuicontroller-0.32.0/AndroidManifest.xml:17:1-23:12
+MERGED from [androidx.hilt:hilt-navigation-compose:1.2.0] /home/bahaeddine/.gradle/caches/transforms-4/e8352bc8c9c57362d970e5956857a835/transformed/hilt-navigation-compose-1.2.0/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.hilt:hilt-navigation:1.2.0] /home/bahaeddine/.gradle/caches/transforms-4/1adaa9d16847136407e37c4ac8107a95/transformed/hilt-navigation-1.2.0/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.navigation:navigation-common:2.7.7] /home/bahaeddine/.gradle/caches/transforms-4/b3f1716751af640e98826152edbc3284/transformed/navigation-common-2.7.7/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.navigation:navigation-runtime:2.7.7] /home/bahaeddine/.gradle/caches/transforms-4/1b634b2ba231eaeb8a3175c9bb6823bc/transformed/navigation-runtime-2.7.7/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.navigation:navigation-common-ktx:2.7.7] /home/bahaeddine/.gradle/caches/transforms-4/38bd9649bc3eb5e733ff361ba80d3ed0/transformed/navigation-common-ktx-2.7.7/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.navigation:navigation-ui:2.7.7] /home/bahaeddine/.gradle/caches/transforms-4/6fb34e8e5f293fc9b75b06f1906f1bf9/transformed/navigation-ui-2.7.7/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.navigation:navigation-fragment:2.7.7] /home/bahaeddine/.gradle/caches/transforms-4/3d59e40a156ef9b33ca4146770e5eb3a/transformed/navigation-fragment-2.7.7/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.navigation:navigation-runtime-ktx:2.7.7] /home/bahaeddine/.gradle/caches/transforms-4/c953f0784c973e4f223e80ec2810ba65/transformed/navigation-runtime-ktx-2.7.7/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.navigation:navigation-ui-ktx:2.7.7] /home/bahaeddine/.gradle/caches/transforms-4/1db75ade6ee90a8dce39d5d10228d000/transformed/navigation-ui-ktx-2.7.7/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.navigation:navigation-fragment-ktx:2.7.7] /home/bahaeddine/.gradle/caches/transforms-4/3c1e84c82ddaa4bfe091c75c03ecfb0c/transformed/navigation-fragment-ktx-2.7.7/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.navigation:navigation-compose:2.7.7] /home/bahaeddine/.gradle/caches/transforms-4/6aa4eee7efa2def71099369e8f04caa2/transformed/navigation-compose-2.7.7/AndroidManifest.xml:2:1-7:12
+MERGED from [com.google.accompanist:accompanist-permissions:0.32.0] /home/bahaeddine/.gradle/caches/transforms-4/a8aee9fc22801f07fdce66276fc39918/transformed/accompanist-permissions-0.32.0/AndroidManifest.xml:17:1-23:12
+MERGED from [androidx.compose.material3:material3-window-size-class-android:1.2.1] /home/bahaeddine/.gradle/caches/transforms-4/0006147129c8abc0f2dd663f49c92c23/transformed/material3-window-size-class-release/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.material3:material3-android:1.2.1] /home/bahaeddine/.gradle/caches/transforms-4/8c89753dae33a5fc432a8cb9529532cb/transformed/material3-release/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.compose.material:material-ripple-android:1.6.7] /home/bahaeddine/.gradle/caches/transforms-4/0e4ea3bfbf3cc912a5ed4da73acb56a4/transformed/material-ripple-release/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.material:material-android:1.6.7] /home/bahaeddine/.gradle/caches/transforms-4/96de029266916d75411e2c5a912cfa8f/transformed/material-release/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.material:material-icons-extended-android:1.6.7] /home/bahaeddine/.gradle/caches/transforms-4/e7a85b315bc19bcf57357ea35e760e8f/transformed/material-icons-extended-release/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.material:material-icons-core-android:1.6.7] /home/bahaeddine/.gradle/caches/transforms-4/9522107b316afdc86c6f1e673577219c/transformed/material-icons-core-release/AndroidManifest.xml:2:1-7:12
+MERGED from [io.coil-kt:coil-compose:2.6.0] /home/bahaeddine/.gradle/caches/transforms-4/fbf7e32bb80b1fea949af0dc63fb4c76/transformed/coil-compose-2.6.0/AndroidManifest.xml:2:1-7:12
+MERGED from [io.coil-kt:coil-compose-base:2.6.0] /home/bahaeddine/.gradle/caches/transforms-4/4d4ae5d8c3d4b7dd1b4ce0afbbd7cd20/transformed/coil-compose-base-2.6.0/AndroidManifest.xml:2:1-7:12
+MERGED from [com.google.accompanist:accompanist-drawablepainter:0.32.0] /home/bahaeddine/.gradle/caches/transforms-4/b0d9b6b8407227bf0e632197afe37993/transformed/accompanist-drawablepainter-0.32.0/AndroidManifest.xml:17:1-23:12
+MERGED from [androidx.compose.foundation:foundation-android:1.7.0] /home/bahaeddine/.gradle/caches/transforms-4/28f83b94e0a8717e15dc72d3e8f9b30b/transformed/foundation-release/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.foundation:foundation-layout-android:1.7.0] /home/bahaeddine/.gradle/caches/transforms-4/825b7b009791094066c1d87ffddc7720/transformed/foundation-layout-release/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.animation:animation-core-android:1.7.0] /home/bahaeddine/.gradle/caches/transforms-4/ab4c68e5b2e76a850358e255f5713839/transformed/animation-core-release/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.animation:animation-android:1.7.0] /home/bahaeddine/.gradle/caches/transforms-4/e1de4f0998a2edfdae23154ec15cf8ad/transformed/animation-release/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.ui:ui-geometry-android:1.7.0] /home/bahaeddine/.gradle/caches/transforms-4/74cf2be69db35fd7ef5b1690e82409d5/transformed/ui-geometry-release/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.ui:ui-unit-android:1.7.0] /home/bahaeddine/.gradle/caches/transforms-4/cf650f6306540de14fdb54219b76394c/transformed/ui-unit-release/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.ui:ui-util-android:1.7.0] /home/bahaeddine/.gradle/caches/transforms-4/a1a4df0b4bcef859bf28e002f7dae5d8/transformed/ui-util-release/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.ui:ui-text-android:1.7.0] /home/bahaeddine/.gradle/caches/transforms-4/d03194c89c77f0167e37ba81f4d5df9f/transformed/ui-text-release/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.ui:ui-graphics-android:1.7.0] /home/bahaeddine/.gradle/caches/transforms-4/e6efadc0faa1317b47402622730bd318/transformed/ui-graphics-release/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.ui:ui-tooling-preview-android:1.7.0] /home/bahaeddine/.gradle/caches/transforms-4/9ab072b66deff4641e15f15e36deeb60/transformed/ui-tooling-preview-release/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.compose.runtime:runtime-saveable-android:1.7.0] /home/bahaeddine/.gradle/caches/transforms-4/275cc059bacaead82076ad354191b088/transformed/runtime-saveable-release/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.runtime:runtime-android:1.7.0] /home/bahaeddine/.gradle/caches/transforms-4/e350737faa8a94d1ab2a180b62bfc426/transformed/runtime-release/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.runtime:runtime-livedata:1.7.0] /home/bahaeddine/.gradle/caches/transforms-4/8146d7cb76202bdab4b0379b1a1c6f3d/transformed/runtime-livedata-1.7.0/AndroidManifest.xml:2:1-7:12
+MERGED from [com.google.dagger:hilt-android:2.51] /home/bahaeddine/.gradle/caches/transforms-4/f2a87c3e1020cd86d170f072fad7ee2a/transformed/hilt-android-2.51/AndroidManifest.xml:16:1-19:12
+MERGED from [androidx.fragment:fragment-ktx:1.6.2] /home/bahaeddine/.gradle/caches/transforms-4/35560fee4ee9b88dff7acc3a9fe78dea/transformed/fragment-ktx-1.6.2/AndroidManifest.xml:17:1-22:12
+MERGED from [com.google.android.material:material:1.4.0-beta01] /home/bahaeddine/.gradle/caches/transforms-4/714b5941674b5b79408adb297667306a/transformed/material-1.4.0-beta01/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.viewpager2:viewpager2:1.0.0] /home/bahaeddine/.gradle/caches/transforms-4/371661cb0877a578bc12799ac667617a/transformed/viewpager2-1.0.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.constraintlayout:constraintlayout:2.0.1] /home/bahaeddine/.gradle/caches/transforms-4/6e8e048d0432704b5755a041f7e2c8a8/transformed/constraintlayout-2.0.1/AndroidManifest.xml:2:1-11:12
+MERGED from [io.coil-kt:coil:2.6.0] /home/bahaeddine/.gradle/caches/transforms-4/98896d1f1ce8060d6d90428f60e69a31/transformed/coil-2.6.0/AndroidManifest.xml:2:1-7:12
+MERGED from [io.coil-kt:coil-base:2.6.0] /home/bahaeddine/.gradle/caches/transforms-4/ac7ba03fac6832be9daf27dc33d05011/transformed/coil-base-2.6.0/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.appcompat:appcompat-resources:1.6.1] /home/bahaeddine/.gradle/caches/transforms-4/a5c7100210005d647091ea5ec351f672/transformed/appcompat-resources-1.6.1/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.appcompat:appcompat:1.6.1] /home/bahaeddine/.gradle/caches/transforms-4/3b24efb3bb00ae27b95bc45b4bedb31d/transformed/appcompat-1.6.1/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.fragment:fragment:1.6.2] /home/bahaeddine/.gradle/caches/transforms-4/9fae2db3fb875f2ce79d32f311e7e2b8/transformed/fragment-1.6.2/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] /home/bahaeddine/.gradle/caches/transforms-4/26059329582b58babbd1fdeb530d559b/transformed/dynamicanimation-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /home/bahaeddine/.gradle/caches/transforms-4/4151f0eb1f7c470b210e05153b6e0efa/transformed/legacy-support-core-utils-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.loader:loader:1.0.0] /home/bahaeddine/.gradle/caches/transforms-4/0c7164b22e416ce426b9ce1492900527/transformed/loader-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.savedstate:savedstate-ktx:1.2.1] /home/bahaeddine/.gradle/caches/transforms-4/f22ac2fbee379b084fe4a4a641df0bc2/transformed/savedstate-ktx-1.2.1/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.savedstate:savedstate:1.2.1] /home/bahaeddine/.gradle/caches/transforms-4/d1a6985e59a2aeb6808caa79dfaac24f/transformed/savedstate-1.2.1/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.emoji2:emoji2-views-helper:1.3.0] /home/bahaeddine/.gradle/caches/transforms-4/65fe3f51cb68d01b11f376ec5d6322a2/transformed/emoji2-views-helper-1.3.0/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.emoji2:emoji2:1.3.0] /home/bahaeddine/.gradle/caches/transforms-4/d28151643827e73f41d9d810c30d13a7/transformed/emoji2-1.3.0/AndroidManifest.xml:17:1-35:12
+MERGED from [androidx.lifecycle:lifecycle-process:2.8.3] /home/bahaeddine/.gradle/caches/transforms-4/da778a84c0212dbe5036cb2c2a9f48ac/transformed/lifecycle-process-2.8.3/AndroidManifest.xml:17:1-35:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.8.3] /home/bahaeddine/.gradle/caches/transforms-4/83c360eab11f425bd68c9a55cc15ca66/transformed/lifecycle-viewmodel-2.8.3/AndroidManifest.xml:2:1-5:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-android:2.8.3] /home/bahaeddine/.gradle/caches/transforms-4/e270b9c4f3f91121038021742268865a/transformed/lifecycle-viewmodel-release/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-runtime-ktx-android:2.8.3] /home/bahaeddine/.gradle/caches/transforms-4/bb06bc9f11bb8d85da57185f759f248e/transformed/lifecycle-runtime-ktx-release/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.lifecycle:lifecycle-runtime-android:2.8.3] /home/bahaeddine/.gradle/caches/transforms-4/0f47851e2faf855c94f63d4313eebe1a/transformed/lifecycle-runtime-release/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.8.3] /home/bahaeddine/.gradle/caches/transforms-4/69ab9db6788fc9777ad75e30f7b3bf96/transformed/lifecycle-viewmodel-savedstate-2.8.3/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-ktx:2.8.3] /home/bahaeddine/.gradle/caches/transforms-4/4027653ebf80f1b82f064fa519969c14/transformed/lifecycle-viewmodel-ktx-2.8.3/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.lifecycle:lifecycle-livedata-core-ktx:2.8.3] /home/bahaeddine/.gradle/caches/transforms-4/fd6e05843ccf479afa96c38ef0cf5f9c/transformed/lifecycle-livedata-core-ktx-2.8.3/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.8.3] /home/bahaeddine/.gradle/caches/transforms-4/60e41e541d13799356fdf0ad6a045b9f/transformed/lifecycle-livedata-core-2.8.3/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.8.3] /home/bahaeddine/.gradle/caches/transforms-4/96014a9af8c88947008599e96c090f94/transformed/lifecycle-livedata-2.8.3/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-runtime-compose-android:2.8.3] /home/bahaeddine/.gradle/caches/transforms-4/f8f73be0494a7b68dd96cd9510fc7f44/transformed/lifecycle-runtime-compose-release/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-compose-android:2.8.3] /home/bahaeddine/.gradle/caches/transforms-4/2946f80369196a08707a23c32e24c265/transformed/lifecycle-viewmodel-compose-release/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.ui:ui-android:1.7.0] /home/bahaeddine/.gradle/caches/transforms-4/7e0aa3bcfd38751f814424d17cef0fda/transformed/ui-release/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.ui:ui-tooling-data-android:1.7.0] /home/bahaeddine/.gradle/caches/transforms-4/4c87bbdbaa9b808cb0b311bb9c723ade/transformed/ui-tooling-data-release/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.ui:ui-tooling-android:1.7.0] /home/bahaeddine/.gradle/caches/transforms-4/a50219d588aa4da377da22bd04677d26/transformed/ui-tooling-release/AndroidManifest.xml:17:1-28:12
+MERGED from [androidx.activity:activity-compose:1.9.0] /home/bahaeddine/.gradle/caches/transforms-4/42fdecc630de933d0f702c8913fd6725/transformed/activity-compose-1.9.0/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.activity:activity-ktx:1.9.0] /home/bahaeddine/.gradle/caches/transforms-4/b2555aae38dc6e6666b30fb76ae275c9/transformed/activity-ktx-1.9.0/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.activity:activity:1.9.0] /home/bahaeddine/.gradle/caches/transforms-4/0364efd560ad6530fa36131b3f21625e/transformed/activity-1.9.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.2.0] /home/bahaeddine/.gradle/caches/transforms-4/ccafb365fb4879afebeec50126e645e7/transformed/slidingpanelayout-1.2.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.drawerlayout:drawerlayout:1.1.1] /home/bahaeddine/.gradle/caches/transforms-4/3dbedc8f6f166ba562476dd17972686b/transformed/drawerlayout-1.1.1/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] /home/bahaeddine/.gradle/caches/transforms-4/756b6d0c2e58df754d14cf482f1c2f36/transformed/coordinatorlayout-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.viewpager:viewpager:1.0.0] /home/bahaeddine/.gradle/caches/transforms-4/defa209315cfd9dd7763d91f775f4f0b/transformed/viewpager-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.recyclerview:recyclerview:1.1.0] /home/bahaeddine/.gradle/caches/transforms-4/5b646399b9a3111d3cf4904064ddc77f/transformed/recyclerview-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.customview:customview:1.1.0] /home/bahaeddine/.gradle/caches/transforms-4/0b516d4044a45e5c3c268991f1e0796a/transformed/customview-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.window:window:1.0.0] /home/bahaeddine/.gradle/caches/transforms-4/2b65998f6e0a2f53efc36656870f1419/transformed/window-1.0.0/AndroidManifest.xml:17:1-33:12
+MERGED from [androidx.transition:transition:1.4.1] /home/bahaeddine/.gradle/caches/transforms-4/7c03f90581efa3eac2bfbf49e6ea717d/transformed/transition-1.4.1/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /home/bahaeddine/.gradle/caches/transforms-4/d9b893d96274c50c2bf12627ab807e70/transformed/vectordrawable-animated-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /home/bahaeddine/.gradle/caches/transforms-4/218329589042224cac5214d8227f308e/transformed/vectordrawable-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.autofill:autofill:1.0.0] /home/bahaeddine/.gradle/caches/transforms-4/cb5813234a304c22cb72a84666ae5c92/transformed/autofill-1.0.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.graphics:graphics-path:1.0.1] /home/bahaeddine/.gradle/caches/transforms-4/0f599e56b00fda1a4a7fd8a1cf9a28c8/transformed/graphics-path-1.0.1/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.core:core:1.13.1] /home/bahaeddine/.gradle/caches/transforms-4/887c5a253d1d4da11d523e352a664c25/transformed/core-1.13.1/AndroidManifest.xml:17:1-30:12
+MERGED from [androidx.customview:customview-poolingcontainer:1.0.0] /home/bahaeddine/.gradle/caches/transforms-4/9bac3233abc7328bdff4e8c504ac98e2/transformed/customview-poolingcontainer-1.0.0/AndroidManifest.xml:17:1-23:12
+MERGED from [androidx.core:core-ktx:1.13.1] /home/bahaeddine/.gradle/caches/transforms-4/fee11c26928e863579ff45a2e0c76cc1/transformed/core-ktx-1.13.1/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.room:room-runtime:2.6.1] /home/bahaeddine/.gradle/caches/transforms-4/4e777a3ef92d76a3d9f993b40038f966/transformed/room-runtime-2.6.1/AndroidManifest.xml:17:1-31:12
+MERGED from [androidx.room:room-ktx:2.6.1] /home/bahaeddine/.gradle/caches/transforms-4/7f24e4aaa76cc90d53b68f7ee9ffc777/transformed/room-ktx-2.6.1/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.datastore:datastore-android:1.1.2] /home/bahaeddine/.gradle/caches/transforms-4/1319da917227ac49e41761c890e74a44/transformed/datastore-release/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.datastore:datastore-core-android:1.1.2] /home/bahaeddine/.gradle/caches/transforms-4/d3c1c42c138cdd58c500b77dd4f5750a/transformed/datastore-core-release/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.datastore:datastore-preferences-android:1.1.2] /home/bahaeddine/.gradle/caches/transforms-4/14129271dbdc58dc5f3bdc0a88401d86/transformed/datastore-preferences-release/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.sqlite:sqlite-framework:2.4.0] /home/bahaeddine/.gradle/caches/transforms-4/45f9fb3b14e6d21d95e9762bdfd64905/transformed/sqlite-framework-2.4.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.sqlite:sqlite:2.4.0] /home/bahaeddine/.gradle/caches/transforms-4/6eda72373c1c17b13a9902ba67623bf6/transformed/sqlite-2.4.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.annotation:annotation-experimental:1.4.0] /home/bahaeddine/.gradle/caches/transforms-4/4296d098d2e3454c796b13b019774678/transformed/annotation-experimental-1.4.0/AndroidManifest.xml:2:1-7:12
+MERGED from [io.github.aakira:napier-android-debug:1.4.1] /home/bahaeddine/.gradle/caches/transforms-4/8b696cfb7ebdc758147e86a1717e86f1/transformed/napier-debug/AndroidManifest.xml:2:1-11:12
+MERGED from [androidx.arch.core:core-runtime:2.2.0] /home/bahaeddine/.gradle/caches/transforms-4/4b37c41c58a87b5d8a941a73c81ee5b2/transformed/core-runtime-2.2.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.interpolator:interpolator:1.0.0] /home/bahaeddine/.gradle/caches/transforms-4/6e749a884dce560e4bfec3e860f8d929/transformed/interpolator-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /home/bahaeddine/.gradle/caches/transforms-4/9545c089dbc11be0066ea002adca1829/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:17:1-27:12
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.1] /home/bahaeddine/.gradle/caches/transforms-4/2e2a702d4f04b3aaf960b7eb8cec9a9b/transformed/profileinstaller-1.3.1/AndroidManifest.xml:17:1-55:12
+MERGED from [androidx.startup:startup-runtime:1.1.1] /home/bahaeddine/.gradle/caches/transforms-4/34356894406fa417aa2e4d4b1c52b20a/transformed/startup-runtime-1.1.1/AndroidManifest.xml:17:1-33:12
+MERGED from [androidx.tracing:tracing:1.0.0] /home/bahaeddine/.gradle/caches/transforms-4/8d0d167adb7a06569b44125ef383ba24/transformed/tracing-1.0.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.cardview:cardview:1.0.0] /home/bahaeddine/.gradle/caches/transforms-4/4b38c47dafaa6b22cfe6d842f5c25cd8/transformed/cardview-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.exifinterface:exifinterface:1.3.7] /home/bahaeddine/.gradle/caches/transforms-4/5315d752cc038850a897e6fc54fe9efb/transformed/exifinterface-1.3.7/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.documentfile:documentfile:1.0.0] /home/bahaeddine/.gradle/caches/transforms-4/c53e25e9b7d167de081fb38dcef36090/transformed/documentfile-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /home/bahaeddine/.gradle/caches/transforms-4/29cc73360d4eceafca6b01b87159c748/transformed/localbroadcastmanager-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.print:print:1.0.0] /home/bahaeddine/.gradle/caches/transforms-4/e5aae77d2997cd03123105542ebef800/transformed/print-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /home/bahaeddine/.gradle/caches/transforms-4/ceb23a455f5bce1d2fddd2850d4a926a/transformed/cursoradapter-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [com.google.dagger:dagger-lint-aar:2.51] /home/bahaeddine/.gradle/caches/transforms-4/3e85eba17809d16d9200fb56e5570606/transformed/dagger-lint-aar-2.51/AndroidManifest.xml:16:1-19:12
+	package
+		INJECTED from /home/bahaeddine/Baha-Workspace/food-delivery-platform/delivery-mobile/app/src/main/AndroidManifest.xml
+	android:versionName
+		INJECTED from /home/bahaeddine/Baha-Workspace/food-delivery-platform/delivery-mobile/app/src/main/AndroidManifest.xml
+	xmlns:tools
+		ADDED from /home/bahaeddine/Baha-Workspace/food-delivery-platform/delivery-mobile/app/src/main/AndroidManifest.xml:3:5-51
+	android:versionCode
+		INJECTED from /home/bahaeddine/Baha-Workspace/food-delivery-platform/delivery-mobile/app/src/main/AndroidManifest.xml
+	xmlns:android
+		ADDED from /home/bahaeddine/Baha-Workspace/food-delivery-platform/delivery-mobile/app/src/main/AndroidManifest.xml:2:11-69
+uses-permission#android.permission.INTERNET
+ADDED from /home/bahaeddine/Baha-Workspace/food-delivery-platform/delivery-mobile/app/src/main/AndroidManifest.xml:5:5-67
+	android:name
+		ADDED from /home/bahaeddine/Baha-Workspace/food-delivery-platform/delivery-mobile/app/src/main/AndroidManifest.xml:5:22-64
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from /home/bahaeddine/Baha-Workspace/food-delivery-platform/delivery-mobile/app/src/main/AndroidManifest.xml:6:5-79
+	android:name
+		ADDED from /home/bahaeddine/Baha-Workspace/food-delivery-platform/delivery-mobile/app/src/main/AndroidManifest.xml:6:22-76
+uses-permission#android.permission.ACCESS_FINE_LOCATION
+ADDED from /home/bahaeddine/Baha-Workspace/food-delivery-platform/delivery-mobile/app/src/main/AndroidManifest.xml:7:5-79
+	android:name
+		ADDED from /home/bahaeddine/Baha-Workspace/food-delivery-platform/delivery-mobile/app/src/main/AndroidManifest.xml:7:22-76
+uses-permission#android.permission.ACCESS_COARSE_LOCATION
+ADDED from /home/bahaeddine/Baha-Workspace/food-delivery-platform/delivery-mobile/app/src/main/AndroidManifest.xml:8:5-81
+	android:name
+		ADDED from /home/bahaeddine/Baha-Workspace/food-delivery-platform/delivery-mobile/app/src/main/AndroidManifest.xml:8:22-78
+uses-permission#android.permission.FOREGROUND_SERVICE
+ADDED from /home/bahaeddine/Baha-Workspace/food-delivery-platform/delivery-mobile/app/src/main/AndroidManifest.xml:9:5-77
+	android:name
+		ADDED from /home/bahaeddine/Baha-Workspace/food-delivery-platform/delivery-mobile/app/src/main/AndroidManifest.xml:9:22-74
+uses-permission#android.permission.FOREGROUND_SERVICE_LOCATION
+ADDED from /home/bahaeddine/Baha-Workspace/food-delivery-platform/delivery-mobile/app/src/main/AndroidManifest.xml:10:5-86
+	android:name
+		ADDED from /home/bahaeddine/Baha-Workspace/food-delivery-platform/delivery-mobile/app/src/main/AndroidManifest.xml:10:22-83
+application
+ADDED from /home/bahaeddine/Baha-Workspace/food-delivery-platform/delivery-mobile/app/src/main/AndroidManifest.xml:12:5-40:19
+INJECTED from /home/bahaeddine/Baha-Workspace/food-delivery-platform/delivery-mobile/app/src/main/AndroidManifest.xml:12:5-40:19
+MERGED from [com.google.android.material:material:1.4.0-beta01] /home/bahaeddine/.gradle/caches/transforms-4/714b5941674b5b79408adb297667306a/transformed/material-1.4.0-beta01/AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.material:material:1.4.0-beta01] /home/bahaeddine/.gradle/caches/transforms-4/714b5941674b5b79408adb297667306a/transformed/material-1.4.0-beta01/AndroidManifest.xml:22:5-20
+MERGED from [androidx.constraintlayout:constraintlayout:2.0.1] /home/bahaeddine/.gradle/caches/transforms-4/6e8e048d0432704b5755a041f7e2c8a8/transformed/constraintlayout-2.0.1/AndroidManifest.xml:9:5-20
+MERGED from [androidx.constraintlayout:constraintlayout:2.0.1] /home/bahaeddine/.gradle/caches/transforms-4/6e8e048d0432704b5755a041f7e2c8a8/transformed/constraintlayout-2.0.1/AndroidManifest.xml:9:5-20
+MERGED from [androidx.emoji2:emoji2:1.3.0] /home/bahaeddine/.gradle/caches/transforms-4/d28151643827e73f41d9d810c30d13a7/transformed/emoji2-1.3.0/AndroidManifest.xml:23:5-33:19
+MERGED from [androidx.emoji2:emoji2:1.3.0] /home/bahaeddine/.gradle/caches/transforms-4/d28151643827e73f41d9d810c30d13a7/transformed/emoji2-1.3.0/AndroidManifest.xml:23:5-33:19
+MERGED from [androidx.lifecycle:lifecycle-process:2.8.3] /home/bahaeddine/.gradle/caches/transforms-4/da778a84c0212dbe5036cb2c2a9f48ac/transformed/lifecycle-process-2.8.3/AndroidManifest.xml:23:5-33:19
+MERGED from [androidx.lifecycle:lifecycle-process:2.8.3] /home/bahaeddine/.gradle/caches/transforms-4/da778a84c0212dbe5036cb2c2a9f48ac/transformed/lifecycle-process-2.8.3/AndroidManifest.xml:23:5-33:19
+MERGED from [androidx.compose.ui:ui-tooling-android:1.7.0] /home/bahaeddine/.gradle/caches/transforms-4/a50219d588aa4da377da22bd04677d26/transformed/ui-tooling-release/AndroidManifest.xml:22:5-26:19
+MERGED from [androidx.compose.ui:ui-tooling-android:1.7.0] /home/bahaeddine/.gradle/caches/transforms-4/a50219d588aa4da377da22bd04677d26/transformed/ui-tooling-release/AndroidManifest.xml:22:5-26:19
+MERGED from [androidx.window:window:1.0.0] /home/bahaeddine/.gradle/caches/transforms-4/2b65998f6e0a2f53efc36656870f1419/transformed/window-1.0.0/AndroidManifest.xml:24:5-31:19
+MERGED from [androidx.window:window:1.0.0] /home/bahaeddine/.gradle/caches/transforms-4/2b65998f6e0a2f53efc36656870f1419/transformed/window-1.0.0/AndroidManifest.xml:24:5-31:19
+MERGED from [androidx.core:core:1.13.1] /home/bahaeddine/.gradle/caches/transforms-4/887c5a253d1d4da11d523e352a664c25/transformed/core-1.13.1/AndroidManifest.xml:28:5-89
+MERGED from [androidx.core:core:1.13.1] /home/bahaeddine/.gradle/caches/transforms-4/887c5a253d1d4da11d523e352a664c25/transformed/core-1.13.1/AndroidManifest.xml:28:5-89
+MERGED from [androidx.room:room-runtime:2.6.1] /home/bahaeddine/.gradle/caches/transforms-4/4e777a3ef92d76a3d9f993b40038f966/transformed/room-runtime-2.6.1/AndroidManifest.xml:23:5-29:19
+MERGED from [androidx.room:room-runtime:2.6.1] /home/bahaeddine/.gradle/caches/transforms-4/4e777a3ef92d76a3d9f993b40038f966/transformed/room-runtime-2.6.1/AndroidManifest.xml:23:5-29:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /home/bahaeddine/.gradle/caches/transforms-4/9545c089dbc11be0066ea002adca1829/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:24:5-25:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /home/bahaeddine/.gradle/caches/transforms-4/9545c089dbc11be0066ea002adca1829/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:24:5-25:19
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.1] /home/bahaeddine/.gradle/caches/transforms-4/2e2a702d4f04b3aaf960b7eb8cec9a9b/transformed/profileinstaller-1.3.1/AndroidManifest.xml:23:5-53:19
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.1] /home/bahaeddine/.gradle/caches/transforms-4/2e2a702d4f04b3aaf960b7eb8cec9a9b/transformed/profileinstaller-1.3.1/AndroidManifest.xml:23:5-53:19
+MERGED from [androidx.startup:startup-runtime:1.1.1] /home/bahaeddine/.gradle/caches/transforms-4/34356894406fa417aa2e4d4b1c52b20a/transformed/startup-runtime-1.1.1/AndroidManifest.xml:25:5-31:19
+MERGED from [androidx.startup:startup-runtime:1.1.1] /home/bahaeddine/.gradle/caches/transforms-4/34356894406fa417aa2e4d4b1c52b20a/transformed/startup-runtime-1.1.1/AndroidManifest.xml:25:5-31:19
+	android:extractNativeLibs
+		INJECTED from /home/bahaeddine/Baha-Workspace/food-delivery-platform/delivery-mobile/app/src/main/AndroidManifest.xml
+	android:appComponentFactory
+		ADDED from [androidx.core:core:1.13.1] /home/bahaeddine/.gradle/caches/transforms-4/887c5a253d1d4da11d523e352a664c25/transformed/core-1.13.1/AndroidManifest.xml:28:18-86
+	android:supportsRtl
+		ADDED from /home/bahaeddine/Baha-Workspace/food-delivery-platform/delivery-mobile/app/src/main/AndroidManifest.xml:20:9-35
+	android:label
+		ADDED from /home/bahaeddine/Baha-Workspace/food-delivery-platform/delivery-mobile/app/src/main/AndroidManifest.xml:18:9-41
+	android:fullBackupContent
+		ADDED from /home/bahaeddine/Baha-Workspace/food-delivery-platform/delivery-mobile/app/src/main/AndroidManifest.xml:16:9-54
+	android:roundIcon
+		ADDED from /home/bahaeddine/Baha-Workspace/food-delivery-platform/delivery-mobile/app/src/main/AndroidManifest.xml:19:9-54
+	tools:targetApi
+		ADDED from /home/bahaeddine/Baha-Workspace/food-delivery-platform/delivery-mobile/app/src/main/AndroidManifest.xml:22:9-29
+	android:icon
+		ADDED from /home/bahaeddine/Baha-Workspace/food-delivery-platform/delivery-mobile/app/src/main/AndroidManifest.xml:17:9-43
+	android:allowBackup
+		ADDED from /home/bahaeddine/Baha-Workspace/food-delivery-platform/delivery-mobile/app/src/main/AndroidManifest.xml:14:9-35
+	android:theme
+		ADDED from /home/bahaeddine/Baha-Workspace/food-delivery-platform/delivery-mobile/app/src/main/AndroidManifest.xml:21:9-58
+	android:dataExtractionRules
+		ADDED from /home/bahaeddine/Baha-Workspace/food-delivery-platform/delivery-mobile/app/src/main/AndroidManifest.xml:15:9-65
+	android:name
+		ADDED from /home/bahaeddine/Baha-Workspace/food-delivery-platform/delivery-mobile/app/src/main/AndroidManifest.xml:13:9-48
+activity#com.fooddelivery.deliverymobile.MainActivity
+ADDED from /home/bahaeddine/Baha-Workspace/food-delivery-platform/delivery-mobile/app/src/main/AndroidManifest.xml:24:9-34:20
+	android:launchMode
+		ADDED from /home/bahaeddine/Baha-Workspace/food-delivery-platform/delivery-mobile/app/src/main/AndroidManifest.xml:27:13-43
+	android:windowSoftInputMode
+		ADDED from /home/bahaeddine/Baha-Workspace/food-delivery-platform/delivery-mobile/app/src/main/AndroidManifest.xml:29:13-55
+	android:exported
+		ADDED from /home/bahaeddine/Baha-Workspace/food-delivery-platform/delivery-mobile/app/src/main/AndroidManifest.xml:26:13-36
+	android:theme
+		ADDED from /home/bahaeddine/Baha-Workspace/food-delivery-platform/delivery-mobile/app/src/main/AndroidManifest.xml:28:13-62
+	android:name
+		ADDED from /home/bahaeddine/Baha-Workspace/food-delivery-platform/delivery-mobile/app/src/main/AndroidManifest.xml:25:13-41
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from /home/bahaeddine/Baha-Workspace/food-delivery-platform/delivery-mobile/app/src/main/AndroidManifest.xml:30:13-33:29
+action#android.intent.action.MAIN
+ADDED from /home/bahaeddine/Baha-Workspace/food-delivery-platform/delivery-mobile/app/src/main/AndroidManifest.xml:31:17-69
+	android:name
+		ADDED from /home/bahaeddine/Baha-Workspace/food-delivery-platform/delivery-mobile/app/src/main/AndroidManifest.xml:31:25-66
+category#android.intent.category.LAUNCHER
+ADDED from /home/bahaeddine/Baha-Workspace/food-delivery-platform/delivery-mobile/app/src/main/AndroidManifest.xml:32:17-77
+	android:name
+		ADDED from /home/bahaeddine/Baha-Workspace/food-delivery-platform/delivery-mobile/app/src/main/AndroidManifest.xml:32:27-74
+meta-data#androidx.lifecycle.LifecycleObserver
+ADDED from /home/bahaeddine/Baha-Workspace/food-delivery-platform/delivery-mobile/app/src/main/AndroidManifest.xml:37:9-39:36
+	android:value
+		ADDED from /home/bahaeddine/Baha-Workspace/food-delivery-platform/delivery-mobile/app/src/main/AndroidManifest.xml:39:13-33
+	android:name
+		ADDED from /home/bahaeddine/Baha-Workspace/food-delivery-platform/delivery-mobile/app/src/main/AndroidManifest.xml:38:13-64
+uses-sdk
+INJECTED from /home/bahaeddine/Baha-Workspace/food-delivery-platform/delivery-mobile/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /home/bahaeddine/Baha-Workspace/food-delivery-platform/delivery-mobile/app/src/main/AndroidManifest.xml
+INJECTED from /home/bahaeddine/Baha-Workspace/food-delivery-platform/delivery-mobile/app/src/main/AndroidManifest.xml
+MERGED from [androidx.databinding:viewbinding:8.4.0] /home/bahaeddine/.gradle/caches/transforms-4/2d2d4c8973f29dd69882e19e0eadc4f6/transformed/viewbinding-8.4.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.databinding:viewbinding:8.4.0] /home/bahaeddine/.gradle/caches/transforms-4/2d2d4c8973f29dd69882e19e0eadc4f6/transformed/viewbinding-8.4.0/AndroidManifest.xml:5:5-44
+MERGED from [com.google.accompanist:accompanist-systemuicontroller:0.32.0] /home/bahaeddine/.gradle/caches/transforms-4/833e3726145e656781b169ba41e3056c/transformed/accompanist-systemuicontroller-0.32.0/AndroidManifest.xml:21:5-44
+MERGED from [com.google.accompanist:accompanist-systemuicontroller:0.32.0] /home/bahaeddine/.gradle/caches/transforms-4/833e3726145e656781b169ba41e3056c/transformed/accompanist-systemuicontroller-0.32.0/AndroidManifest.xml:21:5-44
+MERGED from [androidx.hilt:hilt-navigation-compose:1.2.0] /home/bahaeddine/.gradle/caches/transforms-4/e8352bc8c9c57362d970e5956857a835/transformed/hilt-navigation-compose-1.2.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.hilt:hilt-navigation-compose:1.2.0] /home/bahaeddine/.gradle/caches/transforms-4/e8352bc8c9c57362d970e5956857a835/transformed/hilt-navigation-compose-1.2.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.hilt:hilt-navigation:1.2.0] /home/bahaeddine/.gradle/caches/transforms-4/1adaa9d16847136407e37c4ac8107a95/transformed/hilt-navigation-1.2.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.hilt:hilt-navigation:1.2.0] /home/bahaeddine/.gradle/caches/transforms-4/1adaa9d16847136407e37c4ac8107a95/transformed/hilt-navigation-1.2.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.navigation:navigation-common:2.7.7] /home/bahaeddine/.gradle/caches/transforms-4/b3f1716751af640e98826152edbc3284/transformed/navigation-common-2.7.7/AndroidManifest.xml:20:5-44
+MERGED from [androidx.navigation:navigation-common:2.7.7] /home/bahaeddine/.gradle/caches/transforms-4/b3f1716751af640e98826152edbc3284/transformed/navigation-common-2.7.7/AndroidManifest.xml:20:5-44
+MERGED from [androidx.navigation:navigation-runtime:2.7.7] /home/bahaeddine/.gradle/caches/transforms-4/1b634b2ba231eaeb8a3175c9bb6823bc/transformed/navigation-runtime-2.7.7/AndroidManifest.xml:20:5-44
+MERGED from [androidx.navigation:navigation-runtime:2.7.7] /home/bahaeddine/.gradle/caches/transforms-4/1b634b2ba231eaeb8a3175c9bb6823bc/transformed/navigation-runtime-2.7.7/AndroidManifest.xml:20:5-44
+MERGED from [androidx.navigation:navigation-common-ktx:2.7.7] /home/bahaeddine/.gradle/caches/transforms-4/38bd9649bc3eb5e733ff361ba80d3ed0/transformed/navigation-common-ktx-2.7.7/AndroidManifest.xml:5:5-44
+MERGED from [androidx.navigation:navigation-common-ktx:2.7.7] /home/bahaeddine/.gradle/caches/transforms-4/38bd9649bc3eb5e733ff361ba80d3ed0/transformed/navigation-common-ktx-2.7.7/AndroidManifest.xml:5:5-44
+MERGED from [androidx.navigation:navigation-ui:2.7.7] /home/bahaeddine/.gradle/caches/transforms-4/6fb34e8e5f293fc9b75b06f1906f1bf9/transformed/navigation-ui-2.7.7/AndroidManifest.xml:20:5-44
+MERGED from [androidx.navigation:navigation-ui:2.7.7] /home/bahaeddine/.gradle/caches/transforms-4/6fb34e8e5f293fc9b75b06f1906f1bf9/transformed/navigation-ui-2.7.7/AndroidManifest.xml:20:5-44
+MERGED from [androidx.navigation:navigation-fragment:2.7.7] /home/bahaeddine/.gradle/caches/transforms-4/3d59e40a156ef9b33ca4146770e5eb3a/transformed/navigation-fragment-2.7.7/AndroidManifest.xml:20:5-44
+MERGED from [androidx.navigation:navigation-fragment:2.7.7] /home/bahaeddine/.gradle/caches/transforms-4/3d59e40a156ef9b33ca4146770e5eb3a/transformed/navigation-fragment-2.7.7/AndroidManifest.xml:20:5-44
+MERGED from [androidx.navigation:navigation-runtime-ktx:2.7.7] /home/bahaeddine/.gradle/caches/transforms-4/c953f0784c973e4f223e80ec2810ba65/transformed/navigation-runtime-ktx-2.7.7/AndroidManifest.xml:5:5-44
+MERGED from [androidx.navigation:navigation-runtime-ktx:2.7.7] /home/bahaeddine/.gradle/caches/transforms-4/c953f0784c973e4f223e80ec2810ba65/transformed/navigation-runtime-ktx-2.7.7/AndroidManifest.xml:5:5-44
+MERGED from [androidx.navigation:navigation-ui-ktx:2.7.7] /home/bahaeddine/.gradle/caches/transforms-4/1db75ade6ee90a8dce39d5d10228d000/transformed/navigation-ui-ktx-2.7.7/AndroidManifest.xml:5:5-44
+MERGED from [androidx.navigation:navigation-ui-ktx:2.7.7] /home/bahaeddine/.gradle/caches/transforms-4/1db75ade6ee90a8dce39d5d10228d000/transformed/navigation-ui-ktx-2.7.7/AndroidManifest.xml:5:5-44
+MERGED from [androidx.navigation:navigation-fragment-ktx:2.7.7] /home/bahaeddine/.gradle/caches/transforms-4/3c1e84c82ddaa4bfe091c75c03ecfb0c/transformed/navigation-fragment-ktx-2.7.7/AndroidManifest.xml:5:5-44
+MERGED from [androidx.navigation:navigation-fragment-ktx:2.7.7] /home/bahaeddine/.gradle/caches/transforms-4/3c1e84c82ddaa4bfe091c75c03ecfb0c/transformed/navigation-fragment-ktx-2.7.7/AndroidManifest.xml:5:5-44
+MERGED from [androidx.navigation:navigation-compose:2.7.7] /home/bahaeddine/.gradle/caches/transforms-4/6aa4eee7efa2def71099369e8f04caa2/transformed/navigation-compose-2.7.7/AndroidManifest.xml:5:5-44
+MERGED from [androidx.navigation:navigation-compose:2.7.7] /home/bahaeddine/.gradle/caches/transforms-4/6aa4eee7efa2def71099369e8f04caa2/transformed/navigation-compose-2.7.7/AndroidManifest.xml:5:5-44
+MERGED from [com.google.accompanist:accompanist-permissions:0.32.0] /home/bahaeddine/.gradle/caches/transforms-4/a8aee9fc22801f07fdce66276fc39918/transformed/accompanist-permissions-0.32.0/AndroidManifest.xml:21:5-44
+MERGED from [com.google.accompanist:accompanist-permissions:0.32.0] /home/bahaeddine/.gradle/caches/transforms-4/a8aee9fc22801f07fdce66276fc39918/transformed/accompanist-permissions-0.32.0/AndroidManifest.xml:21:5-44
+MERGED from [androidx.compose.material3:material3-window-size-class-android:1.2.1] /home/bahaeddine/.gradle/caches/transforms-4/0006147129c8abc0f2dd663f49c92c23/transformed/material3-window-size-class-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.material3:material3-window-size-class-android:1.2.1] /home/bahaeddine/.gradle/caches/transforms-4/0006147129c8abc0f2dd663f49c92c23/transformed/material3-window-size-class-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.material3:material3-android:1.2.1] /home/bahaeddine/.gradle/caches/transforms-4/8c89753dae33a5fc432a8cb9529532cb/transformed/material3-release/AndroidManifest.xml:20:5-44
+MERGED from [androidx.compose.material3:material3-android:1.2.1] /home/bahaeddine/.gradle/caches/transforms-4/8c89753dae33a5fc432a8cb9529532cb/transformed/material3-release/AndroidManifest.xml:20:5-44
+MERGED from [androidx.compose.material:material-ripple-android:1.6.7] /home/bahaeddine/.gradle/caches/transforms-4/0e4ea3bfbf3cc912a5ed4da73acb56a4/transformed/material-ripple-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.material:material-ripple-android:1.6.7] /home/bahaeddine/.gradle/caches/transforms-4/0e4ea3bfbf3cc912a5ed4da73acb56a4/transformed/material-ripple-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.material:material-android:1.6.7] /home/bahaeddine/.gradle/caches/transforms-4/96de029266916d75411e2c5a912cfa8f/transformed/material-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.material:material-android:1.6.7] /home/bahaeddine/.gradle/caches/transforms-4/96de029266916d75411e2c5a912cfa8f/transformed/material-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.material:material-icons-extended-android:1.6.7] /home/bahaeddine/.gradle/caches/transforms-4/e7a85b315bc19bcf57357ea35e760e8f/transformed/material-icons-extended-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.material:material-icons-extended-android:1.6.7] /home/bahaeddine/.gradle/caches/transforms-4/e7a85b315bc19bcf57357ea35e760e8f/transformed/material-icons-extended-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.material:material-icons-core-android:1.6.7] /home/bahaeddine/.gradle/caches/transforms-4/9522107b316afdc86c6f1e673577219c/transformed/material-icons-core-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.material:material-icons-core-android:1.6.7] /home/bahaeddine/.gradle/caches/transforms-4/9522107b316afdc86c6f1e673577219c/transformed/material-icons-core-release/AndroidManifest.xml:5:5-44
+MERGED from [io.coil-kt:coil-compose:2.6.0] /home/bahaeddine/.gradle/caches/transforms-4/fbf7e32bb80b1fea949af0dc63fb4c76/transformed/coil-compose-2.6.0/AndroidManifest.xml:5:5-44
+MERGED from [io.coil-kt:coil-compose:2.6.0] /home/bahaeddine/.gradle/caches/transforms-4/fbf7e32bb80b1fea949af0dc63fb4c76/transformed/coil-compose-2.6.0/AndroidManifest.xml:5:5-44
+MERGED from [io.coil-kt:coil-compose-base:2.6.0] /home/bahaeddine/.gradle/caches/transforms-4/4d4ae5d8c3d4b7dd1b4ce0afbbd7cd20/transformed/coil-compose-base-2.6.0/AndroidManifest.xml:5:5-44
+MERGED from [io.coil-kt:coil-compose-base:2.6.0] /home/bahaeddine/.gradle/caches/transforms-4/4d4ae5d8c3d4b7dd1b4ce0afbbd7cd20/transformed/coil-compose-base-2.6.0/AndroidManifest.xml:5:5-44
+MERGED from [com.google.accompanist:accompanist-drawablepainter:0.32.0] /home/bahaeddine/.gradle/caches/transforms-4/b0d9b6b8407227bf0e632197afe37993/transformed/accompanist-drawablepainter-0.32.0/AndroidManifest.xml:21:5-44
+MERGED from [com.google.accompanist:accompanist-drawablepainter:0.32.0] /home/bahaeddine/.gradle/caches/transforms-4/b0d9b6b8407227bf0e632197afe37993/transformed/accompanist-drawablepainter-0.32.0/AndroidManifest.xml:21:5-44
+MERGED from [androidx.compose.foundation:foundation-android:1.7.0] /home/bahaeddine/.gradle/caches/transforms-4/28f83b94e0a8717e15dc72d3e8f9b30b/transformed/foundation-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.foundation:foundation-android:1.7.0] /home/bahaeddine/.gradle/caches/transforms-4/28f83b94e0a8717e15dc72d3e8f9b30b/transformed/foundation-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.foundation:foundation-layout-android:1.7.0] /home/bahaeddine/.gradle/caches/transforms-4/825b7b009791094066c1d87ffddc7720/transformed/foundation-layout-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.foundation:foundation-layout-android:1.7.0] /home/bahaeddine/.gradle/caches/transforms-4/825b7b009791094066c1d87ffddc7720/transformed/foundation-layout-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.animation:animation-core-android:1.7.0] /home/bahaeddine/.gradle/caches/transforms-4/ab4c68e5b2e76a850358e255f5713839/transformed/animation-core-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.animation:animation-core-android:1.7.0] /home/bahaeddine/.gradle/caches/transforms-4/ab4c68e5b2e76a850358e255f5713839/transformed/animation-core-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.animation:animation-android:1.7.0] /home/bahaeddine/.gradle/caches/transforms-4/e1de4f0998a2edfdae23154ec15cf8ad/transformed/animation-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.animation:animation-android:1.7.0] /home/bahaeddine/.gradle/caches/transforms-4/e1de4f0998a2edfdae23154ec15cf8ad/transformed/animation-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-geometry-android:1.7.0] /home/bahaeddine/.gradle/caches/transforms-4/74cf2be69db35fd7ef5b1690e82409d5/transformed/ui-geometry-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-geometry-android:1.7.0] /home/bahaeddine/.gradle/caches/transforms-4/74cf2be69db35fd7ef5b1690e82409d5/transformed/ui-geometry-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-unit-android:1.7.0] /home/bahaeddine/.gradle/caches/transforms-4/cf650f6306540de14fdb54219b76394c/transformed/ui-unit-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-unit-android:1.7.0] /home/bahaeddine/.gradle/caches/transforms-4/cf650f6306540de14fdb54219b76394c/transformed/ui-unit-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-util-android:1.7.0] /home/bahaeddine/.gradle/caches/transforms-4/a1a4df0b4bcef859bf28e002f7dae5d8/transformed/ui-util-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-util-android:1.7.0] /home/bahaeddine/.gradle/caches/transforms-4/a1a4df0b4bcef859bf28e002f7dae5d8/transformed/ui-util-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-text-android:1.7.0] /home/bahaeddine/.gradle/caches/transforms-4/d03194c89c77f0167e37ba81f4d5df9f/transformed/ui-text-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-text-android:1.7.0] /home/bahaeddine/.gradle/caches/transforms-4/d03194c89c77f0167e37ba81f4d5df9f/transformed/ui-text-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-graphics-android:1.7.0] /home/bahaeddine/.gradle/caches/transforms-4/e6efadc0faa1317b47402622730bd318/transformed/ui-graphics-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-graphics-android:1.7.0] /home/bahaeddine/.gradle/caches/transforms-4/e6efadc0faa1317b47402622730bd318/transformed/ui-graphics-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-tooling-preview-android:1.7.0] /home/bahaeddine/.gradle/caches/transforms-4/9ab072b66deff4641e15f15e36deeb60/transformed/ui-tooling-preview-release/AndroidManifest.xml:20:5-44
+MERGED from [androidx.compose.ui:ui-tooling-preview-android:1.7.0] /home/bahaeddine/.gradle/caches/transforms-4/9ab072b66deff4641e15f15e36deeb60/transformed/ui-tooling-preview-release/AndroidManifest.xml:20:5-44
+MERGED from [androidx.compose.runtime:runtime-saveable-android:1.7.0] /home/bahaeddine/.gradle/caches/transforms-4/275cc059bacaead82076ad354191b088/transformed/runtime-saveable-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.runtime:runtime-saveable-android:1.7.0] /home/bahaeddine/.gradle/caches/transforms-4/275cc059bacaead82076ad354191b088/transformed/runtime-saveable-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.runtime:runtime-android:1.7.0] /home/bahaeddine/.gradle/caches/transforms-4/e350737faa8a94d1ab2a180b62bfc426/transformed/runtime-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.runtime:runtime-android:1.7.0] /home/bahaeddine/.gradle/caches/transforms-4/e350737faa8a94d1ab2a180b62bfc426/transformed/runtime-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.runtime:runtime-livedata:1.7.0] /home/bahaeddine/.gradle/caches/transforms-4/8146d7cb76202bdab4b0379b1a1c6f3d/transformed/runtime-livedata-1.7.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.runtime:runtime-livedata:1.7.0] /home/bahaeddine/.gradle/caches/transforms-4/8146d7cb76202bdab4b0379b1a1c6f3d/transformed/runtime-livedata-1.7.0/AndroidManifest.xml:5:5-44
+MERGED from [com.google.dagger:hilt-android:2.51] /home/bahaeddine/.gradle/caches/transforms-4/f2a87c3e1020cd86d170f072fad7ee2a/transformed/hilt-android-2.51/AndroidManifest.xml:18:3-42
+MERGED from [com.google.dagger:hilt-android:2.51] /home/bahaeddine/.gradle/caches/transforms-4/f2a87c3e1020cd86d170f072fad7ee2a/transformed/hilt-android-2.51/AndroidManifest.xml:18:3-42
+MERGED from [androidx.fragment:fragment-ktx:1.6.2] /home/bahaeddine/.gradle/caches/transforms-4/35560fee4ee9b88dff7acc3a9fe78dea/transformed/fragment-ktx-1.6.2/AndroidManifest.xml:20:5-44
+MERGED from [androidx.fragment:fragment-ktx:1.6.2] /home/bahaeddine/.gradle/caches/transforms-4/35560fee4ee9b88dff7acc3a9fe78dea/transformed/fragment-ktx-1.6.2/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.material:material:1.4.0-beta01] /home/bahaeddine/.gradle/caches/transforms-4/714b5941674b5b79408adb297667306a/transformed/material-1.4.0-beta01/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.material:material:1.4.0-beta01] /home/bahaeddine/.gradle/caches/transforms-4/714b5941674b5b79408adb297667306a/transformed/material-1.4.0-beta01/AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager2:viewpager2:1.0.0] /home/bahaeddine/.gradle/caches/transforms-4/371661cb0877a578bc12799ac667617a/transformed/viewpager2-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.viewpager2:viewpager2:1.0.0] /home/bahaeddine/.gradle/caches/transforms-4/371661cb0877a578bc12799ac667617a/transformed/viewpager2-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.constraintlayout:constraintlayout:2.0.1] /home/bahaeddine/.gradle/caches/transforms-4/6e8e048d0432704b5755a041f7e2c8a8/transformed/constraintlayout-2.0.1/AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.constraintlayout:constraintlayout:2.0.1] /home/bahaeddine/.gradle/caches/transforms-4/6e8e048d0432704b5755a041f7e2c8a8/transformed/constraintlayout-2.0.1/AndroidManifest.xml:5:5-7:41
+MERGED from [io.coil-kt:coil:2.6.0] /home/bahaeddine/.gradle/caches/transforms-4/98896d1f1ce8060d6d90428f60e69a31/transformed/coil-2.6.0/AndroidManifest.xml:5:5-44
+MERGED from [io.coil-kt:coil:2.6.0] /home/bahaeddine/.gradle/caches/transforms-4/98896d1f1ce8060d6d90428f60e69a31/transformed/coil-2.6.0/AndroidManifest.xml:5:5-44
+MERGED from [io.coil-kt:coil-base:2.6.0] /home/bahaeddine/.gradle/caches/transforms-4/ac7ba03fac6832be9daf27dc33d05011/transformed/coil-base-2.6.0/AndroidManifest.xml:5:5-44
+MERGED from [io.coil-kt:coil-base:2.6.0] /home/bahaeddine/.gradle/caches/transforms-4/ac7ba03fac6832be9daf27dc33d05011/transformed/coil-base-2.6.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.appcompat:appcompat-resources:1.6.1] /home/bahaeddine/.gradle/caches/transforms-4/a5c7100210005d647091ea5ec351f672/transformed/appcompat-resources-1.6.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.appcompat:appcompat-resources:1.6.1] /home/bahaeddine/.gradle/caches/transforms-4/a5c7100210005d647091ea5ec351f672/transformed/appcompat-resources-1.6.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.appcompat:appcompat:1.6.1] /home/bahaeddine/.gradle/caches/transforms-4/3b24efb3bb00ae27b95bc45b4bedb31d/transformed/appcompat-1.6.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.appcompat:appcompat:1.6.1] /home/bahaeddine/.gradle/caches/transforms-4/3b24efb3bb00ae27b95bc45b4bedb31d/transformed/appcompat-1.6.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.fragment:fragment:1.6.2] /home/bahaeddine/.gradle/caches/transforms-4/9fae2db3fb875f2ce79d32f311e7e2b8/transformed/fragment-1.6.2/AndroidManifest.xml:20:5-44
+MERGED from [androidx.fragment:fragment:1.6.2] /home/bahaeddine/.gradle/caches/transforms-4/9fae2db3fb875f2ce79d32f311e7e2b8/transformed/fragment-1.6.2/AndroidManifest.xml:20:5-44
+MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] /home/bahaeddine/.gradle/caches/transforms-4/26059329582b58babbd1fdeb530d559b/transformed/dynamicanimation-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] /home/bahaeddine/.gradle/caches/transforms-4/26059329582b58babbd1fdeb530d559b/transformed/dynamicanimation-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /home/bahaeddine/.gradle/caches/transforms-4/4151f0eb1f7c470b210e05153b6e0efa/transformed/legacy-support-core-utils-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /home/bahaeddine/.gradle/caches/transforms-4/4151f0eb1f7c470b210e05153b6e0efa/transformed/legacy-support-core-utils-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] /home/bahaeddine/.gradle/caches/transforms-4/0c7164b22e416ce426b9ce1492900527/transformed/loader-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] /home/bahaeddine/.gradle/caches/transforms-4/0c7164b22e416ce426b9ce1492900527/transformed/loader-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.savedstate:savedstate-ktx:1.2.1] /home/bahaeddine/.gradle/caches/transforms-4/f22ac2fbee379b084fe4a4a641df0bc2/transformed/savedstate-ktx-1.2.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.savedstate:savedstate-ktx:1.2.1] /home/bahaeddine/.gradle/caches/transforms-4/f22ac2fbee379b084fe4a4a641df0bc2/transformed/savedstate-ktx-1.2.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.savedstate:savedstate:1.2.1] /home/bahaeddine/.gradle/caches/transforms-4/d1a6985e59a2aeb6808caa79dfaac24f/transformed/savedstate-1.2.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.savedstate:savedstate:1.2.1] /home/bahaeddine/.gradle/caches/transforms-4/d1a6985e59a2aeb6808caa79dfaac24f/transformed/savedstate-1.2.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.emoji2:emoji2-views-helper:1.3.0] /home/bahaeddine/.gradle/caches/transforms-4/65fe3f51cb68d01b11f376ec5d6322a2/transformed/emoji2-views-helper-1.3.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.emoji2:emoji2-views-helper:1.3.0] /home/bahaeddine/.gradle/caches/transforms-4/65fe3f51cb68d01b11f376ec5d6322a2/transformed/emoji2-views-helper-1.3.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.emoji2:emoji2:1.3.0] /home/bahaeddine/.gradle/caches/transforms-4/d28151643827e73f41d9d810c30d13a7/transformed/emoji2-1.3.0/AndroidManifest.xml:21:5-44
+MERGED from [androidx.emoji2:emoji2:1.3.0] /home/bahaeddine/.gradle/caches/transforms-4/d28151643827e73f41d9d810c30d13a7/transformed/emoji2-1.3.0/AndroidManifest.xml:21:5-44
+MERGED from [androidx.lifecycle:lifecycle-process:2.8.3] /home/bahaeddine/.gradle/caches/transforms-4/da778a84c0212dbe5036cb2c2a9f48ac/transformed/lifecycle-process-2.8.3/AndroidManifest.xml:21:5-44
+MERGED from [androidx.lifecycle:lifecycle-process:2.8.3] /home/bahaeddine/.gradle/caches/transforms-4/da778a84c0212dbe5036cb2c2a9f48ac/transformed/lifecycle-process-2.8.3/AndroidManifest.xml:21:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.8.3] /home/bahaeddine/.gradle/caches/transforms-4/83c360eab11f425bd68c9a55cc15ca66/transformed/lifecycle-viewmodel-2.8.3/AndroidManifest.xml:4:5-43
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.8.3] /home/bahaeddine/.gradle/caches/transforms-4/83c360eab11f425bd68c9a55cc15ca66/transformed/lifecycle-viewmodel-2.8.3/AndroidManifest.xml:4:5-43
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-android:2.8.3] /home/bahaeddine/.gradle/caches/transforms-4/e270b9c4f3f91121038021742268865a/transformed/lifecycle-viewmodel-release/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-android:2.8.3] /home/bahaeddine/.gradle/caches/transforms-4/e270b9c4f3f91121038021742268865a/transformed/lifecycle-viewmodel-release/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime-ktx-android:2.8.3] /home/bahaeddine/.gradle/caches/transforms-4/bb06bc9f11bb8d85da57185f759f248e/transformed/lifecycle-runtime-ktx-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime-ktx-android:2.8.3] /home/bahaeddine/.gradle/caches/transforms-4/bb06bc9f11bb8d85da57185f759f248e/transformed/lifecycle-runtime-ktx-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime-android:2.8.3] /home/bahaeddine/.gradle/caches/transforms-4/0f47851e2faf855c94f63d4313eebe1a/transformed/lifecycle-runtime-release/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime-android:2.8.3] /home/bahaeddine/.gradle/caches/transforms-4/0f47851e2faf855c94f63d4313eebe1a/transformed/lifecycle-runtime-release/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.8.3] /home/bahaeddine/.gradle/caches/transforms-4/69ab9db6788fc9777ad75e30f7b3bf96/transformed/lifecycle-viewmodel-savedstate-2.8.3/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.8.3] /home/bahaeddine/.gradle/caches/transforms-4/69ab9db6788fc9777ad75e30f7b3bf96/transformed/lifecycle-viewmodel-savedstate-2.8.3/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-ktx:2.8.3] /home/bahaeddine/.gradle/caches/transforms-4/4027653ebf80f1b82f064fa519969c14/transformed/lifecycle-viewmodel-ktx-2.8.3/AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-ktx:2.8.3] /home/bahaeddine/.gradle/caches/transforms-4/4027653ebf80f1b82f064fa519969c14/transformed/lifecycle-viewmodel-ktx-2.8.3/AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core-ktx:2.8.3] /home/bahaeddine/.gradle/caches/transforms-4/fd6e05843ccf479afa96c38ef0cf5f9c/transformed/lifecycle-livedata-core-ktx-2.8.3/AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core-ktx:2.8.3] /home/bahaeddine/.gradle/caches/transforms-4/fd6e05843ccf479afa96c38ef0cf5f9c/transformed/lifecycle-livedata-core-ktx-2.8.3/AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.8.3] /home/bahaeddine/.gradle/caches/transforms-4/60e41e541d13799356fdf0ad6a045b9f/transformed/lifecycle-livedata-core-2.8.3/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.8.3] /home/bahaeddine/.gradle/caches/transforms-4/60e41e541d13799356fdf0ad6a045b9f/transformed/lifecycle-livedata-core-2.8.3/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.8.3] /home/bahaeddine/.gradle/caches/transforms-4/96014a9af8c88947008599e96c090f94/transformed/lifecycle-livedata-2.8.3/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.8.3] /home/bahaeddine/.gradle/caches/transforms-4/96014a9af8c88947008599e96c090f94/transformed/lifecycle-livedata-2.8.3/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime-compose-android:2.8.3] /home/bahaeddine/.gradle/caches/transforms-4/f8f73be0494a7b68dd96cd9510fc7f44/transformed/lifecycle-runtime-compose-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime-compose-android:2.8.3] /home/bahaeddine/.gradle/caches/transforms-4/f8f73be0494a7b68dd96cd9510fc7f44/transformed/lifecycle-runtime-compose-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-compose-android:2.8.3] /home/bahaeddine/.gradle/caches/transforms-4/2946f80369196a08707a23c32e24c265/transformed/lifecycle-viewmodel-compose-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-compose-android:2.8.3] /home/bahaeddine/.gradle/caches/transforms-4/2946f80369196a08707a23c32e24c265/transformed/lifecycle-viewmodel-compose-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-android:1.7.0] /home/bahaeddine/.gradle/caches/transforms-4/7e0aa3bcfd38751f814424d17cef0fda/transformed/ui-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-android:1.7.0] /home/bahaeddine/.gradle/caches/transforms-4/7e0aa3bcfd38751f814424d17cef0fda/transformed/ui-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-tooling-data-android:1.7.0] /home/bahaeddine/.gradle/caches/transforms-4/4c87bbdbaa9b808cb0b311bb9c723ade/transformed/ui-tooling-data-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-tooling-data-android:1.7.0] /home/bahaeddine/.gradle/caches/transforms-4/4c87bbdbaa9b808cb0b311bb9c723ade/transformed/ui-tooling-data-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-tooling-android:1.7.0] /home/bahaeddine/.gradle/caches/transforms-4/a50219d588aa4da377da22bd04677d26/transformed/ui-tooling-release/AndroidManifest.xml:20:5-44
+MERGED from [androidx.compose.ui:ui-tooling-android:1.7.0] /home/bahaeddine/.gradle/caches/transforms-4/a50219d588aa4da377da22bd04677d26/transformed/ui-tooling-release/AndroidManifest.xml:20:5-44
+MERGED from [androidx.activity:activity-compose:1.9.0] /home/bahaeddine/.gradle/caches/transforms-4/42fdecc630de933d0f702c8913fd6725/transformed/activity-compose-1.9.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.activity:activity-compose:1.9.0] /home/bahaeddine/.gradle/caches/transforms-4/42fdecc630de933d0f702c8913fd6725/transformed/activity-compose-1.9.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.activity:activity-ktx:1.9.0] /home/bahaeddine/.gradle/caches/transforms-4/b2555aae38dc6e6666b30fb76ae275c9/transformed/activity-ktx-1.9.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.activity:activity-ktx:1.9.0] /home/bahaeddine/.gradle/caches/transforms-4/b2555aae38dc6e6666b30fb76ae275c9/transformed/activity-ktx-1.9.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.activity:activity:1.9.0] /home/bahaeddine/.gradle/caches/transforms-4/0364efd560ad6530fa36131b3f21625e/transformed/activity-1.9.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.activity:activity:1.9.0] /home/bahaeddine/.gradle/caches/transforms-4/0364efd560ad6530fa36131b3f21625e/transformed/activity-1.9.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.2.0] /home/bahaeddine/.gradle/caches/transforms-4/ccafb365fb4879afebeec50126e645e7/transformed/slidingpanelayout-1.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.2.0] /home/bahaeddine/.gradle/caches/transforms-4/ccafb365fb4879afebeec50126e645e7/transformed/slidingpanelayout-1.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.drawerlayout:drawerlayout:1.1.1] /home/bahaeddine/.gradle/caches/transforms-4/3dbedc8f6f166ba562476dd17972686b/transformed/drawerlayout-1.1.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.drawerlayout:drawerlayout:1.1.1] /home/bahaeddine/.gradle/caches/transforms-4/3dbedc8f6f166ba562476dd17972686b/transformed/drawerlayout-1.1.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] /home/bahaeddine/.gradle/caches/transforms-4/756b6d0c2e58df754d14cf482f1c2f36/transformed/coordinatorlayout-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] /home/bahaeddine/.gradle/caches/transforms-4/756b6d0c2e58df754d14cf482f1c2f36/transformed/coordinatorlayout-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.viewpager:viewpager:1.0.0] /home/bahaeddine/.gradle/caches/transforms-4/defa209315cfd9dd7763d91f775f4f0b/transformed/viewpager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] /home/bahaeddine/.gradle/caches/transforms-4/defa209315cfd9dd7763d91f775f4f0b/transformed/viewpager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.recyclerview:recyclerview:1.1.0] /home/bahaeddine/.gradle/caches/transforms-4/5b646399b9a3111d3cf4904064ddc77f/transformed/recyclerview-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.recyclerview:recyclerview:1.1.0] /home/bahaeddine/.gradle/caches/transforms-4/5b646399b9a3111d3cf4904064ddc77f/transformed/recyclerview-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.customview:customview:1.1.0] /home/bahaeddine/.gradle/caches/transforms-4/0b516d4044a45e5c3c268991f1e0796a/transformed/customview-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.customview:customview:1.1.0] /home/bahaeddine/.gradle/caches/transforms-4/0b516d4044a45e5c3c268991f1e0796a/transformed/customview-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.window:window:1.0.0] /home/bahaeddine/.gradle/caches/transforms-4/2b65998f6e0a2f53efc36656870f1419/transformed/window-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.window:window:1.0.0] /home/bahaeddine/.gradle/caches/transforms-4/2b65998f6e0a2f53efc36656870f1419/transformed/window-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.transition:transition:1.4.1] /home/bahaeddine/.gradle/caches/transforms-4/7c03f90581efa3eac2bfbf49e6ea717d/transformed/transition-1.4.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.transition:transition:1.4.1] /home/bahaeddine/.gradle/caches/transforms-4/7c03f90581efa3eac2bfbf49e6ea717d/transformed/transition-1.4.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /home/bahaeddine/.gradle/caches/transforms-4/d9b893d96274c50c2bf12627ab807e70/transformed/vectordrawable-animated-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /home/bahaeddine/.gradle/caches/transforms-4/d9b893d96274c50c2bf12627ab807e70/transformed/vectordrawable-animated-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /home/bahaeddine/.gradle/caches/transforms-4/218329589042224cac5214d8227f308e/transformed/vectordrawable-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /home/bahaeddine/.gradle/caches/transforms-4/218329589042224cac5214d8227f308e/transformed/vectordrawable-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.autofill:autofill:1.0.0] /home/bahaeddine/.gradle/caches/transforms-4/cb5813234a304c22cb72a84666ae5c92/transformed/autofill-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.autofill:autofill:1.0.0] /home/bahaeddine/.gradle/caches/transforms-4/cb5813234a304c22cb72a84666ae5c92/transformed/autofill-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.graphics:graphics-path:1.0.1] /home/bahaeddine/.gradle/caches/transforms-4/0f599e56b00fda1a4a7fd8a1cf9a28c8/transformed/graphics-path-1.0.1/AndroidManifest.xml:5:5-44
+MERGED from [androidx.graphics:graphics-path:1.0.1] /home/bahaeddine/.gradle/caches/transforms-4/0f599e56b00fda1a4a7fd8a1cf9a28c8/transformed/graphics-path-1.0.1/AndroidManifest.xml:5:5-44
+MERGED from [androidx.core:core:1.13.1] /home/bahaeddine/.gradle/caches/transforms-4/887c5a253d1d4da11d523e352a664c25/transformed/core-1.13.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core:1.13.1] /home/bahaeddine/.gradle/caches/transforms-4/887c5a253d1d4da11d523e352a664c25/transformed/core-1.13.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.customview:customview-poolingcontainer:1.0.0] /home/bahaeddine/.gradle/caches/transforms-4/9bac3233abc7328bdff4e8c504ac98e2/transformed/customview-poolingcontainer-1.0.0/AndroidManifest.xml:20:5-21:38
+MERGED from [androidx.customview:customview-poolingcontainer:1.0.0] /home/bahaeddine/.gradle/caches/transforms-4/9bac3233abc7328bdff4e8c504ac98e2/transformed/customview-poolingcontainer-1.0.0/AndroidManifest.xml:20:5-21:38
+MERGED from [androidx.core:core-ktx:1.13.1] /home/bahaeddine/.gradle/caches/transforms-4/fee11c26928e863579ff45a2e0c76cc1/transformed/core-ktx-1.13.1/AndroidManifest.xml:5:5-44
+MERGED from [androidx.core:core-ktx:1.13.1] /home/bahaeddine/.gradle/caches/transforms-4/fee11c26928e863579ff45a2e0c76cc1/transformed/core-ktx-1.13.1/AndroidManifest.xml:5:5-44
+MERGED from [androidx.room:room-runtime:2.6.1] /home/bahaeddine/.gradle/caches/transforms-4/4e777a3ef92d76a3d9f993b40038f966/transformed/room-runtime-2.6.1/AndroidManifest.xml:21:5-44
+MERGED from [androidx.room:room-runtime:2.6.1] /home/bahaeddine/.gradle/caches/transforms-4/4e777a3ef92d76a3d9f993b40038f966/transformed/room-runtime-2.6.1/AndroidManifest.xml:21:5-44
+MERGED from [androidx.room:room-ktx:2.6.1] /home/bahaeddine/.gradle/caches/transforms-4/7f24e4aaa76cc90d53b68f7ee9ffc777/transformed/room-ktx-2.6.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.room:room-ktx:2.6.1] /home/bahaeddine/.gradle/caches/transforms-4/7f24e4aaa76cc90d53b68f7ee9ffc777/transformed/room-ktx-2.6.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.datastore:datastore-android:1.1.2] /home/bahaeddine/.gradle/caches/transforms-4/1319da917227ac49e41761c890e74a44/transformed/datastore-release/AndroidManifest.xml:20:5-44
+MERGED from [androidx.datastore:datastore-android:1.1.2] /home/bahaeddine/.gradle/caches/transforms-4/1319da917227ac49e41761c890e74a44/transformed/datastore-release/AndroidManifest.xml:20:5-44
+MERGED from [androidx.datastore:datastore-core-android:1.1.2] /home/bahaeddine/.gradle/caches/transforms-4/d3c1c42c138cdd58c500b77dd4f5750a/transformed/datastore-core-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.datastore:datastore-core-android:1.1.2] /home/bahaeddine/.gradle/caches/transforms-4/d3c1c42c138cdd58c500b77dd4f5750a/transformed/datastore-core-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.datastore:datastore-preferences-android:1.1.2] /home/bahaeddine/.gradle/caches/transforms-4/14129271dbdc58dc5f3bdc0a88401d86/transformed/datastore-preferences-release/AndroidManifest.xml:20:5-44
+MERGED from [androidx.datastore:datastore-preferences-android:1.1.2] /home/bahaeddine/.gradle/caches/transforms-4/14129271dbdc58dc5f3bdc0a88401d86/transformed/datastore-preferences-release/AndroidManifest.xml:20:5-44
+MERGED from [androidx.sqlite:sqlite-framework:2.4.0] /home/bahaeddine/.gradle/caches/transforms-4/45f9fb3b14e6d21d95e9762bdfd64905/transformed/sqlite-framework-2.4.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.sqlite:sqlite-framework:2.4.0] /home/bahaeddine/.gradle/caches/transforms-4/45f9fb3b14e6d21d95e9762bdfd64905/transformed/sqlite-framework-2.4.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.sqlite:sqlite:2.4.0] /home/bahaeddine/.gradle/caches/transforms-4/6eda72373c1c17b13a9902ba67623bf6/transformed/sqlite-2.4.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.sqlite:sqlite:2.4.0] /home/bahaeddine/.gradle/caches/transforms-4/6eda72373c1c17b13a9902ba67623bf6/transformed/sqlite-2.4.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.annotation:annotation-experimental:1.4.0] /home/bahaeddine/.gradle/caches/transforms-4/4296d098d2e3454c796b13b019774678/transformed/annotation-experimental-1.4.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.annotation:annotation-experimental:1.4.0] /home/bahaeddine/.gradle/caches/transforms-4/4296d098d2e3454c796b13b019774678/transformed/annotation-experimental-1.4.0/AndroidManifest.xml:5:5-44
+MERGED from [io.github.aakira:napier-android-debug:1.4.1] /home/bahaeddine/.gradle/caches/transforms-4/8b696cfb7ebdc758147e86a1717e86f1/transformed/napier-debug/AndroidManifest.xml:7:5-9:41
+MERGED from [io.github.aakira:napier-android-debug:1.4.1] /home/bahaeddine/.gradle/caches/transforms-4/8b696cfb7ebdc758147e86a1717e86f1/transformed/napier-debug/AndroidManifest.xml:7:5-9:41
+MERGED from [androidx.arch.core:core-runtime:2.2.0] /home/bahaeddine/.gradle/caches/transforms-4/4b37c41c58a87b5d8a941a73c81ee5b2/transformed/core-runtime-2.2.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.arch.core:core-runtime:2.2.0] /home/bahaeddine/.gradle/caches/transforms-4/4b37c41c58a87b5d8a941a73c81ee5b2/transformed/core-runtime-2.2.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0] /home/bahaeddine/.gradle/caches/transforms-4/6e749a884dce560e4bfec3e860f8d929/transformed/interpolator-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0] /home/bahaeddine/.gradle/caches/transforms-4/6e749a884dce560e4bfec3e860f8d929/transformed/interpolator-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /home/bahaeddine/.gradle/caches/transforms-4/9545c089dbc11be0066ea002adca1829/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /home/bahaeddine/.gradle/caches/transforms-4/9545c089dbc11be0066ea002adca1829/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.1] /home/bahaeddine/.gradle/caches/transforms-4/2e2a702d4f04b3aaf960b7eb8cec9a9b/transformed/profileinstaller-1.3.1/AndroidManifest.xml:21:5-44
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.1] /home/bahaeddine/.gradle/caches/transforms-4/2e2a702d4f04b3aaf960b7eb8cec9a9b/transformed/profileinstaller-1.3.1/AndroidManifest.xml:21:5-44
+MERGED from [androidx.startup:startup-runtime:1.1.1] /home/bahaeddine/.gradle/caches/transforms-4/34356894406fa417aa2e4d4b1c52b20a/transformed/startup-runtime-1.1.1/AndroidManifest.xml:21:5-23:41
+MERGED from [androidx.startup:startup-runtime:1.1.1] /home/bahaeddine/.gradle/caches/transforms-4/34356894406fa417aa2e4d4b1c52b20a/transformed/startup-runtime-1.1.1/AndroidManifest.xml:21:5-23:41
+MERGED from [androidx.tracing:tracing:1.0.0] /home/bahaeddine/.gradle/caches/transforms-4/8d0d167adb7a06569b44125ef383ba24/transformed/tracing-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.tracing:tracing:1.0.0] /home/bahaeddine/.gradle/caches/transforms-4/8d0d167adb7a06569b44125ef383ba24/transformed/tracing-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.cardview:cardview:1.0.0] /home/bahaeddine/.gradle/caches/transforms-4/4b38c47dafaa6b22cfe6d842f5c25cd8/transformed/cardview-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.cardview:cardview:1.0.0] /home/bahaeddine/.gradle/caches/transforms-4/4b38c47dafaa6b22cfe6d842f5c25cd8/transformed/cardview-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.exifinterface:exifinterface:1.3.7] /home/bahaeddine/.gradle/caches/transforms-4/5315d752cc038850a897e6fc54fe9efb/transformed/exifinterface-1.3.7/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.exifinterface:exifinterface:1.3.7] /home/bahaeddine/.gradle/caches/transforms-4/5315d752cc038850a897e6fc54fe9efb/transformed/exifinterface-1.3.7/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.documentfile:documentfile:1.0.0] /home/bahaeddine/.gradle/caches/transforms-4/c53e25e9b7d167de081fb38dcef36090/transformed/documentfile-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.documentfile:documentfile:1.0.0] /home/bahaeddine/.gradle/caches/transforms-4/c53e25e9b7d167de081fb38dcef36090/transformed/documentfile-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /home/bahaeddine/.gradle/caches/transforms-4/29cc73360d4eceafca6b01b87159c748/transformed/localbroadcastmanager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /home/bahaeddine/.gradle/caches/transforms-4/29cc73360d4eceafca6b01b87159c748/transformed/localbroadcastmanager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.print:print:1.0.0] /home/bahaeddine/.gradle/caches/transforms-4/e5aae77d2997cd03123105542ebef800/transformed/print-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.print:print:1.0.0] /home/bahaeddine/.gradle/caches/transforms-4/e5aae77d2997cd03123105542ebef800/transformed/print-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /home/bahaeddine/.gradle/caches/transforms-4/ceb23a455f5bce1d2fddd2850d4a926a/transformed/cursoradapter-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /home/bahaeddine/.gradle/caches/transforms-4/ceb23a455f5bce1d2fddd2850d4a926a/transformed/cursoradapter-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.dagger:dagger-lint-aar:2.51] /home/bahaeddine/.gradle/caches/transforms-4/3e85eba17809d16d9200fb56e5570606/transformed/dagger-lint-aar-2.51/AndroidManifest.xml:18:3-42
+MERGED from [com.google.dagger:dagger-lint-aar:2.51] /home/bahaeddine/.gradle/caches/transforms-4/3e85eba17809d16d9200fb56e5570606/transformed/dagger-lint-aar-2.51/AndroidManifest.xml:18:3-42
+	android:targetSdkVersion
+		INJECTED from /home/bahaeddine/Baha-Workspace/food-delivery-platform/delivery-mobile/app/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /home/bahaeddine/Baha-Workspace/food-delivery-platform/delivery-mobile/app/src/main/AndroidManifest.xml
+provider#androidx.startup.InitializationProvider
+ADDED from [androidx.emoji2:emoji2:1.3.0] /home/bahaeddine/.gradle/caches/transforms-4/d28151643827e73f41d9d810c30d13a7/transformed/emoji2-1.3.0/AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.lifecycle:lifecycle-process:2.8.3] /home/bahaeddine/.gradle/caches/transforms-4/da778a84c0212dbe5036cb2c2a9f48ac/transformed/lifecycle-process-2.8.3/AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.lifecycle:lifecycle-process:2.8.3] /home/bahaeddine/.gradle/caches/transforms-4/da778a84c0212dbe5036cb2c2a9f48ac/transformed/lifecycle-process-2.8.3/AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.1] /home/bahaeddine/.gradle/caches/transforms-4/2e2a702d4f04b3aaf960b7eb8cec9a9b/transformed/profileinstaller-1.3.1/AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.1] /home/bahaeddine/.gradle/caches/transforms-4/2e2a702d4f04b3aaf960b7eb8cec9a9b/transformed/profileinstaller-1.3.1/AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.startup:startup-runtime:1.1.1] /home/bahaeddine/.gradle/caches/transforms-4/34356894406fa417aa2e4d4b1c52b20a/transformed/startup-runtime-1.1.1/AndroidManifest.xml:26:9-30:34
+MERGED from [androidx.startup:startup-runtime:1.1.1] /home/bahaeddine/.gradle/caches/transforms-4/34356894406fa417aa2e4d4b1c52b20a/transformed/startup-runtime-1.1.1/AndroidManifest.xml:26:9-30:34
+	tools:node
+		ADDED from [androidx.emoji2:emoji2:1.3.0] /home/bahaeddine/.gradle/caches/transforms-4/d28151643827e73f41d9d810c30d13a7/transformed/emoji2-1.3.0/AndroidManifest.xml:28:13-31
+	android:authorities
+		ADDED from [androidx.emoji2:emoji2:1.3.0] /home/bahaeddine/.gradle/caches/transforms-4/d28151643827e73f41d9d810c30d13a7/transformed/emoji2-1.3.0/AndroidManifest.xml:26:13-68
+	android:exported
+		ADDED from [androidx.emoji2:emoji2:1.3.0] /home/bahaeddine/.gradle/caches/transforms-4/d28151643827e73f41d9d810c30d13a7/transformed/emoji2-1.3.0/AndroidManifest.xml:27:13-37
+	android:name
+		ADDED from [androidx.emoji2:emoji2:1.3.0] /home/bahaeddine/.gradle/caches/transforms-4/d28151643827e73f41d9d810c30d13a7/transformed/emoji2-1.3.0/AndroidManifest.xml:25:13-67
+meta-data#androidx.emoji2.text.EmojiCompatInitializer
+ADDED from [androidx.emoji2:emoji2:1.3.0] /home/bahaeddine/.gradle/caches/transforms-4/d28151643827e73f41d9d810c30d13a7/transformed/emoji2-1.3.0/AndroidManifest.xml:29:13-31:52
+	android:value
+		ADDED from [androidx.emoji2:emoji2:1.3.0] /home/bahaeddine/.gradle/caches/transforms-4/d28151643827e73f41d9d810c30d13a7/transformed/emoji2-1.3.0/AndroidManifest.xml:31:17-49
+	android:name
+		ADDED from [androidx.emoji2:emoji2:1.3.0] /home/bahaeddine/.gradle/caches/transforms-4/d28151643827e73f41d9d810c30d13a7/transformed/emoji2-1.3.0/AndroidManifest.xml:30:17-75
+meta-data#androidx.lifecycle.ProcessLifecycleInitializer
+ADDED from [androidx.lifecycle:lifecycle-process:2.8.3] /home/bahaeddine/.gradle/caches/transforms-4/da778a84c0212dbe5036cb2c2a9f48ac/transformed/lifecycle-process-2.8.3/AndroidManifest.xml:29:13-31:52
+	android:value
+		ADDED from [androidx.lifecycle:lifecycle-process:2.8.3] /home/bahaeddine/.gradle/caches/transforms-4/da778a84c0212dbe5036cb2c2a9f48ac/transformed/lifecycle-process-2.8.3/AndroidManifest.xml:31:17-49
+	android:name
+		ADDED from [androidx.lifecycle:lifecycle-process:2.8.3] /home/bahaeddine/.gradle/caches/transforms-4/da778a84c0212dbe5036cb2c2a9f48ac/transformed/lifecycle-process-2.8.3/AndroidManifest.xml:30:17-78
+activity#androidx.compose.ui.tooling.PreviewActivity
+ADDED from [androidx.compose.ui:ui-tooling-android:1.7.0] /home/bahaeddine/.gradle/caches/transforms-4/a50219d588aa4da377da22bd04677d26/transformed/ui-tooling-release/AndroidManifest.xml:23:9-25:39
+	android:exported
+		ADDED from [androidx.compose.ui:ui-tooling-android:1.7.0] /home/bahaeddine/.gradle/caches/transforms-4/a50219d588aa4da377da22bd04677d26/transformed/ui-tooling-release/AndroidManifest.xml:25:13-36
+	android:name
+		ADDED from [androidx.compose.ui:ui-tooling-android:1.7.0] /home/bahaeddine/.gradle/caches/transforms-4/a50219d588aa4da377da22bd04677d26/transformed/ui-tooling-release/AndroidManifest.xml:24:13-71
+uses-library#androidx.window.extensions
+ADDED from [androidx.window:window:1.0.0] /home/bahaeddine/.gradle/caches/transforms-4/2b65998f6e0a2f53efc36656870f1419/transformed/window-1.0.0/AndroidManifest.xml:25:9-27:40
+	android:required
+		ADDED from [androidx.window:window:1.0.0] /home/bahaeddine/.gradle/caches/transforms-4/2b65998f6e0a2f53efc36656870f1419/transformed/window-1.0.0/AndroidManifest.xml:27:13-37
+	android:name
+		ADDED from [androidx.window:window:1.0.0] /home/bahaeddine/.gradle/caches/transforms-4/2b65998f6e0a2f53efc36656870f1419/transformed/window-1.0.0/AndroidManifest.xml:26:13-54
+uses-library#androidx.window.sidecar
+ADDED from [androidx.window:window:1.0.0] /home/bahaeddine/.gradle/caches/transforms-4/2b65998f6e0a2f53efc36656870f1419/transformed/window-1.0.0/AndroidManifest.xml:28:9-30:40
+	android:required
+		ADDED from [androidx.window:window:1.0.0] /home/bahaeddine/.gradle/caches/transforms-4/2b65998f6e0a2f53efc36656870f1419/transformed/window-1.0.0/AndroidManifest.xml:30:13-37
+	android:name
+		ADDED from [androidx.window:window:1.0.0] /home/bahaeddine/.gradle/caches/transforms-4/2b65998f6e0a2f53efc36656870f1419/transformed/window-1.0.0/AndroidManifest.xml:29:13-51
+permission#${applicationId}.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+ADDED from [androidx.core:core:1.13.1] /home/bahaeddine/.gradle/caches/transforms-4/887c5a253d1d4da11d523e352a664c25/transformed/core-1.13.1/AndroidManifest.xml:22:5-24:47
+	android:protectionLevel
+		ADDED from [androidx.core:core:1.13.1] /home/bahaeddine/.gradle/caches/transforms-4/887c5a253d1d4da11d523e352a664c25/transformed/core-1.13.1/AndroidManifest.xml:24:9-44
+	android:name
+		ADDED from [androidx.core:core:1.13.1] /home/bahaeddine/.gradle/caches/transforms-4/887c5a253d1d4da11d523e352a664c25/transformed/core-1.13.1/AndroidManifest.xml:23:9-81
+permission#com.fooddelivery.deliverymobile.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+ADDED from [androidx.core:core:1.13.1] /home/bahaeddine/.gradle/caches/transforms-4/887c5a253d1d4da11d523e352a664c25/transformed/core-1.13.1/AndroidManifest.xml:22:5-24:47
+	android:protectionLevel
+		ADDED from [androidx.core:core:1.13.1] /home/bahaeddine/.gradle/caches/transforms-4/887c5a253d1d4da11d523e352a664c25/transformed/core-1.13.1/AndroidManifest.xml:24:9-44
+	android:name
+		ADDED from [androidx.core:core:1.13.1] /home/bahaeddine/.gradle/caches/transforms-4/887c5a253d1d4da11d523e352a664c25/transformed/core-1.13.1/AndroidManifest.xml:23:9-81
+uses-permission#${applicationId}.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+ADDED from [androidx.core:core:1.13.1] /home/bahaeddine/.gradle/caches/transforms-4/887c5a253d1d4da11d523e352a664c25/transformed/core-1.13.1/AndroidManifest.xml:26:5-97
+	android:name
+		ADDED from [androidx.core:core:1.13.1] /home/bahaeddine/.gradle/caches/transforms-4/887c5a253d1d4da11d523e352a664c25/transformed/core-1.13.1/AndroidManifest.xml:26:22-94
+uses-permission#com.fooddelivery.deliverymobile.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+ADDED from [androidx.core:core:1.13.1] /home/bahaeddine/.gradle/caches/transforms-4/887c5a253d1d4da11d523e352a664c25/transformed/core-1.13.1/AndroidManifest.xml:26:5-97
+	android:name
+		ADDED from [androidx.core:core:1.13.1] /home/bahaeddine/.gradle/caches/transforms-4/887c5a253d1d4da11d523e352a664c25/transformed/core-1.13.1/AndroidManifest.xml:26:22-94
+service#androidx.room.MultiInstanceInvalidationService
+ADDED from [androidx.room:room-runtime:2.6.1] /home/bahaeddine/.gradle/caches/transforms-4/4e777a3ef92d76a3d9f993b40038f966/transformed/room-runtime-2.6.1/AndroidManifest.xml:24:9-28:63
+	android:exported
+		ADDED from [androidx.room:room-runtime:2.6.1] /home/bahaeddine/.gradle/caches/transforms-4/4e777a3ef92d76a3d9f993b40038f966/transformed/room-runtime-2.6.1/AndroidManifest.xml:27:13-37
+	tools:ignore
+		ADDED from [androidx.room:room-runtime:2.6.1] /home/bahaeddine/.gradle/caches/transforms-4/4e777a3ef92d76a3d9f993b40038f966/transformed/room-runtime-2.6.1/AndroidManifest.xml:28:13-60
+	android:directBootAware
+		ADDED from [androidx.room:room-runtime:2.6.1] /home/bahaeddine/.gradle/caches/transforms-4/4e777a3ef92d76a3d9f993b40038f966/transformed/room-runtime-2.6.1/AndroidManifest.xml:26:13-43
+	android:name
+		ADDED from [androidx.room:room-runtime:2.6.1] /home/bahaeddine/.gradle/caches/transforms-4/4e777a3ef92d76a3d9f993b40038f966/transformed/room-runtime-2.6.1/AndroidManifest.xml:25:13-74
+meta-data#androidx.profileinstaller.ProfileInstallerInitializer
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /home/bahaeddine/.gradle/caches/transforms-4/2e2a702d4f04b3aaf960b7eb8cec9a9b/transformed/profileinstaller-1.3.1/AndroidManifest.xml:29:13-31:52
+	android:value
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /home/bahaeddine/.gradle/caches/transforms-4/2e2a702d4f04b3aaf960b7eb8cec9a9b/transformed/profileinstaller-1.3.1/AndroidManifest.xml:31:17-49
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /home/bahaeddine/.gradle/caches/transforms-4/2e2a702d4f04b3aaf960b7eb8cec9a9b/transformed/profileinstaller-1.3.1/AndroidManifest.xml:30:17-85
+receiver#androidx.profileinstaller.ProfileInstallReceiver
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /home/bahaeddine/.gradle/caches/transforms-4/2e2a702d4f04b3aaf960b7eb8cec9a9b/transformed/profileinstaller-1.3.1/AndroidManifest.xml:34:9-52:20
+	android:enabled
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /home/bahaeddine/.gradle/caches/transforms-4/2e2a702d4f04b3aaf960b7eb8cec9a9b/transformed/profileinstaller-1.3.1/AndroidManifest.xml:37:13-35
+	android:exported
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /home/bahaeddine/.gradle/caches/transforms-4/2e2a702d4f04b3aaf960b7eb8cec9a9b/transformed/profileinstaller-1.3.1/AndroidManifest.xml:38:13-36
+	android:permission
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /home/bahaeddine/.gradle/caches/transforms-4/2e2a702d4f04b3aaf960b7eb8cec9a9b/transformed/profileinstaller-1.3.1/AndroidManifest.xml:39:13-57
+	android:directBootAware
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /home/bahaeddine/.gradle/caches/transforms-4/2e2a702d4f04b3aaf960b7eb8cec9a9b/transformed/profileinstaller-1.3.1/AndroidManifest.xml:36:13-44
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /home/bahaeddine/.gradle/caches/transforms-4/2e2a702d4f04b3aaf960b7eb8cec9a9b/transformed/profileinstaller-1.3.1/AndroidManifest.xml:35:13-76
+intent-filter#action:name:androidx.profileinstaller.action.INSTALL_PROFILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /home/bahaeddine/.gradle/caches/transforms-4/2e2a702d4f04b3aaf960b7eb8cec9a9b/transformed/profileinstaller-1.3.1/AndroidManifest.xml:40:13-42:29
+action#androidx.profileinstaller.action.INSTALL_PROFILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /home/bahaeddine/.gradle/caches/transforms-4/2e2a702d4f04b3aaf960b7eb8cec9a9b/transformed/profileinstaller-1.3.1/AndroidManifest.xml:41:17-91
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /home/bahaeddine/.gradle/caches/transforms-4/2e2a702d4f04b3aaf960b7eb8cec9a9b/transformed/profileinstaller-1.3.1/AndroidManifest.xml:41:25-88
+intent-filter#action:name:androidx.profileinstaller.action.SKIP_FILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /home/bahaeddine/.gradle/caches/transforms-4/2e2a702d4f04b3aaf960b7eb8cec9a9b/transformed/profileinstaller-1.3.1/AndroidManifest.xml:43:13-45:29
+action#androidx.profileinstaller.action.SKIP_FILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /home/bahaeddine/.gradle/caches/transforms-4/2e2a702d4f04b3aaf960b7eb8cec9a9b/transformed/profileinstaller-1.3.1/AndroidManifest.xml:44:17-85
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /home/bahaeddine/.gradle/caches/transforms-4/2e2a702d4f04b3aaf960b7eb8cec9a9b/transformed/profileinstaller-1.3.1/AndroidManifest.xml:44:25-82
+intent-filter#action:name:androidx.profileinstaller.action.SAVE_PROFILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /home/bahaeddine/.gradle/caches/transforms-4/2e2a702d4f04b3aaf960b7eb8cec9a9b/transformed/profileinstaller-1.3.1/AndroidManifest.xml:46:13-48:29
+action#androidx.profileinstaller.action.SAVE_PROFILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /home/bahaeddine/.gradle/caches/transforms-4/2e2a702d4f04b3aaf960b7eb8cec9a9b/transformed/profileinstaller-1.3.1/AndroidManifest.xml:47:17-88
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /home/bahaeddine/.gradle/caches/transforms-4/2e2a702d4f04b3aaf960b7eb8cec9a9b/transformed/profileinstaller-1.3.1/AndroidManifest.xml:47:25-85
+intent-filter#action:name:androidx.profileinstaller.action.BENCHMARK_OPERATION
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /home/bahaeddine/.gradle/caches/transforms-4/2e2a702d4f04b3aaf960b7eb8cec9a9b/transformed/profileinstaller-1.3.1/AndroidManifest.xml:49:13-51:29
+action#androidx.profileinstaller.action.BENCHMARK_OPERATION
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /home/bahaeddine/.gradle/caches/transforms-4/2e2a702d4f04b3aaf960b7eb8cec9a9b/transformed/profileinstaller-1.3.1/AndroidManifest.xml:50:17-95
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /home/bahaeddine/.gradle/caches/transforms-4/2e2a702d4f04b3aaf960b7eb8cec9a9b/transformed/profileinstaller-1.3.1/AndroidManifest.xml:50:25-92
