@@ -6,75 +6,8 @@ CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
 CREATE EXTENSION IF NOT EXISTS "pgcrypto";
 CREATE EXTENSION IF NOT EXISTS "btree_gin";
 
--- Custom enum types
-CREATE TYPE user_role AS ENUM (
-    'CUSTOMER', 'DELIVERY_PERSON', 'RESTAURANT_OWNER', 'ADMIN'
-);
-
-CREATE TYPE user_status AS ENUM (
-    'ACTIVE', 'INACTIVE', 'SUSPENDED', 'PENDING_VERIFICATION', 'DELETED'
-);
-
-CREATE TYPE restaurant_status AS ENUM (
-    'DRAFT', 'PENDING_APPROVAL', 'APPROVED', 'REJECTED', 'SUSPENDED', 'CLOSED'
-);
-
-CREATE TYPE application_status AS ENUM (
-    'SUBMITTED', 'UNDER_REVIEW', 'APPROVED', 'REJECTED'
-);
-
-CREATE TYPE address_type AS ENUM (
-    'HOME', 'WORK', 'OTHER', 'RESTAURANT', 'PICKUP', 'DELIVERY'
-);
-
-CREATE TYPE order_status AS ENUM (
-    'PENDING', 'ACCEPTED', 'REJECTED', 'PREPARING', 'READY',
-    'ASSIGNED', 'PICKED_UP', 'DELIVERING', 'DELIVERED', 'CANCELLED'
-);
-
-CREATE TYPE delivery_status AS ENUM (
-    'PENDING_ASSIGNMENT', 'ASSIGNED', 'ACCEPTED', 'PICKED_UP',
-    'DELIVERING', 'DELIVERED', 'CANCELLED', 'FAILED'
-);
-
-CREATE TYPE payment_method AS ENUM (
-    'CASH_ON_DELIVERY', 'CARD', 'WALLET', 'BANK_TRANSFER'
-);
-
-CREATE TYPE payment_status AS ENUM (
-    'PENDING', 'PAID', 'FAILED', 'REFUNDED', 'PARTIALLY_REFUNDED'
-);
-
-CREATE TYPE notification_type AS ENUM (
-    'ORDER_PLACED', 'ORDER_ACCEPTED', 'ORDER_REJECTED', 'ORDER_READY',
-    'DELIVERY_ASSIGNED', 'DELIVERY_PICKED_UP', 'DELIVERY_DELIVERED',
-    'PAYMENT_RECEIVED', 'REVIEW_RECEIVED', 'SYSTEM_ALERT',
-    'RESTAURANT_APPROVED', 'RESTAURANT_REJECTED'
-);
-
-CREATE TYPE notification_priority AS ENUM (
-    'LOW', 'NORMAL', 'HIGH', 'CRITICAL'
-);
-
-CREATE TYPE review_target_type AS ENUM (
-    'RESTAURANT', 'DELIVERY_PERSON', 'PRODUCT'
-);
-
-CREATE TYPE moderation_status AS ENUM (
-    'PENDING', 'APPROVED', 'REJECTED', 'HIDDEN'
-);
-
-CREATE TYPE verification_status AS ENUM (
-    'PENDING', 'APPROVED', 'REJECTED', 'EXPIRED'
-);
-
-CREATE TYPE vehicle_type AS ENUM (
-    'MOTORCYCLE', 'BICYCLE', 'CAR', 'SCOOTER', 'WALKING'
-);
-
-CREATE TYPE day_of_week AS ENUM (
-    'MONDAY', 'TUESDAY', 'WEDNESDAY', 'THURSDAY', 'FRIDAY', 'SATURDAY', 'SUNDAY'
-);
+-- Note: Enum types are handled by JPA AttributeConverters using VARCHAR columns
+-- This avoids issues with PostgreSQL enum types and Hibernate mapping
 
 -- ============================================
 -- USERS & AUTHENTICATION
@@ -88,8 +21,8 @@ CREATE TABLE users (
     last_name VARCHAR(100) NOT NULL,
     phone VARCHAR(20),
     avatar_url VARCHAR(500),
-    role user_role NOT NULL,
-    status user_status NOT NULL DEFAULT 'PENDING_VERIFICATION',
+    role VARCHAR(30) NOT NULL DEFAULT 'CUSTOMER',
+    status VARCHAR(30) NOT NULL DEFAULT 'PENDING_VERIFICATION',
     email_verified BOOLEAN NOT NULL DEFAULT FALSE,
     email_verification_token VARCHAR(255),
     password_reset_token VARCHAR(255),
@@ -116,20 +49,21 @@ CREATE TABLE customer_profiles (
     preferences JSONB NOT NULL DEFAULT '{}',
     loyalty_points INTEGER NOT NULL DEFAULT 0,
     created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
-    updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
+    updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+    version BIGINT NOT NULL DEFAULT 0
 );
 
 -- Delivery Profile
 CREATE TABLE delivery_profiles (
     id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
     user_id UUID NOT NULL UNIQUE REFERENCES users(id) ON DELETE CASCADE,
-    vehicle_type vehicle_type NOT NULL,
+    vehicle_type VARCHAR(20) NOT NULL,
     vehicle_plate VARCHAR(20),
     vehicle_color VARCHAR(30),
     license_number VARCHAR(50) NOT NULL,
     license_expiry DATE NOT NULL,
     id_document_url VARCHAR(500),
-    background_check_status verification_status NOT NULL DEFAULT 'PENDING',
+    background_check_status VARCHAR(20) NOT NULL DEFAULT 'PENDING',
     is_available BOOLEAN NOT NULL DEFAULT FALSE,
     current_latitude DECIMAL(10, 8),
     current_longitude DECIMAL(11, 8),
@@ -137,7 +71,8 @@ CREATE TABLE delivery_profiles (
     average_rating DECIMAL(3, 2) NOT NULL DEFAULT 0.00,
     total_deliveries INTEGER NOT NULL DEFAULT 0,
     created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
-    updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
+    updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+    version BIGINT NOT NULL DEFAULT 0
 );
 
 CREATE INDEX idx_delivery_profiles_available ON delivery_profiles(is_available) WHERE is_available = TRUE;
@@ -154,7 +89,8 @@ CREATE TABLE restaurant_owner_profiles (
     bank_account_name VARCHAR(200),
     commission_rate DECIMAL(5, 2) NOT NULL DEFAULT 15.00,
     created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
-    updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
+    updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+    version BIGINT NOT NULL DEFAULT 0
 );
 
 CREATE UNIQUE INDEX idx_restaurant_owner_tax_id ON restaurant_owner_profiles(tax_id);
@@ -179,9 +115,10 @@ CREATE TABLE addresses (
     longitude DECIMAL(11, 8),
     instructions TEXT,
     is_default BOOLEAN NOT NULL DEFAULT FALSE,
-    address_type address_type NOT NULL DEFAULT 'HOME',
+    address_type VARCHAR(20) NOT NULL DEFAULT 'HOME',
     created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
-    updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
+    updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+    version BIGINT NOT NULL DEFAULT 0
 );
 
 CREATE INDEX idx_addresses_user_id ON addresses(user_id);
@@ -209,7 +146,7 @@ CREATE TABLE restaurants (
     logo_url VARCHAR(500),
     cover_image_url VARCHAR(500),
     cuisine_type VARCHAR(100),
-    status restaurant_status NOT NULL DEFAULT 'DRAFT',
+    status VARCHAR(20) NOT NULL DEFAULT 'DRAFT',
     address_id UUID NOT NULL REFERENCES addresses(id) ON DELETE RESTRICT,
     delivery_radius_km DECIMAL(5, 2) NOT NULL DEFAULT 5.00,
     minimum_order_amount DECIMAL(10, 2) NOT NULL DEFAULT 0.00,
@@ -236,12 +173,13 @@ CREATE INDEX idx_restaurants_location ON restaurants(address_id);
 CREATE TABLE restaurant_hours (
     id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
     restaurant_id UUID NOT NULL REFERENCES restaurants(id) ON DELETE CASCADE,
-    day_of_week day_of_week NOT NULL,
+    day_of_week VARCHAR(10) NOT NULL,
     open_time TIME,
     close_time TIME,
     is_closed BOOLEAN NOT NULL DEFAULT FALSE,
     created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
     updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+    version BIGINT NOT NULL DEFAULT 0,
     UNIQUE (restaurant_id, day_of_week)
 );
 
@@ -257,13 +195,14 @@ CREATE TABLE restaurant_applications (
     business_license_url VARCHAR(500) NOT NULL,
     tax_id_document_url VARCHAR(500) NOT NULL,
     owner_id_document_url VARCHAR(500) NOT NULL,
-    status application_status NOT NULL DEFAULT 'SUBMITTED',
+    status VARCHAR(20) NOT NULL DEFAULT 'SUBMITTED',
     review_notes TEXT,
     reviewed_by UUID REFERENCES users(id) ON DELETE SET NULL,
     reviewed_at TIMESTAMPTZ,
     submitted_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
     created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
-    updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
+    updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+    version BIGINT NOT NULL DEFAULT 0
 );
 
 CREATE INDEX idx_restaurant_applications_owner ON restaurant_applications(owner_id);
@@ -296,13 +235,13 @@ CREATE TABLE products (
     description TEXT,
     price DECIMAL(10, 2) NOT NULL CHECK (price >= 0),
     image_url VARCHAR(500),
-    additional_images TEXT[],
+    additional_images JSONB,
     is_available BOOLEAN NOT NULL DEFAULT TRUE,
     is_vegetarian BOOLEAN NOT NULL DEFAULT FALSE,
     is_vegan BOOLEAN NOT NULL DEFAULT FALSE,
     is_gluten_free BOOLEAN NOT NULL DEFAULT FALSE,
     allergens TEXT,
-    tags TEXT[],
+    tags JSONB,
     preparation_time_minutes INTEGER,
     display_order INTEGER NOT NULL DEFAULT 0,
     average_rating DECIMAL(3, 2) NOT NULL DEFAULT 0.00,
@@ -326,7 +265,7 @@ CREATE TABLE orders (
     customer_id UUID NOT NULL REFERENCES users(id) ON DELETE RESTRICT,
     restaurant_id UUID NOT NULL REFERENCES restaurants(id) ON DELETE RESTRICT,
     address_id UUID NOT NULL REFERENCES addresses(id) ON DELETE RESTRICT,
-    status order_status NOT NULL DEFAULT 'PENDING',
+    status VARCHAR(20) NOT NULL DEFAULT 'PENDING',
     subtotal DECIMAL(10, 2) NOT NULL CHECK (subtotal >= 0),
     tax_amount DECIMAL(10, 2) NOT NULL DEFAULT 0.00 CHECK (tax_amount >= 0),
     delivery_fee DECIMAL(10, 2) NOT NULL DEFAULT 0.00 CHECK (delivery_fee >= 0),
@@ -373,6 +312,7 @@ CREATE TABLE order_items (
     line_total DECIMAL(10, 2) NOT NULL CHECK (line_total >= 0),
     created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
     updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+    version BIGINT NOT NULL DEFAULT 0,
 
     CONSTRAINT chk_line_total CHECK (unit_price_snapshot * quantity = line_total)
 );
@@ -384,12 +324,13 @@ CREATE INDEX idx_order_items_product ON order_items(product_id);
 CREATE TABLE order_status_history (
     id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
     order_id UUID NOT NULL REFERENCES orders(id) ON DELETE CASCADE,
-    from_status order_status,
-    to_status order_status NOT NULL,
+    from_status VARCHAR(20),
+    to_status VARCHAR(20) NOT NULL,
     changed_by UUID NOT NULL REFERENCES users(id) ON DELETE RESTRICT,
     change_reason TEXT,
     metadata JSONB,
-    created_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
+    created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+    version BIGINT NOT NULL DEFAULT 0
 );
 
 CREATE INDEX idx_order_status_history_order ON order_status_history(order_id, created_at);
@@ -402,7 +343,7 @@ CREATE TABLE deliveries (
     id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
     order_id UUID NOT NULL UNIQUE REFERENCES orders(id) ON DELETE CASCADE,
     delivery_person_id UUID REFERENCES users(id) ON DELETE SET NULL,
-    status delivery_status NOT NULL DEFAULT 'PENDING_ASSIGNMENT',
+    status VARCHAR(20) NOT NULL DEFAULT 'PENDING_ASSIGNMENT',
     pickup_address_id UUID NOT NULL REFERENCES addresses(id) ON DELETE RESTRICT,
     delivery_address_id UUID NOT NULL REFERENCES addresses(id) ON DELETE RESTRICT,
     pickup_latitude DECIMAL(10, 8),
@@ -439,12 +380,14 @@ CREATE TABLE delivery_location_updates (
     accuracy DECIMAL(6, 2),
     speed DECIMAL(6, 2),
     heading DECIMAL(5, 2),
-    recorded_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
+    recorded_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+    version BIGINT NOT NULL DEFAULT 0
 );
 
 CREATE INDEX idx_delivery_location_updates_delivery ON delivery_location_updates(delivery_id, recorded_at DESC);
-CREATE INDEX idx_delivery_location_updates_recent ON delivery_location_updates(recorded_at DESC)
-    WHERE recorded_at > NOW() - INTERVAL '24 hours';
+-- Partial index with NOW() removed - use a maintenance job or materialized view instead
+-- CREATE INDEX idx_delivery_location_updates_recent ON delivery_location_updates(recorded_at DESC)
+--     WHERE recorded_at > NOW() - INTERVAL '24 hours';
 
 -- ============================================
 -- PAYMENTS
@@ -454,8 +397,8 @@ CREATE TABLE payments (
     id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
     order_id UUID NOT NULL UNIQUE REFERENCES orders(id) ON DELETE CASCADE,
     amount DECIMAL(10, 2) NOT NULL CHECK (amount >= 0),
-    method payment_method NOT NULL,
-    status payment_status NOT NULL DEFAULT 'PENDING',
+    method VARCHAR(20) NOT NULL,
+    status VARCHAR(20) NOT NULL DEFAULT 'PENDING',
     transaction_reference VARCHAR(100),
     gateway_response JSONB,
     paid_at TIMESTAMPTZ,
@@ -477,17 +420,21 @@ CREATE INDEX idx_payments_transaction_ref ON payments(transaction_reference) WHE
 CREATE TABLE notifications (
     id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
     user_id UUID NOT NULL REFERENCES users(id) ON DELETE CASCADE,
-    type notification_type NOT NULL,
+    type VARCHAR(30) NOT NULL,
     title VARCHAR(200) NOT NULL,
-    message TEXT NOT NULL,
+    body TEXT,
     data JSONB,
-    priority notification_priority NOT NULL DEFAULT 'NORMAL',
+    priority VARCHAR(20) NOT NULL DEFAULT 'NORMAL',
     is_read BOOLEAN NOT NULL DEFAULT FALSE,
     read_at TIMESTAMPTZ,
+    related_entity_type VARCHAR(50),
+    related_entity_id UUID,
     sent_via_push BOOLEAN NOT NULL DEFAULT FALSE,
     sent_via_email BOOLEAN NOT NULL DEFAULT FALSE,
     sent_via_sms BOOLEAN NOT NULL DEFAULT FALSE,
-    created_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
+    created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+    updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+    version BIGINT NOT NULL DEFAULT 0
 );
 
 CREATE INDEX idx_notifications_user ON notifications(user_id, is_read, created_at DESC);
@@ -501,16 +448,21 @@ CREATE TABLE reviews (
     id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
     order_id UUID NOT NULL REFERENCES orders(id) ON DELETE CASCADE,
     customer_id UUID NOT NULL REFERENCES users(id) ON DELETE CASCADE,
-    target_type review_target_type NOT NULL,
+    target_type VARCHAR(20) NOT NULL,
     target_id UUID NOT NULL,
     rating INTEGER NOT NULL CHECK (rating BETWEEN 1 AND 5),
     comment TEXT,
-    owner_response TEXT,
-    owner_response_at TIMESTAMPTZ,
+    ratings_breakdown JSONB,
+    response TEXT,
+    responded_at TIMESTAMPTZ,
     is_verified BOOLEAN NOT NULL DEFAULT TRUE,
-    moderation_status moderation_status NOT NULL DEFAULT 'APPROVED',
+    is_flagged BOOLEAN NOT NULL DEFAULT FALSE,
+    flag_reason TEXT,
+    moderation_status VARCHAR(20) NOT NULL DEFAULT 'APPROVED',
+    helpful_count INTEGER NOT NULL DEFAULT 0,
     created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
     updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+    version BIGINT NOT NULL DEFAULT 0,
 
     CONSTRAINT uq_review_per_order_target UNIQUE (order_id, customer_id, target_type, target_id)
 );

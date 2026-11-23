@@ -146,12 +146,12 @@ class ReviewService(
     }
 
     fun getReviewsByTarget(targetType: ReviewTargetType, targetId: UUID, pageable: Pageable): Page<ReviewResponse> {
-        return reviewRepository.findByTargetAndIsVerified(targetType, targetId, true, pageable)
+        return reviewRepository.findByTargetTypeAndTargetIdAndIsVerified(targetType, targetId, true, pageable)
             .map { ReviewResponse.fromEntity(it) }
     }
 
     fun getAllReviewsForTarget(targetType: ReviewTargetType, targetId: UUID, pageable: Pageable): Page<ReviewResponse> {
-        return reviewRepository.findByTarget(targetType, targetId, pageable)
+        return reviewRepository.findByTargetTypeAndTargetId(targetType, targetId, pageable)
             .map { ReviewResponse.fromEntity(it) }
     }
 

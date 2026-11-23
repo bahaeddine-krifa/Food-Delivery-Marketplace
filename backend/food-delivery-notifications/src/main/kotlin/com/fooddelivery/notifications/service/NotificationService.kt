@@ -91,7 +91,7 @@ class NotificationService(
     }
 
     fun getNotifications(userId: UUID, pageable: Pageable): Page<NotificationResponse> {
-        return notificationRepository.findByUserId(userId, pageable)
+        return notificationRepository.findByUser_Id(userId, pageable)
             .map { NotificationResponse.fromEntity(it) }
     }
 
@@ -101,7 +101,7 @@ class NotificationService(
     }
 
     fun getUnreadCount(userId: UUID): UnreadCountResponse {
-        val count = notificationRepository.countByUserIdAndIsRead(userId, false)
+        val count = notificationRepository.countByUser_IdAndIsRead(userId, false)
         return UnreadCountResponse(count)
     }
 
@@ -120,9 +120,9 @@ class NotificationService(
     }
 
     fun markAllAsRead(userId: UUID): Int {
-        val unread = notificationRepository.findByUserIdAndIsRead(userId, false, org.springframework.data.domain.Pageable.unpaged())
+        val unread = notificationRepository.findByUser_IdAndIsRead(userId, false, org.springframework.data.domain.Pageable.unpaged())
         var updated = 0
-        for (notification in unread) {
+        for (notification in unread.content) {
             notification.isRead = true
             notification.readAt = OffsetDateTime.now()
             notificationRepository.save(notification)

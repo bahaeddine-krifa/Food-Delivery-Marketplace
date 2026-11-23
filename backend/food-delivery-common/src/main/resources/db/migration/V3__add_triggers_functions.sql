@@ -363,15 +363,15 @@ CREATE TRIGGER set_delivery_codes
 CREATE OR REPLACE FUNCTION update_restaurant_open_status()
 RETURNS TRIGGER AS $$
 DECLARE
-    current_day day_of_week;
-    current_time TIME;
+    current_day VARCHAR(10);
+    current_time_of_day TIME;
     hours_record RECORD;
 BEGIN
     current_day := CASE EXTRACT(DOW FROM NOW())::INTEGER
         WHEN 0 THEN 'SUNDAY' WHEN 1 THEN 'MONDAY' WHEN 2 THEN 'TUESDAY'
         WHEN 3 THEN 'WEDNESDAY' WHEN 4 THEN 'THURSDAY' WHEN 5 THEN 'FRIDAY'
         WHEN 6 THEN 'SATURDAY' END;
-    current_time := NOW()::TIME;
+    current_time_of_day := NOW()::TIME;
 
     SELECT * INTO hours_record
     FROM restaurant_hours
@@ -381,8 +381,8 @@ BEGIN
     IF hours_record IS NOT NULL AND NOT hours_record.is_closed
        AND hours_record.open_time IS NOT NULL
        AND hours_record.close_time IS NOT NULL
-       AND current_time >= hours_record.open_time
-       AND current_time <= hours_record.close_time THEN
+       AND current_time_of_day >= hours_record.open_time
+       AND current_time_of_day <= hours_record.close_time THEN
         NEW.is_open_now := TRUE;
     ELSE
         NEW.is_open_now := FALSE;
@@ -399,9 +399,49 @@ CREATE TRIGGER update_restaurant_open_status
 
 -- Also trigger when hours change
 DROP TRIGGER IF EXISTS update_restaurant_open_status_hours ON restaurant_hours;
+CREATE OR REPLACE FUNCTION update_restaurant_open_status_from_hours()
+RETURNS TRIGGER AS $$
+DECLARE
+    current_day VARCHAR(10);
+    current_time_of_day TIME;
+    hours_record RECORD;
+    v_restaurant_id UUID;
+BEGIN
+    -- Determine the restaurant_id from the changed hours record
+    IF TG_OP = 'DELETE' THEN
+        v_restaurant_id := OLD.restaurant_id;
+    ELSE
+        v_restaurant_id := NEW.restaurant_id;
+    END IF;
+
+    current_day := CASE EXTRACT(DOW FROM NOW())::INTEGER
+        WHEN 0 THEN 'SUNDAY' WHEN 1 THEN 'MONDAY' WHEN 2 THEN 'TUESDAY'
+        WHEN 3 THEN 'WEDNESDAY' WHEN 4 THEN 'THURSDAY' WHEN 5 THEN 'FRIDAY'
+        WHEN 6 THEN 'SATURDAY' END;
+    current_time_of_day := NOW()::TIME;
+
+    SELECT * INTO hours_record
+    FROM restaurant_hours
+    WHERE restaurant_id = v_restaurant_id
+    AND day_of_week = current_day;
+
+    IF hours_record IS NOT NULL AND NOT hours_record.is_closed
+       AND hours_record.open_time IS NOT NULL
+       AND hours_record.close_time IS NOT NULL
+       AND current_time_of_day >= hours_record.open_time
+       AND current_time_of_day <= hours_record.close_time THEN
+        UPDATE restaurants SET is_open_now = TRUE WHERE id = v_restaurant_id;
+    ELSE
+        UPDATE restaurants SET is_open_now = FALSE WHERE id = v_restaurant_id;
+    END IF;
+
+    RETURN NULL; -- AFTER trigger doesn't need to return anything meaningful
+END;
+$$ LANGUAGE plpgsql;
+
 CREATE TRIGGER update_restaurant_open_status_hours
     AFTER INSERT OR UPDATE OR DELETE ON restaurant_hours
-    FOR EACH ROW EXECUTE FUNCTION update_restaurant_open_status();
+    FOR EACH ROW EXECUTE FUNCTION update_restaurant_open_status_from_hours();
 
 -- ============================================
 -- HELPER FUNCTIONS
@@ -463,12 +503,13 @@ $$ LANGUAGE plpgsql;
 CREATE OR REPLACE FUNCTION is_restaurant_open_now(p_restaurant_id UUID)
 RETURNS BOOLEAN AS $$
 DECLARE
-    current_day day_of_week;
-    current_time TIME;
+    current_day VARCHAR(10);
+    current_time_of_day TIME;
     hours_record RECORD;
+    restaurant_status VARCHAR(20);
 BEGIN
-    SELECT status INTO current_day FROM restaurants WHERE id = p_restaurant_id;
-    IF current_day != 'APPROVED' THEN
+    SELECT status INTO restaurant_status FROM restaurants WHERE id = p_restaurant_id;
+    IF restaurant_status != 'APPROVED' THEN
         RETURN FALSE;
     END IF;
 
@@ -476,7 +517,7 @@ BEGIN
         WHEN 0 THEN 'SUNDAY' WHEN 1 THEN 'MONDAY' WHEN 2 THEN 'TUESDAY'
         WHEN 3 THEN 'WEDNESDAY' WHEN 4 THEN 'THURSDAY' WHEN 5 THEN 'FRIDAY'
         WHEN 6 THEN 'SATURDAY' END;
-    current_time := NOW()::TIME;
+    current_time_of_day := NOW()::TIME;
 
     SELECT * INTO hours_record
     FROM restaurant_hours
@@ -486,8 +527,8 @@ BEGIN
     IF hours_record IS NOT NULL AND NOT hours_record.is_closed
        AND hours_record.open_time IS NOT NULL
        AND hours_record.close_time IS NOT NULL
-       AND current_time >= hours_record.open_time
-       AND current_time <= hours_record.close_time THEN
+       AND current_time_of_day >= hours_record.open_time
+       AND current_time_of_day <= hours_record.close_time THEN
         RETURN TRUE;
     END IF;
 
@@ -497,7 +538,7 @@ $$ LANGUAGE plpgsql;
 
 -- Get order count by status for a restaurant
 CREATE OR REPLACE FUNCTION get_restaurant_order_counts(p_restaurant_id UUID)
-RETURNS TABLE(status order_status, count BIGINT) AS $$
+RETURNS TABLE(status VARCHAR(20), count BIGINT) AS $$
 BEGIN
     RETURN QUERY
     SELECT o.status, COUNT(*)

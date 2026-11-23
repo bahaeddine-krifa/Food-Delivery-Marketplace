@@ -62,17 +62,15 @@ class UserService(
         val user = findById(userId)
         return when (role) {
             UserRole.CUSTOMER -> {
-                val profile = CustomerProfile().apply { this.user = user }
-                customerProfileRepository.save(profile)
+                customerProfileRepository.findByUserId(userId) ?: CustomerProfile().apply { this.user = user }.also { customerProfileRepository.save(it) }
             }
             UserRole.DELIVERY_PERSON -> {
-                val profile = DeliveryProfile().apply { this.user = user }
-                deliveryProfileRepository.save(profile)
+                deliveryProfileRepository.findByUserId(userId) ?: DeliveryProfile().apply { this.user = user }.also { deliveryProfileRepository.save(it) }
             }
             UserRole.RESTAURANT_OWNER -> {
-                val profile = RestaurantOwnerProfile().apply { this.user = user }
-                restaurantOwnerProfileRepository.save(profile)
+                restaurantOwnerProfileRepository.findByUserId(userId) ?: RestaurantOwnerProfile().apply { this.user = user }.also { restaurantOwnerProfileRepository.save(it) }
             }
+            UserRole.ADMIN -> Unit // Admin doesn't need a profile
             else -> throw BusinessException("Cannot create profile for role: $role", "INVALID_ROLE")
         }
     }

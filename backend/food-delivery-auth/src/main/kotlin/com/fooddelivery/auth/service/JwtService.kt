@@ -32,7 +32,7 @@ class JwtService(private val properties: JwtProperties) {
             .issuedAt(Date.from(now))
             .expiration(Date.from(expiry))
             .claim("email", email)
-            .claim("role", role.value)
+            .claim("role", role.name)
             .claim("type", "access")
             .signWith(signingKey)
             .compact()

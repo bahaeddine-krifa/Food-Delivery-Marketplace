@@ -12,16 +12,16 @@ import java.util.UUID
 @Repository
 interface NotificationRepository : JpaRepository<Notification, UUID> {
 
-    fun findByUserId(userId: UUID, pageable: Pageable): Page<Notification>
+    fun findByUser_Id(userId: UUID, pageable: Pageable): Page<Notification>
 
-    fun findByUserIdAndIsRead(userId: UUID, isRead: Boolean, pageable: Pageable): Page<Notification>
+    fun findByUser_IdAndIsRead(userId: UUID, isRead: Boolean, pageable: Pageable): Page<Notification>
 
-    fun countByUserIdAndIsRead(userId: UUID, isRead: Boolean): Long
+    fun countByUser_IdAndIsRead(userId: UUID, isRead: Boolean): Long
 
-    @Query("SELECT n FROM Notification n WHERE n.userId = :userId AND n.isRead = false")
+    @Query("SELECT n FROM Notification n WHERE n.user.id = :userId AND n.isRead = false")
     fun findUnreadByUserId(userId: UUID, pageable: Pageable): Page<Notification>
 
-    fun findByUserIdAndType(userId: UUID, type: NotificationType, pageable: Pageable): Page<Notification>
+    fun findByUser_IdAndType(userId: UUID, type: NotificationType, pageable: Pageable): Page<Notification>
 
-    fun findByRelatedEntity(relatedEntityType: String, relatedEntityId: UUID): List<Notification>
+    fun findByRelatedEntityTypeAndRelatedEntityId(relatedEntityType: String, relatedEntityId: UUID): List<Notification>
 }

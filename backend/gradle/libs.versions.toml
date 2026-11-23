@@ -14,7 +14,7 @@ springMail = "6.1.6"
 
 # Database
 postgresql = "42.7.3"
-flyway = "10.17.0"
+flyway = "10.21.0"
 hikaricp = "5.1.0"
 liquibase = "4.29.0"
 testcontainers = "1.19.8"

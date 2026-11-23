@@ -22,6 +22,7 @@ COPY food-delivery-payments/build.gradle.kts food-delivery-payments/
 COPY food-delivery-notifications/build.gradle.kts food-delivery-notifications/
 COPY food-delivery-reviews/build.gradle.kts food-delivery-reviews/
 COPY food-delivery-admin/build.gradle.kts food-delivery-admin/
+COPY food-delivery-api/build.gradle.kts food-delivery-api/
 
 # Download dependencies
 RUN gradle dependencies --no-daemon
@@ -40,9 +41,10 @@ COPY food-delivery-payments/src ./food-delivery-payments/src
 COPY food-delivery-notifications/src ./food-delivery-notifications/src
 COPY food-delivery-reviews/src ./food-delivery-reviews/src
 COPY food-delivery-admin/src ./food-delivery-admin/src
+COPY food-delivery-api/src ./food-delivery-api/src
 
 # Build application
-RUN gradle bootJar --no-daemon -x test
+RUN gradle :food-delivery-api:bootJar --no-daemon -x test
 
 # Runtime stage
 FROM eclipse-temurin:21-jre-alpine
@@ -57,7 +59,7 @@ RUN addgroup -g 1000 -S appgroup && \
 RUN apk add --no-cache curl
 
 # Copy built jar
-COPY --from=builder /app/food-delivery-common/build/libs/*.jar app.jar
+COPY --from=builder /app/food-delivery-api/build/libs/*.jar app.jar
 
 # Create uploads directory
 RUN mkdir -p /app/uploads && chown -R appuser:appgroup /app/uploads

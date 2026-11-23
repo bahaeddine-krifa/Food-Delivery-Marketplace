@@ -45,7 +45,7 @@ class JwtAuthenticationFilter(private val jwtService: JwtService) : OncePerReque
             val email = jwtService.extractEmail(token)
             val role = jwtService.extractRole(token)
 
-            val authorities = listOf(SimpleGrantedAuthority("ROLE_${role.value}"))
+            val authorities = listOf(SimpleGrantedAuthority("ROLE_${role.name}"))
 
             val authentication = UsernamePasswordAuthenticationToken(
                 CurrentUser(userId, email, role),

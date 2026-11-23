@@ -3,15 +3,15 @@ package com.fooddelivery.users.domain
 import com.fooddelivery.common.domain.AuditableEntity
 import com.fooddelivery.common.enums.UserRole
 import com.fooddelivery.common.enums.UserStatus
+import com.fooddelivery.common.type.UserRoleConverter
+import com.fooddelivery.common.type.UserStatusConverter
 import jakarta.persistence.Column
 import jakarta.persistence.Convert
 import jakarta.persistence.Entity
-import jakarta.persistence.EnumType
-import jakarta.persistence.Enumerated
 import jakarta.persistence.Index
 import jakarta.persistence.Table
 import jakarta.persistence.UniqueConstraint
-import org.hibernate.annotations.JdbcTypeCode
+import org.hibernate.annotations.JdbcType
 import org.hibernate.type.SqlTypes
 import java.time.OffsetDateTime
 import java.util.UUID
@@ -46,12 +46,12 @@ class User : AuditableEntity() {
     @Column(name = "avatar_url", length = 500)
     var avatarUrl: String? = null
 
-    @Enumerated(EnumType.STRING)
-    @Column(nullable = false, length = 30)
+    @Convert(converter = UserRoleConverter::class)
+    @Column(name = "role", nullable = false)
     var role: UserRole = UserRole.CUSTOMER
 
-    @Enumerated(EnumType.STRING)
-    @Column(nullable = false, length = 30)
+    @Convert(converter = UserStatusConverter::class)
+    @Column(name = "status", nullable = false)
     var status: UserStatus = UserStatus.PENDING_VERIFICATION
 
     @Column(name = "email_verified", nullable = false)
@@ -75,8 +75,8 @@ class User : AuditableEntity() {
     @Column(name = "last_login_at")
     var lastLoginAt: OffsetDateTime? = null
 
-    @JdbcTypeCode(SqlTypes.JSON)
-    @Column(name = "preferences")
+    @org.hibernate.annotations.JdbcTypeCode(org.hibernate.type.SqlTypes.JSON)
+    @Column(name = "preferences", columnDefinition = "jsonb")
     var preferences: String = "{}"
 
     fun getFullName(): String = "$firstName $lastName"

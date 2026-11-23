@@ -16,9 +16,9 @@ interface ReviewRepository : JpaRepository<Review, UUID> {
 
     fun findByCustomerId(customerId: UUID, pageable: Pageable): Page<Review>
 
-    fun findByTarget(targetType: ReviewTargetType, targetId: UUID, pageable: Pageable): Page<Review>
+    fun findByTargetTypeAndTargetId(targetType: ReviewTargetType, targetId: UUID, pageable: Pageable): Page<Review>
 
-    fun findByTargetAndIsVerified(targetType: ReviewTargetType, targetId: UUID, isVerified: Boolean, pageable: Pageable): Page<Review>
+    fun findByTargetTypeAndTargetIdAndIsVerified(targetType: ReviewTargetType, targetId: UUID, isVerified: Boolean, pageable: Pageable): Page<Review>
 
     @Query("SELECT AVG(r.rating) FROM Review r WHERE r.targetType = :targetType AND r.targetId = :targetId AND r.isVerified = true")
     fun getAverageRating(targetType: ReviewTargetType, targetId: UUID): Double?

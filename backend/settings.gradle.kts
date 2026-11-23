@@ -30,5 +30,6 @@ include(
     "food-delivery-payments",
     "food-delivery-notifications",
     "food-delivery-reviews",
-    "food-delivery-admin"
+    "food-delivery-admin",
+    "food-delivery-api"
 )
