@@ -110,7 +110,12 @@ class ApiClient {
 
   private async refreshAccessToken(): Promise<string> {
     if (!this.refreshToken) {
-      throw new Error('No refresh token available');
+      // No refresh token available - clear any stale access token and redirect to login
+      this.clearTokens();
+      if (typeof window !== 'undefined') {
+        window.location.href = '/login';
+      }
+      throw new Error('No refresh token available - please log in again');
     }
 
     const response = await axios.post<ApiResponse<TokenResponse>>(

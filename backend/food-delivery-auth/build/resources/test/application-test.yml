@@ -1,0 +1,129 @@
+# Food Delivery Platform - Test Configuration
+# In-memory H2 database for tests
+
+spring:
+  application:
+    name: food-delivery-platform-test
+
+  # Database Configuration - H2 in-memory for tests
+  datasource:
+    url: jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE;MODE=PostgreSQL
+    username: sa
+    password:
+    driver-class-name: org.h2.Driver
+    hikari:
+      maximum-pool-size: 5
+
+  # JPA/Hibernate Configuration
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: false
+    properties:
+      hibernate:
+        format_sql: true
+        use_sql_comments: true
+        jdbc:
+          time_zone: UTC
+        default_batch_fetch_size: 20
+
+  # Flyway Migration Configuration - disabled for tests (use ddl-auto create-drop)
+  flyway:
+    enabled: false
+
+  # Redis Configuration - disabled for tests
+  data:
+    redis:
+      host: localhost
+      port: 6379
+
+  # Mail Configuration - mock for tests
+  mail:
+    host: localhost
+    port: 1025
+
+  # Jackson Configuration
+  jackson:
+    default-property-inclusion: non_null
+    serialization:
+      write-dates-as-timestamps: false
+    deserialization:
+      fail-on-unknown-properties: false
+
+  # Servlet Configuration
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 20MB
+
+# Server Configuration
+server:
+  port: 0
+
+# Actuator Configuration
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+      base-path: /actuator
+
+# Logging Configuration - reduced for tests
+logging:
+  level:
+    com.fooddelivery: INFO
+    org.springframework.security: INFO
+    org.hibernate.SQL: INFO
+    org.flywaydb: INFO
+
+# Application-specific Properties
+app:
+  jwt:
+    secret: test-secret-key-for-testing-purposes-only-must-be-32-chars-minimum
+    access-token-expiration: 15m
+    refresh-token-expiration: 7d
+    remember-me-expiration: 30d
+    issuer: food-delivery-platform
+    audience: food-delivery-clients
+
+  # File Upload
+  upload:
+    max-size: 10MB
+    allowed-types: image/jpeg,image/png,image/webp
+    path: /tmp/uploads
+
+  # Email Verification
+  email:
+    verification:
+      base-url: http://localhost:8080/api/v1/auth/verify-email
+    password-reset:
+      base-url: http://localhost:8080/api/v1/auth/reset-password
+
+  # Pagination
+  pagination:
+    default-page-size: 20
+    max-page-size: 100
+
+  # Rate Limiting
+  rate-limit:
+    auth-requests-per-minute: 10
+    api-requests-per-minute: 100
+
+  # Delivery
+  delivery:
+    default-radius-km: 5.0
+    offer-timeout-seconds: 60
+    auto-assignment-enabled: true
+
+  # Order
+  order:
+    pending-timeout-minutes: 10
+    tax-rate: 0.19
+
+# OpenAPI/Swagger Configuration
+springdoc:
+  api-docs:
+    path: /api-docs
+  swagger-ui:
+    path: /swagger-ui.html

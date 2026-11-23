@@ -32,7 +32,7 @@ export function Login() {
     }
   };
 
-  const isDisabled = isLoading || authLoading || !email || !password;
+  const isDisabled = isLoading || !email || !password;
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-neutral-50 px-4 py-12">
@@ -71,7 +71,6 @@ export function Login() {
                 placeholder="admin@fooddelivery.com"
                 autoComplete="email"
                 required
-                disabled={isDisabled}
               />
 
               <div className="relative">
@@ -83,7 +82,6 @@ export function Login() {
                   placeholder="••••••••"
                   autoComplete="current-password"
                   required
-                  disabled={isDisabled}
                 />
                 <button
                   type="button"

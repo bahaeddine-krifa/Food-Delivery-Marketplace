@@ -1,0 +1,11 @@
+{
+  "restaurantId": "11111111-1111-1111-1111-111111111111",
+  "addressId": "eeeeeeee-eeee-eeee-eeee-eeeeeeeeeeee",
+  "idempotencyKey": "demo-order-1795454756",
+  "customerNotes": "Please ring doorbell",
+  "items": [
+    {"productId": "77777777-7777-7777-7777-777777777777", "quantity": 2},
+    {"productId": "88888888-8888-8888-8888-888888888888", "quantity": 1},
+    {"productId": "bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbbbbbb", "quantity": 2}
+  ]
+}

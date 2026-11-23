@@ -39,7 +39,7 @@ class JwtServiceTest {
         val claims = jwtService.validateToken(token)
         assert(claims.subject == userId.toString())
         assert(claims.get("email", String::class.java) == email)
-        assert(claims.get("role", String::class.java) == role.value)
+        assert(claims.get("role", String::class.java) == role.name)
         assert(claims.get("type", String::class.java) == "access")
     }
 

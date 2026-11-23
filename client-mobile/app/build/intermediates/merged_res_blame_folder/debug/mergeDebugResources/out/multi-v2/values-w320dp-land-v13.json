@@ -1,0 +1,19 @@
+{
+    "logs": [
+        {
+            "outputFile": "com.fooddelivery.clientmobile.app-mergeDebugResources-83:/values-w320dp-land-v13/values-w320dp-land-v13.xml",
+            "map": [
+                {
+                    "source": "/home/bahaeddine/.gradle/caches/transforms-4/4b38706ebec42158ec28a59b8d1013a1/transformed/material-1.4.0-beta01/res/values-w320dp-land-v13/values-w320dp-land-v13.xml",
+                    "from": {
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,110",
+                        "endColumns": "54,61",
+                        "endOffsets": "105,167"
+                    }
+                }
+            ]
+        }
+    ]
+}
